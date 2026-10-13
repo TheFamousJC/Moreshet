@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "tourSlug": "new-york-lower-east-side-jewish-immigration",
+  "status": "research_complete_cms_draft_pending",
+  "language": "en",
+  "city": {
+    "name": "New York — Lower East Side",
+    "country": "United States",
+    "flagEmoji": "🇺🇸",
+    "centerLat": 40.7165,
+    "centerLng": -73.9895,
+    "subtitle": "Immigration, prayer, Yiddish culture and neighbourhood life",
+    "description": "Walk through institutions created by Jewish immigrants from Eastern Europe and the Ottoman Greek world, from tenement homes and synagogues to the headquarters of the Yiddish press."
+  },
+  "tour": {
+    "title": "Jewish Lower East Side: Immigration, Worship and Everyday Life",
+    "subtitle": "Five places where newcomers built Jewish New York",
+    "overview": "This walking tour explores Jewish immigrant housing, Romaniote and Ashkenazi congregations, monumental worship and Yiddish journalism. It avoids presenting the neighbourhood as a vanished monoculture: every stop is tied to a particular community, institution and historical experience.",
+    "estimatedDurationMinutes": 110,
+    "difficulty": "easy",
+    "accessMode": "free",
+    "narrationMode": "simulated",
+    "publicationPolicy": "cms_review_required"
+  },
+  "stops": [
+    {
+      "position": 1,
+      "slug": "lower-east-side-tenement-museum",
+      "title": "Tenement Museum — 97 Orchard Street",
+      "category": "museum",
+      "address": "97 Orchard Street, New York, NY 10002, United States",
+      "lat": 40.7185451,
+      "lng": -73.9902766,
+      "shortDescription": "A preserved tenement interpreting the crowded homes and choices of immigrant families, including Jewish residents.",
+      "fullDescription": "The tenement at 97 Orchard Street housed working-class immigrants between 1863 and 1935. Its interpreted apartments include Jewish families whose labour, religious choices, language and adaptation illuminate Lower East Side life. Interior access is by a museum programme rather than casual entry; tour availability should be checked in advance.",
+      "transcript": "At 97 Orchard Street, immigration becomes a household story. The building opened in 1863 and over the following decades sheltered families arriving from many parts of Europe. Jewish residents lived in small apartments where home, work, religion and the demands of a new country met every day. Some sewed garments in crowded rooms; some balanced Sabbath practice against industrial schedules; children learned English faster than their parents, while Yiddish carried news and family life. The Tenement Museum reconstructs individual histories from records rather than treating immigrants as an anonymous mass. Remember that the building also belonged to other communities and periods. Its Jewish significance comes from specific residents and the wider neighbourhood they helped shape. Interior visits require an official tour, but the façade already prompts a central question: how did ordinary families turn limited space into a foothold in New York?",
+      "sources": [
+        "https://www.nps.gov/loea/index.htm",
+        "https://www.tenement.org/"
+      ],
+      "image": {
+        "fileName": "New York Lower East Side Tenement Museum’s landmark tenement building at 97 Orchard Street.jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/New_York_Lower_East_Side_Tenement_Museum%E2%80%99s_landmark_tenement_building_at_97_Orchard_Street.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:New_York_Lower_East_Side_Tenement_Museum%E2%80%99s_landmark_tenement_building_at_97_Orchard_Street.jpg",
+        "creator": "Wally Gobetz",
+        "rightsStatus": "cc_by",
+        "licenseName": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+        "attributionText": "97 Orchard Street — Wally Gobetz, CC BY 2.0, via Wikimedia Commons"
+      }
+    },
+    {
+      "position": 2,
+      "slug": "lower-east-side-kehila-kedosha-janina",
+      "title": "Kehila Kedosha Janina",
+      "category": "synagogue",
+      "address": "280 Broome Street, New York, NY 10002, United States",
+      "lat": 40.7185277,
+      "lng": -73.9912164,
+      "shortDescription": "A synagogue and museum preserving the Romaniote Jewish tradition of Ioannina, Greece.",
+      "fullDescription": "Kehila Kedosha Janina was built in 1925–27 by Jews from Ioannina. It preserves Romaniote practice, a Greek-speaking Jewish tradition distinct from both Ashkenazi and Sephardic rites, and is widely described as the only Romaniote synagogue in the Western Hemisphere. It remains a congregation as well as a museum.",
+      "transcript": "This modest façade protects one of the Lower East Side’s most distinctive Jewish traditions. Kehila Kedosha Janina was established by immigrants from Ioannina in northwestern Greece and completed in the 1920s. They were Romaniote Jews, members of an ancient Greek-speaking community whose customs developed separately from both Ashkenazi and Sephardic traditions. The synagogue’s layout, melodies and ritual practices preserve that inheritance in New York. The community later faced devastating loss when most of Ioannina’s Jews were deported and murdered during the Holocaust. Today the building functions as both a congregation and a museum, linking descendants with family histories that cross Greece and the United States. Its survival complicates any simple picture of the Lower East Side as exclusively Eastern European and Yiddish-speaking. Check visiting hours and respect services: this is a living religious institution, not only a heritage exhibit.",
+      "sources": [
+        "https://www.kkjsm.org/",
+        "https://commons.wikimedia.org/wiki/Category:Kehila_Kedosha_Janina"
+      ],
+      "image": {
+        "fileName": "Exterior facade of the Kehila Kedosha Janina Synagogue during the Greek Jewish Festival in 2025.jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Exterior_facade_of_the_Kehila_Kedosha_Janina_Synagogue_during_the_Greek_Jewish_Festival_in_2025.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Exterior_facade_of_the_Kehila_Kedosha_Janina_Synagogue_during_the_Greek_Jewish_Festival_in_2025.jpg",
+        "creator": "Tzim78",
+        "rightsStatus": "cc_by",
+        "licenseName": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attributionText": "Kehila Kedosha Janina façade — Tzim78, CC BY 4.0, via Wikimedia Commons"
+      }
+    },
+    {
+      "position": 3,
+      "slug": "lower-east-side-eldridge-street-synagogue",
+      "title": "Eldridge Street Synagogue",
+      "category": "synagogue",
+      "address": "12 Eldridge Street, New York, NY 10002, United States",
+      "lat": 40.7147291,
+      "lng": -73.993461,
+      "shortDescription": "The grand 1887 synagogue built by Eastern European Jewish immigrants and restored as the Museum at Eldridge Street.",
+      "fullDescription": "Opened in 1887, Eldridge Street was among the first purpose-built grand synagogues erected in the United States by Eastern European Jews. Its sanctuary expressed both Orthodox worship and immigrant confidence. After decades of decline, extensive restoration preserved the building as a museum while a congregation continues in the lower-level study hall.",
+      "transcript": "The Eldridge Street Synagogue announces itself very differently from the tenement and the Romaniote congregation. When it opened in 1887, its high façade and richly decorated sanctuary expressed the ambitions of Eastern European Jewish immigrants who wanted a permanent, dignified house of worship. The building supported religious life, charitable activity and networks that helped newcomers adapt to the city. As the Jewish population moved away from the Lower East Side, the great sanctuary declined and was eventually closed for decades. Preservation work rescued the structure without pretending that time had stood still. The restored building now operates as the Museum at Eldridge Street, while worship continues in a smaller space. Look upward at the arches and windows and consider what monumental architecture meant to immigrants living in cramped apartments nearby: it created a shared public interior where a community could hear familiar prayers and imagine a future in America.",
+      "sources": [
+        "https://www.eldridgestreet.org/history",
+        "https://www.eldridgestreet.org/"
+      ],
+      "image": {
+        "fileName": "Eldridge Street Synagogue 2025.jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Eldridge_Street_Synagogue_2025.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eldridge_Street_Synagogue_2025.jpg",
+        "creator": "Montanabw",
+        "rightsStatus": "cc_by_sa",
+        "licenseName": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attributionText": "Eldridge Street Synagogue — Montanabw, CC BY-SA 4.0, via Wikimedia Commons"
+      }
+    },
+    {
+      "position": 4,
+      "slug": "lower-east-side-forward-building",
+      "title": "Forward Building",
+      "category": "historic_sites",
+      "address": "173–175 East Broadway, New York, NY 10002, United States",
+      "lat": 40.71386,
+      "lng": -73.98952,
+      "shortDescription": "The 1912 headquarters of the Jewish Daily Forward, once the most influential Yiddish newspaper in the United States.",
+      "fullDescription": "The Jewish Daily Forward moved into this ten-storey building in 1912. Founded in 1897 and shaped by editor Abraham Cahan, the Yiddish paper reported news, advocated labour and democratic causes, published literature and helped immigrants navigate American life. The building is now residential, so the heritage experience is exterior only.",
+      "transcript": "The words and portraits on this façade recall a time when a newspaper building served as a landmark for Jewish immigrant New York. The Jewish Daily Forward began publishing in Yiddish in 1897. Under Abraham Cahan, it combined news, literature, labour politics, advice and debate, becoming what the paper later called the voice of the Jewish immigrant. This headquarters opened in 1912 with presses below and editorial offices above. At its height the Forward reached readers far beyond the Lower East Side and helped newcomers negotiate work, family conflict, American customs and Jewish identity. The relief portraits of socialist thinkers reflect the paper’s political roots, while its enormous circulation reveals the power of Yiddish public culture. The interior has been converted to private residences and is not part of the tour. Read the exterior as a surviving page: a reminder that Jewish neighbourhood life was created through argument and journalism as well as synagogues.",
+      "sources": [
+        "https://forward.com/about-us/history/",
+        "https://s-media.nyc.gov/agencies/lpc/lp/1419.pdf"
+      ],
+      "image": {
+        "fileName": "Forward Building detail.jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Forward_Building_detail.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Forward_Building_detail.jpg",
+        "creator": "Beyond My Ken",
+        "rightsStatus": "cc_by_sa",
+        "licenseName": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attributionText": "Forward Building detail — Beyond My Ken, CC BY-SA 4.0, via Wikimedia Commons"
+      }
+    },
+    {
+      "position": 5,
+      "slug": "lower-east-side-bialystoker-synagogue",
+      "title": "Bialystoker Synagogue",
+      "category": "synagogue",
+      "address": "7–11 Bialystoker Place, New York, NY 10002, United States",
+      "lat": 40.7155396,
+      "lng": -73.983309,
+      "shortDescription": "An Orthodox congregation formed by immigrants from Białystok in one of Lower Manhattan’s oldest religious buildings.",
+      "fullDescription": "The Bialystoker congregation grew from an immigrant mutual-aid society established by Jews from Białystok. In 1905 it purchased an 1826 former Methodist church, adapting the fieldstone building for Orthodox worship. The synagogue illustrates how landsmanshaft networks connected people from the same European hometown through prayer, charity and practical support.",
+      "transcript": "Our final stop began not as a synagogue but as a Methodist church built in 1826. The Bialystoker congregation purchased the building in 1905 and transformed it for Orthodox Jewish worship. Its name points to Białystok, then in the Russian Empire and now in Poland. Immigrants often formed landsmanshaftn—associations based on a shared hometown—that offered prayer, burial arrangements, charity, companionship and help navigating life in New York. The congregation’s story therefore reaches beyond architecture. It shows how newcomers rebuilt local networks in a city where relatives and familiar institutions might be absent. The building is among the oldest surviving religious structures in Lower Manhattan and remains an active synagogue. Please do not assume entry is available; check congregational arrangements and respect worship. Ending here returns us from mass journalism to a particular congregation, both essential parts of the Jewish Lower East Side.",
+      "sources": [
+        "https://www.bialystoker.org/",
+        "https://commons.wikimedia.org/wiki/Category:Bialystoker_Synagogue"
+      ],
+      "image": {
+        "fileName": "Bialystoker Synagogue.jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bialystoker_Synagogue.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bialystoker_Synagogue.jpg",
+        "creator": "Beyond My Ken",
+        "rightsStatus": "cc_by_sa",
+        "licenseName": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attributionText": "Bialystoker Synagogue — Beyond My Ken, CC BY-SA 4.0, via Wikimedia Commons"
+      }
+    }
+  ]
+}

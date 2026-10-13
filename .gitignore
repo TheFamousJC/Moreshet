@@ -1,0 +1,32 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+backups/
+Docs/.manual_render*
+Docs/~$*.docx
+
+# Local credential and machine notes. Recreate securely on each development computer.
+Docs/Bravo.txt
+Docs/Supbase Databse.txt
+Docs/Codex project path is.txt
+supabase/.temp/
+supabase/.branches/
+.tmp/
+
+# Keep the current MVP documentation; archived Office files and old deployment
+# documents remain local reference material.
+Docs/*
+!Docs/MVP-Technical-Spec.md
+!Docs/MVP-Development-Plan.md
+!Docs/MVP-Verification.md
+!Docs/MVP-Guide.html
+!Docs/MVP-Feature-Inventory.json
+!Docs/MVP-preview.png
+
+# The archived scheduled production monitor targets the previous deployment.
+.github/workflows/production-monitor.yml

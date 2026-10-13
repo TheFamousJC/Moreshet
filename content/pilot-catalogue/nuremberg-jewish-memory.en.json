@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "tourSlug": "nuremberg-jewish-memory",
+  "status": "research_complete_cms_draft_pending",
+  "language": "en",
+  "city": {
+    "name": "Nuremberg",
+    "country": "Germany",
+    "flagEmoji": "🇩🇪",
+    "centerLat": 49.4529,
+    "centerLng": 11.0708,
+    "subtitle": "Jewish community, persecution and the pursuit of justice",
+    "description": "Follow traces of medieval and modern Jewish Nuremberg, confront the destruction imposed by Nazism and finish with the legal and educational institutions created in response."
+  },
+  "tour": {
+    "title": "Jewish Nuremberg: Community, Persecution and Justice",
+    "subtitle": "Five sites linking Jewish life, destruction, remembrance and law",
+    "overview": "This transit-assisted route begins with two sites of destroyed synagogues, visits the community’s active cemetery and then examines Nazi crimes and their legal reckoning. It centres Jewish lives and institutions while explaining why the Nazi Rally Grounds and Courtroom 600 belong in a Jewish heritage tour.",
+    "estimatedDurationMinutes": 180,
+    "difficulty": "moderate",
+    "accessMode": "free",
+    "narrationMode": "simulated",
+    "publicationPolicy": "cms_review_required"
+  },
+  "stops": [
+    {
+      "position": 1,
+      "slug": "nuremberg-medieval-synagogue-site",
+      "title": "Medieval Synagogue Site at Hauptmarkt",
+      "category": "historic_sites",
+      "address": "Hauptmarkt 14, 90403 Nuremberg, Germany",
+      "lat": 49.4540444,
+      "lng": 11.0781809,
+      "shortDescription": "The site of Nuremberg’s first documented synagogue and a Jewish quarter destroyed in the 1349 pogrom.",
+      "fullDescription": "A synagogue stood at the eastern edge of today’s Hauptmarkt from 1296. Nuremberg’s medieval Jewish quarter grew around it and suffered mass murder in 1298 and again in 1349. After the 1349 pogrom, the synagogue and Jewish homes were demolished and the Frauenkirche was built on the site. The stop makes the erased Jewish landscape visible without presenting the later church as a Jewish monument.",
+      "transcript": "Stand in the Hauptmarkt and picture a neighbourhood that the modern square has almost completely erased. A synagogue was built here in 1296, serving a Jewish community that became one of the largest in the medieval German lands. Nuremberg’s Jewish memorial book records the murder of hundreds of community members during the Rintfleisch violence of 1298. In 1349, another pogrom killed Jewish women, men and children and destroyed the quarter. The synagogue was demolished, the market was reshaped and the Frauenkirche rose on the site. We begin here because absence is part of Jewish heritage. The attractive square does not explain by itself whose homes and institutions were removed. Historical maps, archaeology and written records allow us to recover that suppressed layer and name the community that once prayed and lived here.",
+      "sources": [
+        "https://hdbg.eu/juedisches_leben/synagoge/nuernberg-1-hauptmarkt-1296-1349/1645",
+        "https://www.nuernberg.de/internet/stadtarchiv/projekte_juedische_geschichte_stadtplan.html"
+      ],
+      "image": {
+        "fileName": "Nuremberg, Hauptmarkt and Frauenkirche 4666.jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Nuremberg%2C_Hauptmarkt_and_Frauenkirche_4666.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nuremberg%2C_Hauptmarkt_and_Frauenkirche_4666.jpg",
+        "creator": "Hubertl",
+        "rightsStatus": "cc_by_sa",
+        "licenseName": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attributionText": "Nuremberg, Hauptmarkt and Frauenkirche 4666 — Hubertl, CC BY-SA 4.0, via Wikimedia Commons"
+      }
+    },
+    {
+      "position": 2,
+      "slug": "nuremberg-main-synagogue-memorial",
+      "title": "Memorial at the Former Main Synagogue",
+      "category": "memorial",
+      "address": "Hans-Sachs-Platz, 90403 Nuremberg, Germany",
+      "lat": 49.4533,
+      "lng": 11.0807,
+      "shortDescription": "A memorial to Nuremberg’s monumental Main Synagogue, demolished by the Nazi city authorities in August 1938.",
+      "fullDescription": "The Main Synagogue opened in 1874 and represented the renewed Jewish presence in nineteenth-century Nuremberg. Nazi authorities ordered its demolition in August 1938, before the nationwide November pogrom, using planning claims to disguise antisemitic destruction. The memorial near Hans-Sachs-Platz recalls the building and the congregation it served.",
+      "transcript": "Only a short walk separates this memorial from the medieval synagogue site, yet the destruction remembered here occurred in modern Germany. Nuremberg’s Main Synagogue opened in 1874, expressing the confidence of a Jewish community that had returned to the city after centuries of exclusion. Its prominent dome became part of the cityscape. In August 1938, Nazi officials forced the synagogue’s demolition. This happened before the November pogrom often called Kristallnacht, showing that anti-Jewish violence was already being organized through municipal power, propaganda and supposedly administrative decisions. The memorial does not reproduce the scale of the lost building. Instead, it asks us to supply the missing congregation: people who worshipped, studied, celebrated and participated in city life here. Notice how close the site is to busy streets and public institutions. The destruction was neither distant nor hidden from Nuremberg’s population.",
+      "sources": [
+        "https://www.nuernberg.de/internet/stadtarchiv/projekte_juedische_geschichte_stadtplan.html",
+        "https://www.mekomot-nuernberg.de/mekomot-startseite/synagoge-hans-sachs-platz/"
+      ],
+      "image": {
+        "fileName": "Nuremberg - synagogue monument.jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Nuremberg_-_synagogue_monument.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nuremberg_-_synagogue_monument.jpg",
+        "creator": "Aka",
+        "rightsStatus": "cc_by_sa",
+        "licenseName": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/",
+        "attributionText": "Nuremberg synagogue monument — Aka, CC BY-SA 2.5, via Wikimedia Commons"
+      }
+    },
+    {
+      "position": 3,
+      "slug": "nuremberg-jewish-cemetery",
+      "title": "Nuremberg Jewish Cemetery",
+      "category": "cemetery",
+      "address": "Schnieglinger Straße 155, 90425 Nuremberg, Germany",
+      "lat": 49.4661211,
+      "lng": 11.0375234,
+      "shortDescription": "The Jewish community’s burial ground since 1910 and a place of continuing religious responsibility.",
+      "fullDescription": "The New Jewish Cemetery opened in 1910 and continues to serve Nuremberg’s Jewish community. Its graves preserve family histories across persecution, emigration, return and renewal. It remains a religious burial ground rather than an open-air museum: visitors should check access, avoid Shabbat and Jewish holidays, dress respectfully and follow the community’s rules.",
+      "transcript": "This cemetery has served Nuremberg’s Jewish community since 1910. Unlike the two previous stops, it is not principally a marker of something removed. It is an active Jewish burial place governed by religious practice and communal responsibility. Names and dates on the stones trace families through the upheavals of the twentieth century, but visitors should resist treating individual graves as objects of curiosity. The community asks men to cover their heads, and the cemetery closes on Shabbat and Jewish holidays. Jewish custom generally places a small stone, rather than flowers, when visiting a grave. Pause to consider how a cemetery records both rupture and continuity. Some families vanished from the city through flight or murder; Jewish life later returned and continues. Confirm opening conditions before travelling here, keep voices low and photograph only when the rules and the privacy of mourners clearly permit it.",
+      "sources": [
+        "https://ikg-nuernberg.de/services-mitglieder/beerdigungen/friedhoefe/",
+        "https://hdbg.eu/juedisches_leben/friedhof/nuernberg/674"
+      ],
+      "image": {
+        "fileName": "D-5-64-000-1785 Schnieglinger Straße 155, Grabmäler Nürnberg 20241020 0037.jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/D-5-64-000-1785_Schnieglinger_Stra%C3%9Fe_155%2C_Grabm%C3%A4ler_N%C3%BCrnberg_20241020_0037.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:D-5-64-000-1785_Schnieglinger_Stra%C3%9Fe_155%2C_Grabm%C3%A4ler_N%C3%BCrnberg_20241020_0037.jpg",
+        "creator": "Tilman2007",
+        "rightsStatus": "cc_by_sa",
+        "licenseName": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attributionText": "Jewish Cemetery, Schnieglinger Straße 155 — Tilman2007, CC BY-SA 4.0, via Wikimedia Commons"
+      }
+    },
+    {
+      "position": 4,
+      "slug": "nuremberg-trials-memorium",
+      "title": "Memorium Nuremberg Trials",
+      "category": "museum",
+      "address": "Bärenschanzstraße 72, 90429 Nuremberg, Germany",
+      "lat": 49.4544374,
+      "lng": 11.0483199,
+      "shortDescription": "The historic courthouse where leading Nazi officials were prosecuted after the Holocaust and Second World War.",
+      "fullDescription": "Courtroom 600 hosted the International Military Tribunal of 1945–46 and later proceedings against officials implicated in Nazi crimes. The Memorium explains the defendants, evidence, verdicts and the trials’ influence on international criminal law. Courtroom access can be limited because the building remains an active court.",
+      "transcript": "Courtroom 600 became the setting for an unprecedented legal proceeding. Between November 1945 and October 1946, leading officials of the Nazi regime were tried before an international tribunal. Evidence presented here documented aggressive war, persecution and mass murder, including the systematic destruction of European Jewry. The proceedings did not capture every perpetrator or answer every moral question, and later sentences and releases remain subjects of debate. Their lasting importance lies partly in the effort to hold individuals responsible for crimes committed through a state. The subsequent Nuremberg trials examined doctors, judges, industrialists, SS leaders and other professionals who sustained the dictatorship. The Memorium connects these cases to the development of international criminal law. Because this remains an operating courthouse, Courtroom 600 may not always be accessible. The institution, rather than courtroom entry alone, is the essential stop.",
+      "sources": [
+        "https://museums.nuernberg.de/memorium-nuremberg-trials/",
+        "https://museums.nuernberg.de/memorium-nuremberg-trials/the-nuremberg-trials/the-international-military-tribunal"
+      ],
+      "image": {
+        "fileName": "Memorium Nürnberger Prozesse - Blick in den Saal 600 (3).jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Memorium_N%C3%BCrnberger_Prozesse_-_Blick_in_den_Saal_600_%283%29.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Memorium_N%C3%BCrnberger_Prozesse_-_Blick_in_den_Saal_600_%283%29.jpg",
+        "creator": "JensKunstfreund",
+        "rightsStatus": "cc_by_sa",
+        "licenseName": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attributionText": "Courtroom 600 — JensKunstfreund, CC BY-SA 4.0, via Wikimedia Commons"
+      }
+    },
+    {
+      "position": 5,
+      "slug": "nuremberg-documentation-center",
+      "title": "Documentation Center Nazi Party Rally Grounds",
+      "category": "museum",
+      "address": "Bayernstraße 110, 90478 Nuremberg, Germany",
+      "lat": 49.4338361,
+      "lng": 11.1124726,
+      "shortDescription": "A museum confronting the propaganda, institutions and persecution organized by the Nazi regime in Nuremberg.",
+      "fullDescription": "The Documentation Center occupies part of the unfinished Congress Hall on the former Nazi Party Rally Grounds. Its exhibitions analyze how mass spectacle, propaganda and state power supported dictatorship and racial persecution. The site also addresses deportations through the Rally Grounds area, including more than 2,000 Jews from Franconia sent toward ghettos and killing centres.",
+      "transcript": "The immense unfinished Congress Hall was designed to make Nazi power appear permanent. Today the Documentation Center uses the site against that purpose. Its exhibitions examine how architecture, rallies, propaganda and bureaucracy transformed political extremism into state practice. Nuremberg was where the regime announced the antisemitic laws of 1935 that stripped Jews of rights and recast persecution as legal order. During the war, the wider Rally Grounds area also became connected to forced labour, imprisonment and deportation. The museum records that more than two thousand Jews from Franconia were deported via the nearby Märzfeld station toward ghettos and extermination camps; very few survived. This final stop joins the route’s themes. Jewish institutions were first erased, exclusion was turned into policy, mass violence followed, and the trials attempted a legal response. The buildings remain as evidence, not as monuments to admire.",
+      "sources": [
+        "https://museums.nuernberg.de/documentation-center/",
+        "https://museums.nuernberg.de/documentation-center/new-permanent-exhibition/nuremberg-and-the-nazi-party-rallies"
+      ],
+      "image": {
+        "fileName": "Innenhof Dokumentationszentrum Reichsparteitage 20250218.jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Innenhof_Dokumentationszentrum_Reichsparteitage_20250218.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Innenhof_Dokumentationszentrum_Reichsparteitage_20250218.jpg",
+        "creator": "Superikonoskop",
+        "rightsStatus": "cc_by",
+        "licenseName": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+        "attributionText": "Documentation Center courtyard — Superikonoskop, CC BY 3.0, via Wikimedia Commons"
+      }
+    }
+  ]
+}

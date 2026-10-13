@@ -1,0 +1,20 @@
+FROM node:22-alpine AS build
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci
+COPY . .
+ARG VITE_SUPABASE_URL
+ARG VITE_SUPABASE_PUBLISHABLE_KEY
+ARG VITE_GPS_MODE=live
+ARG VITE_ORGANIZATION_SLUG=3sci
+RUN VITE_SUPABASE_URL="$VITE_SUPABASE_URL" VITE_SUPABASE_PUBLISHABLE_KEY="$VITE_SUPABASE_PUBLISHABLE_KEY" VITE_GPS_MODE="$VITE_GPS_MODE" VITE_ORGANIZATION_SLUG="$VITE_ORGANIZATION_SLUG" npm run build
+
+FROM node:22-alpine AS runtime
+ENV NODE_ENV=production
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev && npm cache clean --force
+COPY --from=build /app/dist ./dist
+USER node
+EXPOSE 3000
+CMD ["node", "dist/server.js"]

@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "tourSlug": "cochin-jewish-kerala",
+  "status": "research_complete_cms_draft_pending",
+  "language": "en",
+  "city": {
+    "name": "Cochin",
+    "country": "India",
+    "flagEmoji": "🇮🇳",
+    "centerLat": 10.045,
+    "centerLng": 76.243,
+    "subtitle": "Malabar and Paradesi Jewish heritage across Kerala",
+    "description": "Follow the surviving synagogues, streets and museums of the Cochin Jews, whose communities grew through Indian Ocean trade and developed distinctive Kerala Jewish traditions."
+  },
+  "tour": {
+    "title": "Jewish Kerala: Synagogues and Communities of Cochin",
+    "subtitle": "Five places preserving a many-centuries-old Indian Jewish world",
+    "overview": "This extended route begins in Mattancherry's Jew Town, crosses to the surviving Malabar synagogue in central Ernakulam, and continues north to the restored synagogue museums at Chendamangalam and Paravur. The route distinguishes the Paradesi and Malabar Jewish communities while showing their shared place in Kerala history.",
+    "estimatedDurationMinutes": 300,
+    "difficulty": "moderate",
+    "accessMode": "free",
+    "narrationMode": "simulated",
+    "publicationPolicy": "cms_review_required"
+  },
+  "stops": [
+    {
+      "position": 1,
+      "slug": "cochin-paradesi-synagogue",
+      "title": "Paradesi Synagogue",
+      "category": "synagogue",
+      "address": "Synagogue Lane, Jew Town, Mattancherry, Kochi, Kerala 682002, India",
+      "lat": 9.9574827,
+      "lng": 76.2593017,
+      "shortDescription": "The celebrated 1568 synagogue of Cochin's Paradesi Jewish community beside Mattancherry Palace.",
+      "fullDescription": "Built in 1568 and rebuilt after Portuguese destruction, the Paradesi Synagogue remains a functioning place of worship and a major monument of Kerala's Jewish history. Its furnishings, lamps, tiles and copper-plate traditions connect local Jewish life with Indian Ocean trade and the protection of Cochin's rulers. Visitors should confirm opening times and dress respectfully.",
+      "transcript": "The Paradesi Synagogue stands inside a Kerala palace district, a setting that immediately challenges the idea that Jewish history belongs only to Europe or the Middle East. It was founded in 1568 by a community that included Sephardic exiles and traders linked to wider Indian Ocean networks. Portuguese forces damaged the building in 1662, and it was restored under Dutch rule. Inside, hanging lamps, a carved ark, a brass pulpit and hand-painted floor tiles create a space shaped by both Jewish worship and Kerala craftsmanship. The synagogue's traditions also preserve royal copper plates associated with privileges granted to Jewish merchants. Paradesi means foreigner, a community label that must not erase the older Malabar Jewish presence in Kerala. This is still a sacred site, not simply a museum. Check current access arrangements, avoid photography where prohibited and let the building introduce a Jewish history rooted in exchange, adaptation and long local belonging.",
+      "sources": ["https://www.keralatourism.org/judaism/synagogue/heritage-monument", "https://www.keralatourism.org/judaism/jews-kochi"],
+      "image": {
+        "fileName": "Paradesi Synagogue (42743275815).jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Paradesi_Synagogue_(42743275815).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paradesi_Synagogue_(42743275815).jpg",
+        "creator": "Mathew S Thomas", "rightsStatus": "cc0", "licenseName": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attributionText": "Paradesi Synagogue — Mathew S Thomas, CC0 1.0, via Wikimedia Commons"
+      }
+    },
+    {
+      "position": 2,
+      "slug": "cochin-jew-town-mattancherry",
+      "title": "Jew Town and Synagogue Lane",
+      "category": "historic_sites",
+      "address": "Jew Town Road, Mattancherry, Kochi, Kerala 682002, India",
+      "lat": 9.9562732,
+      "lng": 76.2601161,
+      "shortDescription": "The commercial streets around the synagogue where Jewish homes, warehouses and trading life once clustered.",
+      "fullDescription": "Jew Town developed around Mattancherry's synagogues and the spice trade. Although tourism and antique shops now dominate the street, surviving houses, inscriptions and community buildings preserve evidence of a once active Jewish neighbourhood. Interpretation should acknowledge both Paradesi and Malabar Jewish histories and avoid treating the district as an exotic stage set.",
+      "transcript": "Walk slowly through Jew Town and look beyond the souvenir shops. This district grew beside Cochin's royal and commercial centre, where pepper, cardamom and other goods connected Kerala to ports across the Indian Ocean. Jewish merchants participated in those networks, while families built homes, schools, communal institutions and synagogues nearby. The street's present name preserves that history, but the neighbourhood changed profoundly after many Cochin Jews emigrated to Israel in the years after Indian independence. Businesses and buildings passed to new owners, and tourism reshaped the public image of the quarter. The result is both a heritage landscape and a living commercial street. Notice architectural details, Hebrew signs and the close relationship between domestic, religious and trading spaces. Jewish life here was never isolated: it developed through interaction with Hindu, Muslim and Christian neighbours and with Kerala's rulers. Treat the street as evidence of a community embedded in local society, not as a picturesque remnant detached from India.",
+      "sources": ["https://www.keralatourism.org/destination/jew-street-fort-kochi/215/", "https://www.keralatourism.org/destination/jew-town-mattancherry/416//"],
+      "image": {
+        "fileName": "Mattancherry Jew Town.JPG",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mattancherry_Jew_Town.JPG",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mattancherry_Jew_Town.JPG",
+        "creator": "Rudolph.A.furtado", "rightsStatus": "cc0", "licenseName": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attributionText": "Mattancherry Jew Town — Rudolph.A.furtado, CC0 1.0, via Wikimedia Commons"
+      }
+    },
+    {
+      "position": 3,
+      "slug": "cochin-kadavumbhagam-ernakulam-synagogue",
+      "title": "Kadavumbhagam Ernakulam Synagogue",
+      "category": "synagogue",
+      "address": "Jew Street, Market Road, Ernakulam, Kochi, Kerala 682035, India",
+      "lat": 9.9802,
+      "lng": 76.2784,
+      "shortDescription": "A restored Malabar Jewish synagogue that preserves a Torah scroll and occasionally hosts services.",
+      "fullDescription": "The Kadavumbhagam synagogue represents the older Malabar Jewish tradition of Kerala. The community associates the congregation with a medieval foundation, although the building has been rebuilt and restored over time. Restored in the twenty-first century, it again contains a Torah scroll and may be used for occasional services. Access is limited and should be arranged respectfully.",
+      "transcript": "This synagogue introduces the Malabar Jewish community, whose Kerala roots predate the arrival of Sephardic refugees represented at the Paradesi Synagogue. Community tradition dates a synagogue on this site to about 1200, although the structure has undergone repeated rebuilding and restoration. For years the entrance was easily overlooked amid Ernakulam's busy market district. Restoration returned the prayer hall to religious use, and a Torah scroll is present for occasional services. The interior follows characteristic Kerala synagogue forms: carved timber, a central bimah and a second ceremonial focus associated with the women's gallery. These features express a Jewish liturgical tradition through local materials and craft. The synagogue is important precisely because it is neither an abandoned ruin nor a conventional public museum. A small community and caretakers sustain it under changing conditions. Do not assume that the doors will be open; arrange access where necessary and respect any instruction given on site.",
+      "sources": ["https://www.keralatourism.org/judaism/kerala/kadavumbhagam-synagogue", "https://www.keralatourism.org/judaism/jews-kochi"],
+      "image": {
+        "fileName": "Kadavumbhagam Ernakulam Malabar Jewish Synagogue.jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kadavumbhagam_Ernakulam_Malabar_Jewish_Synagogue.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kadavumbhagam_Ernakulam_Malabar_Jewish_Synagogue.jpg",
+        "creator": "Robin klein", "rightsStatus": "cc_by_sa", "licenseName": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attributionText": "Kadavumbhagam Ernakulam Synagogue — Robin klein, CC BY-SA 4.0, via Wikimedia Commons"
+      }
+    },
+    {
+      "position": 4,
+      "slug": "cochin-chendamangalam-synagogue-museum",
+      "title": "Chendamangalam Synagogue Museum",
+      "category": "museum",
+      "address": "Jewish Synagogue Road, Chendamangalam, Kerala 683512, India",
+      "lat": 10.1797,
+      "lng": 76.2097,
+      "shortDescription": "A restored village synagogue interpreting the history and distinctive architecture of Kerala's Jewish communities.",
+      "fullDescription": "The Chendamangalam synagogue was rebuilt in the early seventeenth century on a site associated with an earlier Jewish settlement. After the local Jewish community emigrated, restoration converted it into a museum within the Muziris Heritage Project. Nearby religious monuments and the Jewish cemetery illustrate the community's place in a plural Kerala landscape.",
+      "transcript": "Chendamangalam reveals a different scale of Jewish Kerala: a village community rather than a metropolitan trading quarter. An inscription links Jewish settlement here to the thirteenth century, while the surviving synagogue was rebuilt in the early 1600s after earlier destruction. Its exterior resembles other Kerala religious and domestic buildings, but the interior adapts local woodwork to Jewish worship. A central bimah and an upper gallery recall patterns shared across the region's synagogues. After most community members emigrated to Israel, the building ceased regular religious use. Conservation under the Muziris Heritage Project transformed it into a museum, allowing visitors to study the architecture and community story. Nearby stand places associated with other faiths, as well as a Jewish cemetery, making the landscape an unusually clear expression of Kerala's religious diversity. Museum status does not remove the site's sacred history: move respectfully, check opening hours and remember that displayed objects once served a living congregation.",
+      "sources": ["https://www.keralatourism.org/judaism/kerala/chendamangalam-synagogue", "https://www.keralatourism.org/muziris/museums/kerala-jews-historical-museum"],
+      "image": {
+        "fileName": "Chendamangalam Synagogue - 2025 - 50.jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Chendamangalam_Synagogue_-_2025_-_50.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chendamangalam_Synagogue_-_2025_-_50.jpg",
+        "creator": "Oleg Yunakov", "rightsStatus": "cc_by_sa", "licenseName": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attributionText": "Chendamangalam Synagogue — Oleg Yunakov, CC BY-SA 4.0, via Wikimedia Commons"
+      }
+    },
+    {
+      "position": 5,
+      "slug": "cochin-paravur-synagogue-museum",
+      "title": "Paravur Synagogue — Kerala Jews History Museum",
+      "category": "museum",
+      "address": "Jewish Street, North Paravur, Kerala 683513, India",
+      "lat": 10.1522073,
+      "lng": 76.2210952,
+      "shortDescription": "A monumental restored synagogue and museum interpreting Jewish trade, migration and worship in the Muziris region.",
+      "fullDescription": "The present Paravur synagogue dates mainly from the seventeenth and eighteenth centuries, while Jewish settlement in the area is older. Its gatehouse, passage and prayer hall form one of Kerala's most complete synagogue complexes. Restored as the Kerala Jews History Museum, it interprets migration, trade and ritual life through the wider Muziris story.",
+      "transcript": "The Paravur synagogue provides a fitting final stop because its long approach makes the community's institutions visible as a complete complex. Visitors pass through a gatehouse and courtyard before reaching the prayer hall, a sequence suited to gathering, teaching and worship. Jewish settlement in the region was connected to the old port world of Muziris and to trade across the Arabian Sea. The present structure reflects rebuilding in the seventeenth and eighteenth centuries, combining Kerala timber construction with the requirements of Jewish prayer. After the congregation's migration to Israel, the building fell out of regular use. Restoration created the Kerala Jews History Museum, where the synagogue itself is the principal exhibit. It preserves evidence of a Jewish community that was Indian in language, architecture and daily setting while maintaining religious and family links across great distances. Before leaving, compare this museum with the active synagogues earlier in the route: together they show heritage as worship, neighbourhood, memory and public interpretation.",
+      "sources": ["https://www.keralatourism.org/judaism/kerala/paravur-synagogue", "https://www.keralatourism.org/muziris/museums/kerala-jews-historical-museum"],
+      "image": {
+        "fileName": "Paravur Synagogue-WUS09923.jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Paravur_Synagogue-WUS09923.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paravur_Synagogue-WUS09923.jpg",
+        "creator": "Rainer Halama", "rightsStatus": "cc_by_sa", "licenseName": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attributionText": "Paravur Synagogue — Rainer Halama, CC BY-SA 4.0, via Wikimedia Commons"
+      }
+    }
+  ]
+}

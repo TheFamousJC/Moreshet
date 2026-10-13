@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "status": "research_draft",
+  "language": "en",
+  "publicationPolicy": "cms_review_required",
+  "mediaPolicy": "approved_reusable_license_or_permission_gate_before_publication",
+  "narrationMode": "simulated",
+  "tours": [
+    {
+      "slug": "jerusalem-jewish-quarter",
+      "city": "Jerusalem",
+      "country": "Israel",
+      "flagEmoji": "🇮🇱",
+      "title": "Jerusalem Jewish Quarter: Memory, Prayer and Renewal",
+      "routeMode": "walking",
+      "researchStatus": "research_complete_cms_draft_pending",
+      "detailFile": "content/pilot-catalogue/jerusalem-jewish-quarter.en.json",
+      "primarySources": ["https://whc.unesco.org/en/list/148/"],
+      "stops": [
+        { "title": "The Broad Wall", "interest": "First Temple-period Jerusalem" },
+        { "title": "Hurva Synagogue", "interest": "Synagogue destruction and renewal" },
+        { "title": "Four Sephardic Synagogues", "interest": "Sephardic communal life" },
+        { "title": "The Burnt House", "interest": "Jewish Jerusalem in 70 CE" },
+        { "title": "Western Wall", "interest": "Jewish prayer and continuity" }
+      ]
+    },
+    {
+      "slug": "nuremberg-jewish-memory",
+      "city": "Nuremberg",
+      "country": "Germany",
+      "flagEmoji": "🇩🇪",
+      "title": "Jewish Nuremberg: Community, Persecution and Justice",
+      "routeMode": "transit",
+      "researchStatus": "research_complete_cms_draft_pending",
+      "detailFile": "content/pilot-catalogue/nuremberg-jewish-memory.en.json",
+      "primarySources": ["https://www.nuernberg.de/internet/stadtarchiv/projekte_juedische_geschichte_stadtplan.html"],
+      "stops": [
+        { "title": "Medieval Synagogue Site at Hauptmarkt", "interest": "The destroyed medieval Jewish community" },
+        { "title": "Memorial at the Former Main Synagogue", "interest": "The synagogue demolished under Nazi rule" },
+        { "title": "Nuremberg Jewish Cemetery", "interest": "Community memory and burial heritage" },
+        { "title": "Memorium Nuremberg Trials", "interest": "Legal reckoning after the Holocaust" },
+        { "title": "Documentation Center Nazi Party Rally Grounds", "interest": "The regime that organized Jewish persecution" }
+      ]
+    },
+    {
+      "slug": "new-york-lower-east-side-jewish-immigration",
+      "city": "New York — Lower East Side",
+      "country": "United States",
+      "flagEmoji": "🇺🇸",
+      "title": "Jewish Lower East Side: Immigration, Worship and Everyday Life",
+      "routeMode": "walking",
+      "researchStatus": "research_complete_cms_draft_pending",
+      "detailFile": "content/pilot-catalogue/new-york-lower-east-side-jewish-immigration.en.json",
+      "primarySources": [
+        "https://www.eldridgestreet.org/history",
+        "https://www.nps.gov/loea/index.htm",
+        "https://www.kkjsm.org/"
+      ],
+      "stops": [
+        { "title": "Tenement Museum — 97 Orchard Street", "interest": "Jewish immigrant family life" },
+        { "title": "Kehila Kedosha Janina", "interest": "Romaniote Jewish heritage" },
+        { "title": "Eldridge Street Synagogue", "interest": "Eastern European Jewish immigrant worship" },
+        { "title": "Forward Building", "interest": "Yiddish journalism and labour culture" },
+        { "title": "Bialystoker Synagogue", "interest": "Landsmanshaft and immigrant congregation history" }
+      ]
+    },
+    {
+      "slug": "cochin-jewish-kerala",
+      "city": "Cochin",
+      "country": "India",
+      "flagEmoji": "🇮🇳",
+      "title": "Cochin Jews: Synagogues, Spice Routes and Living Memory",
+      "routeMode": "driving",
+      "researchStatus": "research_complete_cms_draft_pending",
+      "detailFile": "content/pilot-catalogue/cochin-jewish-kerala.en.json",
+      "primarySources": [
+        "https://www.keralatourism.org/judaism/synagogue/heritage-monument",
+        "https://www.keralatourism.org/judaism/kerala/chendamangalam-synagogue"
+      ],
+      "stops": [
+        { "title": "Paradesi Synagogue", "interest": "The active historic synagogue of Jew Town" },
+        { "title": "Jew Town and Synagogue Lane", "interest": "Jewish homes and the spice trade" },
+        { "title": "Kadavumbhagam Ernakulam Synagogue", "interest": "Malabari Jewish worship and restoration" },
+        { "title": "Chendamangalam Synagogue Museum", "interest": "Kerala Jews Lifestyle Museum" },
+        { "title": "Paravur Synagogue — Kerala Jews History Museum", "interest": "Muziris Jewish migration and ritual life" }
+      ]
+    },
+    {
+      "slug": "panama-city-jewish-community",
+      "city": "Panama City",
+      "country": "Panama",
+      "flagEmoji": "🇵🇦",
+      "title": "Jewish Panama City: Sephardic, Ashkenazi and Progressive Communities",
+      "routeMode": "driving",
+      "researchStatus": "research_complete_cms_draft_pending",
+      "detailFile": "content/pilot-catalogue/panama-city-jewish-community.en.json",
+      "primarySources": [
+        "https://www.worldjewishcongress.org/en/about/communities/PA",
+        "https://www.kolshearith.org/en/who-we-are",
+        "https://www.kolshearith.org/en/community-center"
+      ],
+      "stops": [
+        { "title": "Kol Shearith Israel Synagogue", "interest": "Progressive congregation founded in 1876" },
+        { "title": "Panamanian Jewish Museum and Archives", "interest": "Family, cemetery and oral-history records" },
+        { "title": "Beth El Synagogue", "interest": "Ashkenazi Orthodox community life" },
+        { "title": "Shevet Ahim Synagogue", "interest": "Sephardic Orthodox community life" },
+        { "title": "Warsaw Ghetto Fighters Monument", "interest": "Public Holocaust remembrance in Panama" }
+      ]
+    },
+    {
+      "slug": "chisinau-jewish-memory",
+      "city": "Chișinău",
+      "country": "Moldova",
+      "flagEmoji": "🇲🇩",
+      "title": "Jewish Chișinău: Community, Pogrom and Remembrance",
+      "routeMode": "driving",
+      "researchStatus": "research_complete_cms_draft_pending",
+      "detailFile": "content/pilot-catalogue/chisinau-jewish-memory.en.json",
+      "primarySources": [
+        "https://visit.chisinau.md/en/obiective_turistice/cimitirul-evreiesc/",
+        "https://www.heritageabroad.gov/wp-content/uploads/2022/10/Moldova_Report_FINAL.pdf"
+      ],
+      "stops": [
+        { "title": "Chabad Lubavitch Central Synagogue — Glaziers' Synagogue", "interest": "Surviving Jewish religious life" },
+        { "title": "Sennaya Central Synagogue", "interest": "Post-Soviet Jewish communal renewal" },
+        { "title": "Monument to the Victims of the Chișinău Ghetto", "interest": "Jewish ghettoization, deportation and Holocaust memory" },
+        { "title": "Chișinău Jewish Cemetery", "interest": "Community burial heritage" },
+        { "title": "1903 Pogrom Victims Memorial — Alunelul Park", "interest": "Victims and the global response to the pogrom" }
+      ]
+    },
+    {
+      "slug": "london-east-end-jewish-heritage",
+      "city": "London — East End",
+      "country": "United Kingdom",
+      "flagEmoji": "🇬🇧",
+      "title": "Jewish East London: Synagogues, Migration and Resistance",
+      "routeMode": "walking",
+      "researchStatus": "research_complete_cms_draft_pending",
+      "detailFile": "content/pilot-catalogue/london-east-end-jewish-heritage.en.json",
+      "primarySources": [
+        "https://bevismarksheritage.org.uk/",
+        "https://www.sephardi.org.uk/bevis-marks/visit-bevis-marks/"
+      ],
+      "stops": [
+        { "title": "Bevis Marks Synagogue", "interest": "Britain’s oldest continuously used synagogue" },
+        { "title": "Sandys Row Synagogue", "interest": "East End Ashkenazi immigrant congregation" },
+        { "title": "19 Princelet Street", "interest": "Immigrant home and former synagogue" },
+        { "title": "Cable Street and the Battle of Cable Street", "interest": "Jewish anti-fascist resistance" },
+        { "title": "Kindertransport Memorial — The Arrival", "interest": "Jewish child refugees arriving in Britain" }
+      ]
+    },
+    {
+      "slug": "sydney-jewish-life-and-memory",
+      "city": "Sydney",
+      "country": "Australia",
+      "flagEmoji": "🇦🇺",
+      "title": "Jewish Sydney: Congregations, Migration and Survivor Memory",
+      "routeMode": "driving",
+      "researchStatus": "research_complete_cms_draft_pending",
+      "detailFile": "content/pilot-catalogue/sydney-jewish-life-and-memory.en.json",
+      "primarySources": [
+        "https://www.greatsynagogue.org.au/",
+        "https://sydneyjewishmuseum.com.au/our-story/",
+        "https://apps.environment.nsw.gov.au/dpcheritageapp/ViewHeritageItemDetails.aspx?ID=5051584"
+      ],
+      "stops": [
+        { "title": "The Great Synagogue", "interest": "Jewish worship in central Sydney since 1878" },
+        { "title": "A. M. Rosenblum Jewish Museum", "interest": "Australian Jewish ritual and community history" },
+        { "title": "Sydney Jewish Museum", "interest": "Holocaust survivors and Australian Jewish life" },
+        { "title": "Emanuel Synagogue", "interest": "Progressive and Masorti Jewish life" },
+        { "title": "Rookwood Jewish Cemetery", "interest": "Jewish migration and communal memory" }
+      ]
+    },
+    {
+      "slug": "jewish-china-beijing-shanghai",
+      "city": "Shanghai",
+      "country": "China",
+      "flagEmoji": "🇨🇳",
+      "title": "Jewish Shanghai: Refuge, Community and Memory",
+      "routeMode": "transit",
+      "researchStatus": "research_complete_cms_draft_pending",
+      "detailFile": "content/pilot-catalogue/jewish-china-beijing-shanghai.en.json",
+      "scopeNote": "Narrowed from Beijing–Shanghai to Shanghai so that the pilot is a coherent, verifiable GPS tour.",
+      "primarySources": [
+        "https://www.shhkjrm.com/en/",
+        "https://www.shhkjrm.com/en/About_Us/About_the_Museum.htm"
+      ],
+      "stops": [
+        { "title": "Ohel Rachel Synagogue", "interest": "Baghdadi Jewish communal life" },
+        { "title": "Shanghai Jewish Refugees Museum and Ohel Moshe Synagogue", "interest": "European Jewish refuge in Shanghai" },
+        { "title": "Former American Jewish Joint Distribution Committee Site", "interest": "Relief for Jewish refugees" },
+        { "title": "Huoshan Park Memorial", "interest": "The Restricted Sector for Stateless Refugees" },
+        { "title": "Zhoushan Road Refugee Neighbourhood", "interest": "Everyday Jewish refugee life in wartime Shanghai" }
+      ]
+    },
+    {
+      "slug": "gondar-wolleka-beta-israel",
+      "city": "Gondar",
+      "country": "Ethiopia",
+      "flagEmoji": "🇪🇹",
+      "title": "Gondar and Wolleka: Beta Israel Faith, Craft and Memory",
+      "routeMode": "walking",
+      "researchStatus": "research_complete_cms_draft_pending",
+      "detailFile": "content/pilot-catalogue/gondar-wolleka-beta-israel.en.json",
+      "primarySources": [
+        "https://ethiopianjhc.org.il/en/communities/",
+        "https://www.africansynagogues.org/html/countries/ethiopia/ethiopia3.html"
+      ],
+      "stops": [
+        { "title": "Wolleka Village Gateway", "interest": "Beta Israel Jewish village history and respectful terminology" },
+        { "title": "Pottery and Metalwork Traditions", "interest": "Beta Israel Jewish craft heritage and social history" },
+        { "title": "Village Homes and Jewish Symbols", "interest": "Jewish memory in Wolleka’s surviving built environment" },
+        { "title": "Wolleka Octagonal Synagogue", "interest": "Beta Israel synagogue architecture and prayer" },
+        { "title": "Second Wolleka Prayer House", "interest": "Beta Israel Jewish worship, migration and preservation" }
+      ]
+    },
+    {
+      "slug": "buenos-aires-jewish-life-and-memory",
+      "city": "Buenos Aires",
+      "country": "Argentina",
+      "flagEmoji": "🇦🇷",
+      "title": "Jewish Buenos Aires: Immigration, Community and Resilience",
+      "routeMode": "transit",
+      "researchStatus": "research_complete_cms_draft_pending",
+      "detailFile": "content/pilot-catalogue/buenos-aires-jewish-life-and-memory.en.json",
+      "primarySources": ["https://turismo.buenosaires.gob.ar/en/otros-establecimientos/dr-salvador-kibrick-jewish-museum"],
+      "stops": [
+        { "title": "Templo Libertad", "interest": "Argentina’s first synagogue and national Jewish congregation" },
+        { "title": "Dr. Salvador Kibrick Jewish Museum", "interest": "Jewish immigration, worship and civic life" },
+        { "title": "AMIA and Pasteur Memorial", "interest": "Community institutions and memory of the 1994 bombing" },
+        { "title": "Buenos Aires Holocaust Museum", "interest": "Shoah education and survivor testimony" },
+        { "title": "Israeli Embassy Memorial Plaza", "interest": "Jewish and Israeli communal memory of the 1992 embassy bombing" }
+      ]
+    }
+  ]
+}

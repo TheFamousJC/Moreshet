@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "tourSlug": "jerusalem-jewish-quarter",
+  "status": "research_complete_cms_draft_pending",
+  "language": "en",
+  "city": {
+    "name": "Jerusalem",
+    "country": "Israel",
+    "flagEmoji": "🇮🇱",
+    "centerLat": 31.77594,
+    "centerLng": 35.23272,
+    "subtitle": "Ancient walls, living synagogues and Jewish renewal",
+    "description": "Walk through the Jewish Quarter’s layers of First and Second Temple history, Sephardic and Ashkenazi communal life, destruction, return and prayer."
+  },
+  "tour": {
+    "title": "Jerusalem Jewish Quarter: Memory, Prayer and Renewal",
+    "subtitle": "Five Jewish sites across nearly three millennia",
+    "overview": "This compact walking tour links archaeological evidence of ancient Jewish Jerusalem with active synagogues, the remains of a home destroyed in 70 CE and the Western Wall. It treats living religious sites respectfully, distinguishes archaeology from tradition and presents destruction and reconstruction without erasing the communities connected to each place.",
+    "estimatedDurationMinutes": 85,
+    "difficulty": "moderate",
+    "accessMode": "free",
+    "narrationMode": "simulated",
+    "publicationPolicy": "cms_review_required"
+  },
+  "stops": [
+    {
+      "position": 1,
+      "slug": "jerusalem-broad-wall",
+      "title": "The Broad Wall",
+      "category": "historic_sites",
+      "address": "Broad Wall Plaza, Jewish Quarter, Old City, Jerusalem",
+      "lat": 31.7760833,
+      "lng": 35.2318889,
+      "shortDescription": "A massive First Temple-period fortification associated with Jerusalem’s expansion in the late eighth century BCE.",
+      "fullDescription": "The exposed section known as the Broad Wall is part of a substantial fortification built across Jerusalem’s western hill in the late eighth century BCE. Its scale helps visitors understand the growth and defensive needs of the city during the kingdom of Judah. The archaeology is often discussed alongside the reign of King Hezekiah and the Assyrian threat, while the surviving stones provide the primary physical evidence at the stop.",
+      "transcript": "Begin beside a wall whose width is its most immediate message. This exposed fortification belongs to the First Temple period and shows that ancient Jerusalem had expanded onto the western hill by the late eighth century BCE. Archaeologists associate its construction with preparations made as the kingdom of Judah faced the Assyrian empire. Look at the breadth of the masonry and imagine the houses and streets that once met this defensive line. The stones are important because they turn a distant political crisis into something physical and measurable. Our route begins here to establish Jerusalem as a Jewish city long before the later synagogues and museums we will visit. From this archaeological layer, continue a short distance toward Hurva Square and a very different story of destruction and rebuilding.",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q262874",
+        "https://commons.wikimedia.org/wiki/Category:The_Broad_Wall"
+      ],
+      "image": {
+        "fileName": "Hezekiah's Broad Wall (3622125215).jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hezekiah%27s_Broad_Wall_%283622125215%29.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hezekiah%27s_Broad_Wall_%283622125215%29.jpg",
+        "creator": "Ian Scott",
+        "rightsStatus": "cc_by_sa",
+        "licenseName": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "attributionText": "Hezekiah’s Broad Wall — Ian Scott, CC BY-SA 2.0, via Wikimedia Commons"
+      }
+    },
+    {
+      "position": 2,
+      "slug": "jerusalem-hurva-synagogue",
+      "title": "Hurva Synagogue",
+      "category": "synagogue",
+      "address": "89 HaYehudim Street, Jewish Quarter, Old City, Jerusalem",
+      "lat": 31.77533,
+      "lng": 35.23134,
+      "shortDescription": "The rebuilt domed synagogue that embodies the destruction and renewal of Jerusalem’s Ashkenazi community.",
+      "fullDescription": "The Hurva’s name means ‘the ruin’. An eighteenth-century Ashkenazi project was destroyed, a major synagogue was completed on the site in the nineteenth century, and that building was destroyed during the 1948 war. The present synagogue, completed in 2010, reconstructs the nineteenth-century domed form and functions as an active house of prayer and study.",
+      "transcript": "The great dome ahead belongs to the Hurva Synagogue, but its name remembers a ruin. Ashkenazi Jews attempted to establish a synagogue here in the early eighteenth century. The unfinished building was destroyed and the empty site became known simply as the Hurva. A major synagogue was finally completed in the nineteenth century and became a defining landmark of the Jewish Quarter. It was destroyed during the fighting in 1948. After decades in which a single memorial arch marked the skyline, the synagogue was reconstructed and reopened in 2010. Today it is again a working place of prayer and learning. That living function matters: this is not only an architectural reconstruction. Please respect services and local instructions while considering how one site can carry repeated cycles of communal ambition, loss, memory and return.",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q206821",
+        "https://commons.wikimedia.org/wiki/Category:Hurva_Synagogue"
+      ],
+      "image": {
+        "fileName": "Hurva Synagogue Jerusalem.jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hurva_Synagogue_Jerusalem.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hurva_Synagogue_Jerusalem.jpg",
+        "creator": "איתי טיומקין",
+        "rightsStatus": "cc_by_sa",
+        "licenseName": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attributionText": "Hurva Synagogue Jerusalem — איתי טיומקין, CC BY-SA 4.0, via Wikimedia Commons"
+      }
+    },
+    {
+      "position": 3,
+      "slug": "jerusalem-four-sephardic-synagogues",
+      "title": "Four Sephardic Synagogues",
+      "category": "synagogue",
+      "address": "Mishmeret HaKehunah Street, Jewish Quarter, Old City, Jerusalem",
+      "lat": 31.7747528,
+      "lng": 35.2315056,
+      "shortDescription": "Four adjoining synagogues that preserve distinct strands of Jerusalem’s Sephardic prayer and communal history.",
+      "fullDescription": "The complex contains the Yochanan ben Zakai, Istanbuli, Eliyahu HaNavi and Middle synagogues. Developed over several centuries, the adjoining spaces served Jerusalem’s growing Sephardic population and different prayer traditions. The complex was damaged and desecrated after the Jewish Quarter fell in 1948, then restored after 1967; most of it again serves active congregations.",
+      "transcript": "This interconnected complex tells a story that a single sanctuary could not. The Four Sephardic Synagogues include the Yochanan ben Zakai, Istanbuli, Eliyahu HaNavi and Middle synagogues. Their rooms developed at different times as Jerusalem’s Sephardic community grew and worshippers maintained different rites and communal traditions. The complex reflects descendants of Iberian exiles as well as Jews arriving from Ottoman lands and other parts of the Sephardic world. These synagogues were damaged and desecrated after the Jewish Quarter fell in 1948. They were later restored and returned to religious use. As you move through the site, notice that its importance lies not in one monumental façade but in the relationship between several prayer halls. Together they preserve a layered record of Sephardic continuity in Jerusalem.",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q608169",
+        "https://cja.huji.ac.il/browser.php?id=6770&mode=set"
+      ],
+      "image": {
+        "fileName": "ארבעת בתי הכנסת מצויים בקצה הרובע היהודי.JPG",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%D7%90%D7%A8%D7%91%D7%A2%D7%AA_%D7%91%D7%AA%D7%99_%D7%94%D7%9B%D7%A0%D7%A1%D7%AA_%D7%9E%D7%A6%D7%95%D7%99%D7%99%D7%9D_%D7%91%D7%A7%D7%A6%D7%94_%D7%94%D7%A8%D7%95%D7%91%D7%A2_%D7%94%D7%99%D7%94%D7%95%D7%93%D7%99.JPG",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D7%90%D7%A8%D7%91%D7%A2%D7%AA_%D7%91%D7%AA%D7%99_%D7%94%D7%9B%D7%A0%D7%A1%D7%AA_%D7%9E%D7%A6%D7%95%D7%99%D7%99%D7%9D_%D7%91%D7%A7%D7%A6%D7%94_%D7%94%D7%A8%D7%95%D7%91%D7%A2_%D7%94%D7%99%D7%94%D7%95%D7%93%D7%99.JPG",
+        "creator": "Halimi shi",
+        "rightsStatus": "cc_by_sa",
+        "licenseName": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "attributionText": "Four Sephardic Synagogues — Halimi shi, CC BY-SA 3.0, via Wikimedia Commons"
+      }
+    },
+    {
+      "position": 4,
+      "slug": "jerusalem-burnt-house",
+      "title": "The Burnt House",
+      "category": "museum",
+      "address": "Tiferet Israel Street, Jewish Quarter, Old City, Jerusalem",
+      "lat": 31.7755933,
+      "lng": 35.2326983,
+      "shortDescription": "An excavated Jerusalem home destroyed during the Roman conquest in 70 CE.",
+      "fullDescription": "Excavations beneath the modern Jewish Quarter revealed part of an affluent Second Temple-period residence destroyed by fire in 70 CE. Stone vessels, domestic remains and a weight inscribed with the name Katros connect the site to priestly Jerusalem. The museum interprets the archaeological evidence while some details about the household remain informed reconstruction rather than certainty.",
+      "transcript": "Descend from the modern street into a home violently interrupted in the year 70 CE. Archaeologists uncovered these rooms beneath the rebuilt Jewish Quarter, together with signs of intense fire from the Roman destruction of Jerusalem. The finds include domestic objects, stone vessels associated with Jewish purity practices and a weight bearing the name Katros. Ancient sources mention a priestly family with a similar name, but the exact identity of the residents cannot be proved from one inscription alone. That distinction between evidence and interpretation is important. What the archaeology does establish is the final moment of a substantial Jewish household in the Upper City. Rather than viewing the destruction only as a vast military event, this site brings us into rooms where people stored objects, prepared food and lived their daily lives before the city burned.",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q4854786",
+        "https://commons.wikimedia.org/wiki/Category:Burnt_House"
+      ],
+      "image": {
+        "fileName": "Old Jerusalem Burnt House.JPG",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Old_Jerusalem_Burnt_House.JPG",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Old_Jerusalem_Burnt_House.JPG",
+        "creator": "Djampa",
+        "rightsStatus": "cc_by_sa",
+        "licenseName": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attributionText": "Old Jerusalem Burnt House — Djampa, CC BY-SA 4.0, via Wikimedia Commons"
+      }
+    },
+    {
+      "position": 5,
+      "slug": "jerusalem-western-wall",
+      "title": "Western Wall",
+      "category": "historic_sites",
+      "address": "Western Wall Plaza, Old City, Jerusalem",
+      "lat": 31.7769472,
+      "lng": 35.23425,
+      "shortDescription": "Judaism’s most prominent accessible prayer site, beside the retaining walls of the Temple Mount.",
+      "fullDescription": "The Western Wall is a surviving section of the retaining wall around the expanded Temple Mount platform built in the late Second Temple period. Its proximity to the site of the Temples made it a central place of Jewish prayer, mourning and longing across generations. The plaza functions as an active open-air synagogue and should be approached with respect for worshippers and local practice.",
+      "transcript": "Our final stop is the Western Wall, the most prominent accessible place of Jewish prayer in Jerusalem. The stones form part of the retaining wall built around the expanded Temple Mount platform in the late Second Temple period; they are not themselves a surviving wall of the Temple sanctuary. Their closeness to the place where the Temples stood gave this section immense religious meaning. Across generations, Jews came here to pray, mourn destruction and express hope for Jerusalem. Today the plaza functions as an active open-air synagogue used for daily prayer, festivals and family ceremonies. Notice the different sizes and courses of stone, but also the quieter human details: written prayers placed between stones, worshippers facing the wall and visitors pausing before entering the prayer areas. Please follow local guidance, dress respectfully and avoid photographing people intrusively while they pray.",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q134821",
+        "https://whc.unesco.org/en/list/148/"
+      ],
+      "image": {
+        "fileName": "Western Wall April 2006.jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Western_Wall_April_2006.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Western_Wall_April_2006.jpg",
+        "creator": "Bnwwf91",
+        "rightsStatus": "public_domain",
+        "licenseName": "Public domain dedication",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "attributionText": "Western Wall April 2006 — Bnwwf91, public domain, via Wikimedia Commons"
+      }
+    }
+  ]
+}

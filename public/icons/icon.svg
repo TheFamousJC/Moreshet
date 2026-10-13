@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Tudela Global">
+  <rect width="512" height="512" rx="112" fill="#17365d"/>
+  <path d="M256 76 292 183 405 185 315 252 348 361 256 298 164 361 197 252 107 185 220 183Z" fill="none" stroke="#d8b45b" stroke-width="28" stroke-linejoin="round"/>
+  <circle cx="256" cy="256" r="38" fill="#ffffff"/>
+</svg>

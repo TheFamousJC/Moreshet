@@ -1,0 +1,1 @@
+-- Development seed data will be added after the core schema migration exists.

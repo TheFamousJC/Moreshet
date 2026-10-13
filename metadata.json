@@ -1,0 +1,6 @@
+{
+  "name": "Herzl Jewish Heritage & Live Walk",
+  "description": "Mobile audio tour and location-based Jewish Heritage discovery app across European capitals with auto-GPS audio guides, Ask Herzl AI, multi-language support (English, Hebrew, Russian), and offline sync.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

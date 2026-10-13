@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  
+  .font-serif-heading {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+/* A single high-visibility focus treatment keeps keyboard navigation visible
+   even on controls that use custom colours or remove the browser outline. */
+:where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid #c98a3b !important;
+  outline-offset: 2px !important;
+}
+
+/* Tudela Global visitor branding, derived from the supplied production logo. */
+.tudela-visitor-shell {
+  --tudela-teal: #173f46;
+  --tudela-sage: #4f8078;
+  --tudela-terracotta: #a74d38;
+  --tudela-sand: #d7b276;
+  --tudela-ochre: #c98a3b;
+  --tudela-cream: #f7f0e5;
+}
+
+.tudela-visitor-shell .bg-blue-950,
+.tudela-visitor-shell .bg-blue-900 { background-color: var(--tudela-teal) !important; }
+.tudela-visitor-shell .text-blue-950,
+.tudela-visitor-shell .text-blue-900 { color: var(--tudela-teal) !important; }
+.tudela-visitor-shell .border-blue-200,
+.tudela-visitor-shell .border-blue-100 { border-color: color-mix(in srgb, var(--tudela-sage) 35%, white) !important; }
+.tudela-visitor-shell .bg-blue-50,
+.tudela-visitor-shell .bg-blue-100 { background-color: color-mix(in srgb, var(--tudela-sage) 14%, white) !important; }
+.tudela-visitor-shell .text-amber-600,
+.tudela-visitor-shell .text-amber-700 { color: var(--tudela-terracotta) !important; }
+
+@keyframes tudela-splash-reveal {
+  0% { opacity: 0; transform: scale(0.82) translateY(18px); }
+  35% { opacity: 1; transform: scale(1.03) translateY(0); }
+  75% { opacity: 1; transform: scale(1) translateY(0); }
+  100% { opacity: 0; transform: scale(1.04) translateY(-8px); }
+}
+
+@keyframes tudela-splash-screen {
+  0%, 78% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes tudela-splash-halo {
+  0% { opacity: 0; transform: scale(0.3); }
+  45% { opacity: 0.28; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.35); }
+}
+
+.tudela-splash { animation: tudela-splash-screen 2.2s ease-out both; }
+.tudela-splash-mark { position: relative; animation: tudela-splash-reveal 2.2s ease-out both; }
+.tudela-splash-halo { position: absolute; top: 10%; width: 11rem; height: 11rem; border-radius: 9999px; background: #4f8078; filter: blur(24px); animation: tudela-splash-halo 2.2s ease-out both; }
+.tudela-splash-line { animation: tudela-splash-reveal 2.2s ease-out both; }
+
+.leaflet-overlay-pane .tudela-google-walking-route {
+  filter: drop-shadow(0 0 2px rgb(255 255 255 / 100%)) drop-shadow(0 1px 1px rgb(15 23 42 / 45%));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Custom Radar & Waveform Animations */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Keep installed iPhone/iPad web-app controls clear of the Dynamic Island,
+   rounded display corners and Home indicator. The fallback values preserve
+   the existing browser/desktop spacing when no safe area is reported. */
+.app-safe-header {
+  padding-top: calc(env(safe-area-inset-top, 0px) + 0.5rem);
+  padding-right: max(0.75rem, env(safe-area-inset-right, 0px));
+  padding-left: max(0.75rem, env(safe-area-inset-left, 0px));
+}
+
+.app-safe-notice {
+  top: calc(env(safe-area-inset-top, 0px) + 3.5rem);
+}
+
+.app-safe-bottom {
+  padding-right: max(0.5rem, env(safe-area-inset-right, 0px));
+  padding-bottom: 0.125rem;
+  padding-left: max(0.5rem, env(safe-area-inset-left, 0px));
+}
+
+/* Browser chrome already reserves the iPhone Home-indicator area. Apply the
+   larger inset only to an installed standalone web app, where Tudela owns the
+   complete screen. This avoids an unnecessary white shelf below navigation in
+   Safari/Chrome while retaining safe controls after Add to Home Screen. */
+@media (display-mode: standalone) {
+  .app-safe-bottom {
+    padding-bottom: max(0.125rem, env(safe-area-inset-bottom, 0px));
+  }
+}
+
+.app-tour-panel {
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 4.25rem);
+}
+
+.app-map-recenter {
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 9.5rem);
+}
+
+/* Leaflet Light Custom Map Styling */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background-color: #f0ede5 !important;
+  font-family: inherit;
+  z-index: 1;
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+}
+
+.leaflet-control-zoom a {
+  background-color: #ffffff !important;
+  color: #1e3a8a !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: #f8fafc !important;
+}
+
+.leaflet-control-attribution a {
+  color: #075985 !important;
+}
+
+/* Custom Scrollbars */
+.custom-leaflet-tooltip {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.custom-leaflet-tooltip::before {
+  display: none !important;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+@media (min-width: 1024px) {
+  html[data-cms-workspace='wide'] .cms-route-shell > div {
+    width: 100%;
+    max-width: none;
+    height: 100vh;
+    padding-right: 1.5rem;
+    padding-bottom: 2rem;
+    padding-left: 1.5rem;
+  }
+
+  html[data-cms-workspace='wide'] .cms-route-shell textarea {
+    resize: vertical;
+  }
+}

@@ -1,0 +1,15 @@
+FROM docker:cli AS docker_cli
+
+FROM node:20-bookworm-slim
+
+# Supabase checks for the Docker command as well as connecting to its socket.
+COPY --from=docker_cli /usr/local/bin/docker /usr/local/bin/docker
+
+RUN mkdir -p /opt/supabase-cli \
+    && cd /opt/supabase-cli \
+    && npm init -y \
+    && npm install --save-exact supabase@2.112.0 \
+    && npm cache clean --force
+
+WORKDIR /work
+ENTRYPOINT ["/opt/supabase-cli/node_modules/.bin/supabase"]

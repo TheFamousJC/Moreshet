@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "tourSlug": "gondar-wolleka-beta-israel",
+  "status": "research_complete_cms_draft_pending",
+  "language": "en",
+  "city": {
+    "name": "Gondar",
+    "country": "Ethiopia",
+    "flagEmoji": "🇪🇹",
+    "centerLat": 12.64276,
+    "centerLng": 37.47622,
+    "subtitle": "Beta Israel faith, craft and memory at Wolleka",
+    "description": "Explore the former Beta Israel village of Wolleka near Gondar through surviving prayer houses, craft traditions and visible signs of a community whose history continues in Ethiopia and Israel."
+  },
+  "tour": {
+    "title": "Gondar and Wolleka: Beta Israel Faith, Craft and Memory",
+    "subtitle": "Five close stops in a former centre of Ethiopian Jewish life",
+    "overview": "This compact route explores Wolleka, a village on Gondar’s northern edge that preserves material traces of Beta Israel life. It begins at the village approach, considers pottery and metalwork without turning living people into a tourist exhibit, reads surviving Jewish symbols cautiously and visits two documented former prayer-house structures. The tour uses the community’s preferred name, Beta Israel, explains that the older label on some signs can be offensive, and distinguishes documented history from uncertain origin traditions. The former prayer houses are fragile heritage places rather than functioning congregations; visitors should arrange local access, ask before photographing residents and confirm road and site conditions before travel.",
+    "estimatedDurationMinutes": 75,
+    "difficulty": "moderate",
+    "accessMode": "free",
+    "narrationMode": "simulated",
+    "publicationPolicy": "cms_review_required"
+  },
+  "stops": [
+    {
+      "position": 1,
+      "slug": "gondar-wolleka-village-gateway",
+      "title": "Wolleka Village Gateway",
+      "category": "historic_sites",
+      "address": "Gondar–Debark road junction, Wolleka, near Gondar, Ethiopia",
+      "lat": 12.643004,
+      "lng": 37.4781458,
+      "shortDescription": "The village approach introduces Wolleka’s Beta Israel heritage and the respectful language needed to understand it.",
+      "fullDescription": "Wolleka was one of the villages associated with Beta Israel communities in the Gondar region. A roadside sign has long advertised the village using an older label that many community members regard as insulting because it can mean outsider, exile or landless person. The tour begins here to replace that label with Beta Israel—House of Israel—and to establish that the village is a living place, not an abandoned stage set.",
+      "transcript": "Welcome to Wolleka, a village near Gondar that preserves visible traces of Beta Israel history. The roadside sign in the photograph uses a name that appears in older travel writing and tourist advertising. Many Ethiopian Jews reject that term because it has associations with being an outsider, exile or landless person. Throughout this tour we will use Beta Israel, meaning House of Israel. Communities connected with Beta Israel lived across northern and north-western Ethiopia, maintaining a distinctive Jewish religious tradition led by spiritual authorities known as kessim. Wolleka became known to visitors for its prayer houses, pottery, metalwork and cemetery, even as most Jewish residents left Ethiopia during the major migrations of the late twentieth century. Begin with care: people still live and work here. Ask before photographing residents, do not assume that every object marketed with a Star of David is historic, and treat the surviving buildings as fragile evidence of a community rather than as scenery.",
+      "sources": [
+        "https://ethiopianjhc.org.il/en/communities/",
+        "https://anumuseum.org.il/blog/beta-israel/",
+        "https://www.timesofisrael.com/how-a-village-left-behind-by-jews-in-ethiopia-became-a-top-tourist-draw/"
+      ],
+      "image": {
+        "fileName": "Sign Pointing Way to Wolleka (Falasha Jewish Village) - Outside Gondar - Ethiopia (8689184588).jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Sign_Pointing_Way_to_Wolleka_%28Falasha_Jewish_Village%29_-_Outside_Gondar_-_Ethiopia_%288689184588%29.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sign_Pointing_Way_to_Wolleka_%28Falasha_Jewish_Village%29_-_Outside_Gondar_-_Ethiopia_%288689184588%29.jpg",
+        "creator": "Adam Jones",
+        "rightsStatus": "cc_by_sa",
+        "licenseName": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "attributionText": "Sign pointing to Wolleka — Adam Jones, CC BY-SA 2.0, via Wikimedia Commons"
+      }
+    },
+    {
+      "position": 2,
+      "slug": "gondar-wolleka-pottery-tradition",
+      "title": "Pottery and Metalwork Traditions",
+      "category": "historic_sites",
+      "address": "Project Ploughshare Women’s Pottery area, Wolleka, near Gondar, Ethiopia",
+      "lat": 12.6420059,
+      "lng": 37.4766478,
+      "shortDescription": "A craft stop examining the skilled pottery and metalwork long associated with Beta Israel families in the Gondar region.",
+      "fullDescription": "Beta Israel craftspeople in the Gondar region were widely associated with pottery, smithing and other skilled work. Those occupations also reflected social exclusion and restrictions on landholding, so the craft story should not be romanticized. Pottery continues to be sold around Wolleka, but present-day souvenirs and their makers should not automatically be described as historic Beta Israel work without clear provenance.",
+      "transcript": "At this stop, clay objects open a wider conversation about labour, skill and exclusion. Beta Israel communities in the Gondar region became closely associated with pottery and metalwork. Their technical knowledge created useful household vessels, tools and distinctive forms, but the occupational pattern was not simply a picturesque tradition. In different periods, prejudice and limits on access to land helped push Beta Israel families toward crafts that neighbouring communities sometimes treated with suspicion. That history asks us to admire skill without disguising inequality. Pottery and Star of David souvenirs are still sold in Wolleka today. Some continue local techniques; others are made for visitors after the Jewish residents departed. A responsible tour does not claim that every object is an antique or that every current seller belongs to Beta Israel. Instead, look at shaping, firing and decoration as evidence of an evolving local economy. The craft tradition links memory to ordinary work and reminds us that Jewish heritage includes livelihoods as well as prayer buildings.",
+      "sources": [
+        "https://www.timesofisrael.com/how-a-village-left-behind-by-jews-in-ethiopia-became-a-top-tourist-draw/",
+        "https://www.africansynagogues.org/html/countries/ethiopia/ethiopia3.html",
+        "https://archive.diarna.org/site/detail/public/3062/"
+      ],
+      "image": {
+        "fileName": "Falasha village, Gonder Ethiopia Pottery.JPG",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Falasha_village%2C_Gonder_Ethiopia_Pottery.JPG",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Falasha_village%2C_Gonder_Ethiopia_Pottery.JPG",
+        "creator": "Deirdre Snook",
+        "rightsStatus": "cc_by_sa",
+        "licenseName": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "attributionText": "Pottery in Wolleka near Gondar — Deirdre Snook, CC BY-SA 3.0, via Wikimedia Commons"
+      }
+    },
+    {
+      "position": 3,
+      "slug": "gondar-wolleka-village-symbols",
+      "title": "Village Homes and Jewish Symbols",
+      "category": "historic_sites",
+      "address": "Wolleka village lanes, near Gondar, Ethiopia",
+      "lat": 12.642807,
+      "lng": 37.4758549,
+      "shortDescription": "Painted Stars of David on village structures show how Jewish memory is displayed, preserved and marketed after migration.",
+      "fullDescription": "Stars of David remain visible on some mud-built structures in Wolleka. They identify the village’s Jewish associations, but a painted symbol alone cannot date a wall or prove that a particular house belonged to a Jewish family. This stop teaches visitors to separate genuine community history from later repainting, tourism and memory-making while respecting the privacy of current residents.",
+      "transcript": "The painted Star of David is immediately recognizable, yet interpretation requires more than recognition. Jewish symbols on Wolleka’s mud walls help preserve the village’s association with Beta Israel and guide visitors toward the former prayer houses. At the same time, paint can be renewed, buildings can change owners and tourism can encourage symbols to be added or emphasized. We therefore should not treat every decorated wall as untouched evidence from a fixed historical moment. The deeper record comes from combining material traces with oral testimony, photographs, archival research and the memories of families who left the region. This caution does not make the symbols meaningless. It shows that heritage is actively maintained and sometimes marketed after a community disperses. Notice the earth construction and the relationship between homes, paths and work areas. Then remember that this remains a residential village. Photograph architecture only with local permission, avoid intrusive images of children or residents, and do not enter a house simply because it displays a Jewish motif.",
+      "sources": [
+        "https://www.timesofisrael.com/how-a-village-left-behind-by-jews-in-ethiopia-became-a-top-tourist-draw/",
+        "https://archive.diarna.org/site/detail/public/3062/",
+        "https://commons.wikimedia.org/wiki/Category:Wolleka"
+      ],
+      "image": {
+        "fileName": "Painted Star of David on Mud Facade - Wolleka (Falasha Jewish Village) - Outside Gondar - Ethiopia (8689192166).jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Painted_Star_of_David_on_Mud_Facade_-_Wolleka_%28Falasha_Jewish_Village%29_-_Outside_Gondar_-_Ethiopia_%288689192166%29.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Painted_Star_of_David_on_Mud_Facade_-_Wolleka_%28Falasha_Jewish_Village%29_-_Outside_Gondar_-_Ethiopia_%288689192166%29.jpg",
+        "creator": "Adam Jones",
+        "rightsStatus": "cc_by_sa",
+        "licenseName": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "attributionText": "Painted Star of David on a Wolleka mud facade — Adam Jones, CC BY-SA 2.0, via Wikimedia Commons"
+      }
+    },
+    {
+      "position": 4,
+      "slug": "gondar-wolleka-octagonal-synagogue",
+      "title": "Wolleka Octagonal Synagogue",
+      "category": "synagogue",
+      "address": "Former synagogue complex, Wolleka, near Gondar, Ethiopia; mapped position is approximate and local access should be confirmed",
+      "lat": 12.6430531,
+      "lng": 37.4757897,
+      "shortDescription": "The small octagonal former synagogue preserves the spatial memory of Beta Israel worship in Wolleka.",
+      "fullDescription": "One of Wolleka’s documented former prayer houses is a small, roughly octagonal structure built from mud-based materials with a simple framed roof. Painted Jewish symbols make its former religious role visible. It is no longer an active congregation and its precise date is uncertain, so the building should be presented as fragile community heritage rather than assigned an unsupported age.",
+      "transcript": "This modest octagonal building is the best-known former synagogue at Wolleka. Its materials and scale differ sharply from the monumental stone synagogues familiar in many European cities, but architectural size does not measure the depth of a religious tradition. Beta Israel worship developed within Ethiopian landscapes, languages and building practices. Community religious life was guided by kessim, and its scriptural tradition centred on sacred texts preserved in Geʽez. Published architectural documentation describes this structure as roughly eighteen feet across, built with mud-based walls and a simple timber roof. The date is uncertain, and we should resist supplying one merely to make the story sound complete. Painted Stars of David visibly identify its Jewish association, while the empty interior speaks to the departure of the congregation. If access is available, enter only with local permission, avoid touching painted surfaces and remember that preservation depends on relationships with residents as well as interest from families and institutions abroad.",
+      "sources": [
+        "https://www.africansynagogues.org/html/countries/ethiopia/ethiopia3.html",
+        "https://www.wikidata.org/wiki/Q111913062",
+        "https://commons.wikimedia.org/wiki/Category:Wolleka_Synagogue"
+      ],
+      "image": {
+        "fileName": "Abandoned Synagogue - Wolleka (Falasha Jewish Village) - Outside Gondar - Ethiopia (8689307780).jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Abandoned_Synagogue_-_Wolleka_%28Falasha_Jewish_Village%29_-_Outside_Gondar_-_Ethiopia_%288689307780%29.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abandoned_Synagogue_-_Wolleka_%28Falasha_Jewish_Village%29_-_Outside_Gondar_-_Ethiopia_%288689307780%29.jpg",
+        "creator": "Adam Jones",
+        "rightsStatus": "cc_by_sa",
+        "licenseName": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "attributionText": "Former synagogue at Wolleka — Adam Jones, CC BY-SA 2.0, via Wikimedia Commons"
+      }
+    },
+    {
+      "position": 5,
+      "slug": "gondar-wolleka-second-prayer-house",
+      "title": "Second Wolleka Prayer House",
+      "category": "synagogue",
+      "address": "Former synagogue complex, Wolleka, near Gondar, Ethiopia; close to Stop 4 and local access should be confirmed",
+      "lat": 12.643094,
+      "lng": 37.475716,
+      "shortDescription": "A second documented prayer-house structure broadens the story beyond a single iconic synagogue building.",
+      "fullDescription": "Architectural documentation records two small former synagogue structures standing beside one another at Wolleka: an imperfect octagon and a roughly square building. The pair reminds visitors that communal religious space was not necessarily contained in one permanent monument. Their survival also raises questions about maintenance, interpretation and responsibility after most of the congregation migrated.",
+      "transcript": "Our final stop turns from one familiar image to the wider prayer-house complex. Architectural researchers documented two small former synagogue buildings beside each other at Wolleka: the octagonal structure and a second, roughly square building. Looking at the pair prevents us from reducing Beta Israel religious life to one photogenic hut. Communities adapt rooms, maintain more than one gathering space and rebuild with available materials. Today these structures carry memory without a resident congregation using them in the ordinary rhythm of prayer. That change connects Wolleka to the larger twentieth-century story of Ethiopian Jewish migration, including dangerous journeys through Sudan and organized airlifts to Israel. Migration saved lives and reunited families, yet it also left villages, cemeteries and prayer places far from the people whose histories they hold. End the tour by considering preservation as a shared duty: accurate documentation, respectful local access, support for community-led heritage work and attention to Ethiopian Jewish voices in Israel and Ethiopia are all more valuable than repeating legends as fact.",
+      "sources": [
+        "https://www.africansynagogues.org/html/countries/ethiopia/ethiopia3.html",
+        "https://ethiopianjhc.org.il/en/communities/",
+        "https://www.timesofisrael.com/how-a-village-left-behind-by-jews-in-ethiopia-became-a-top-tourist-draw/"
+      ],
+      "image": {
+        "fileName": "Abandoned Synagogue with Painted Stars of David - Wolleka (Falasha Jewish Village) - Outside Gondar - Ethiopia (8688161971).jpg",
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Abandoned_Synagogue_with_Painted_Stars_of_David_-_Wolleka_%28Falasha_Jewish_Village%29_-_Outside_Gondar_-_Ethiopia_%288688161971%29.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abandoned_Synagogue_with_Painted_Stars_of_David_-_Wolleka_%28Falasha_Jewish_Village%29_-_Outside_Gondar_-_Ethiopia_%288688161971%29.jpg",
+        "creator": "Adam Jones",
+        "rightsStatus": "cc_by_sa",
+        "licenseName": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "attributionText": "Former Wolleka prayer house with painted Stars of David — Adam Jones, CC BY-SA 2.0, via Wikimedia Commons"
+      }
+    }
+  ]
+}
