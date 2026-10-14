@@ -32,7 +32,7 @@ export const PublicInformationPage: React.FC<{
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-3">
           <a href={import.meta.env.BASE_URL} className="flex min-w-0 items-center gap-2 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700">
             <ArrowLeft className="h-5 w-5 shrink-0 text-blue-950 rtl:rotate-180" />
-            <img src={`${import.meta.env.BASE_URL}moreshet-logo.png`} alt="Moreshet" className="h-9 w-9 rounded-lg object-cover" />
+            <img src={`${import.meta.env.BASE_URL}moreshet-logo.jpg`} alt="Moreshet" className="h-9 w-9 rounded-lg object-cover" />
             <span className="truncate text-sm font-bold text-blue-950">{copy.backHome}</span>
           </a>
           <span className="hidden rounded-full bg-amber-100 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-amber-900 sm:inline">{copy.pilotLabel}</span>

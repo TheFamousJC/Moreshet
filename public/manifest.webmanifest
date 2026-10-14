@@ -7,7 +7,7 @@
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#f0f8ff",
+  "background_color": "#ffffff",
   "theme_color": "#164b77",
   "lang": "en",
   "dir": "auto",
@@ -18,15 +18,15 @@
   ],
   "icons": [
     {
-      "src": "moreshet-icon.png",
-      "sizes": "512x512",
-      "type": "image/png",
+      "src": "moreshet-logo.jpg",
+      "sizes": "2048x2048",
+      "type": "image/jpeg",
       "purpose": "any"
     },
     {
-      "src": "moreshet-icon.png",
-      "sizes": "512x512",
-      "type": "image/png",
+      "src": "moreshet-logo.jpg",
+      "sizes": "2048x2048",
+      "type": "image/jpeg",
       "purpose": "maskable"
     }
   ],

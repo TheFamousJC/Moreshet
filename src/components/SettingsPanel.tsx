@@ -66,7 +66,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ selectedLanguage, 
         </div>
 
         <section id="visitor-preferences" className="scroll-mt-4 rounded-3xl border border-[#b6daf3]/50 bg-white p-4 shadow-sm" aria-labelledby="visitor-preferences-heading">
-          <div className="mb-4 flex items-center gap-3"><img src={`${import.meta.env.BASE_URL}moreshet-logo.png`} alt="Moreshet" className="h-12 w-12 rounded-2xl border border-[#b6daf3]/30 bg-[#f0f8ff] object-contain" /><div><h2 id="visitor-preferences-heading" className="font-bold text-[#164b77]">{labels.preferences}</h2><p className="text-[11px] text-slate-600">Changes apply immediately and are remembered on this device.</p></div></div>
+          <div className="mb-4 flex items-center gap-3"><img src={`${import.meta.env.BASE_URL}moreshet-logo.jpg`} alt="Moreshet" className="h-12 w-12 rounded-2xl border border-[#b6daf3]/30 bg-[#f0f8ff] object-contain" /><div><h2 id="visitor-preferences-heading" className="font-bold text-[#164b77]">{labels.preferences}</h2><p className="text-[11px] text-slate-600">Changes apply immediately and are remembered on this device.</p></div></div>
           <div className="space-y-3">
             <PreferenceToggle icon={<MapPin className="h-4 w-4" />} label={labels.location} checked={preferences.locationEnabled} onClick={() => toggle('locationEnabled')} />
             <div className="rounded-2xl bg-[#f0f8ff] p-3"><div className="mb-2 flex items-center gap-2 text-xs font-bold text-[#164b77]"><Volume2 className="h-4 w-4" />{labels.arrival}</div><div className="grid grid-cols-2 gap-2"><button type="button" onClick={() => onChangePreferences({ ...preferences, arrivalPlaybackMode: 'auto' })} className={`min-h-10 rounded-xl text-xs font-bold ${preferences.arrivalPlaybackMode === 'auto' ? 'bg-[#318bbf] text-white' : 'border border-slate-200 bg-white text-slate-700'}`}>{labels.auto}</button><button type="button" onClick={() => onChangePreferences({ ...preferences, arrivalPlaybackMode: 'manual' })} className={`min-h-10 rounded-xl text-xs font-bold ${preferences.arrivalPlaybackMode === 'manual' ? 'bg-[#318bbf] text-white' : 'border border-slate-200 bg-white text-slate-700'}`}>{labels.manual}</button></div></div>
@@ -81,7 +81,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ selectedLanguage, 
         <section className="overflow-hidden rounded-3xl bg-[#164b77] text-white shadow-md" aria-labelledby="settings-product-heading">
           <div className="flex items-center gap-3 border-b border-white/10 p-4">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-amber-300/30 bg-white/10">
-              <img src={`${import.meta.env.BASE_URL}moreshet-logo.png`} alt="" className="h-10 w-10 rounded-xl object-contain" />
+              <img src={`${import.meta.env.BASE_URL}moreshet-logo.jpg`} alt="" className="h-10 w-10 rounded-xl object-contain" />
             </div>
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[.18em] text-amber-300">Moreshet</p>
