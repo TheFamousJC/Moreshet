@@ -1,12 +1,20 @@
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { buildPersonalAiPrompt, PERSONAL_AI_SERVICES } from '../src/lib/externalAi.js';
-import { googleMapsSearch, googleMapsWalking } from '../src/lib/googleMaps.js';
+import { googleMapsSearch, googleMapsWalking, googleMapsEmbed } from '../src/lib/googleMaps.js';
 import { readFile } from 'node:fs/promises';
 
 const walk=new URL(googleMapsWalking({lat:47.4979,lng:19.0402}));assert.equal(walk.hostname,'www.google.com');assert.equal(walk.searchParams.get('api'),'1');assert.equal(walk.searchParams.get('travelmode'),'walking');assert.equal(walk.searchParams.get('origin'),null);
 assert.equal(new URL(googleMapsSearch('synagogues Budapest')).searchParams.get('query'),'synagogues Budapest');
 assert.throws(()=>googleMapsWalking({lat:999,lng:19}));
+const tourMap = new URL(googleMapsEmbed('test-key',[{lat:47.5,lng:19},{lat:47.51,lng:19.01},{lat:47.52,lng:19.02}],'en',true));
+assert.equal(tourMap.pathname,'/maps/embed/v1/directions');
+assert.equal(tourMap.searchParams.get('waypoints'),'47.51,19.01');
+assert.equal(tourMap.searchParams.get('mode'),'walking');
+assert.equal(new URL(googleMapsEmbed('test-key',[{lat:47.5,lng:19}],'he')).searchParams.get('language'),'he');
+assert.throws(()=>googleMapsEmbed('test-key',[{lat:NaN,lng:19}],'en'));
+assert.throws(()=>googleMapsEmbed('',[{lat:47,lng:19}],'en'));
+assert.throws(()=>googleMapsEmbed('test-key',Array.from({length:23},()=>({lat:47,lng:19})),'en',true));
 const prompt=buildPersonalAiPrompt('Tell me about this synagogue','Budapest','en');assert.ok(prompt.includes('Budapest'));assert.ok(prompt.includes('Do not invent'));assert.ok(!prompt.includes('access_token'));assert.equal(Object.keys(PERSONAL_AI_SERVICES).length,3);
 assert.ok(!(await readFile('src/components/AskHerzlChat.tsx','utf8')).includes('fetch('));
 assert.ok(!(await readFile('src/components/WhatsAroundMe.tsx','utf8')).includes("fetch('/api/places/nearby'"));

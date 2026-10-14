@@ -52,3 +52,15 @@ See the guide for the eight development stages, every visitor and CMS working pa
 
 Run npm run build:frontend to build the sample-tour frontend into frontend-dist. GitHub Actions publishes only that directory to GitHub Pages. Account login and shared publishing are clearly marked as unavailable in this preview. Private project documents and server code are excluded from the site. The regular local server build remains available for backend development.
 
+
+## In-app Google Maps (14 October 2026)
+
+The Live Walk screen can show an interactive map of the selected stop and a walking route through the tour stops in order. Choosing a stop updates the map. Route overview supports up to 22 stops; larger tours retain individual stop maps. Live turn-by-turn navigation opens the Google Maps app or website. The embedded overview uses tour coordinates, without transmitting the visitor's live location.
+
+Google Maps Embed currently has unlimited no-charge usage. A billing-enabled Google Cloud project is still required. Set VITE_GOOGLE_MAPS_EMBED_KEY to a dedicated browser-visible key restricted to Maps Embed API and the approved websites. Do not reuse an unrestricted server key. For Railway, configure the variable and rebuild; for Pages, configure the same repository variable. Allow https://moreshet-production.up.railway.app/* and https://thefamousjc.github.io/* plus localhost only if needed for development. Leave Places, Routes, Geocoding and Maps JavaScript integrations disabled to avoid their usage charges. A billing budget alert is a notification, not a spending cap.
+
+Until the Embed key is configured, the app offers working Google Maps stop links and walking directions. The map integration is prepared but cannot be accepted as working in production until a real restricted key is configured and tested.
+
+The MVP checks discovery failure was caused by reading Vite's browser environment directly in a Node test. The API helper now defaults safely when that environment is absent; discovery tests still run in CI.
+
+Official references: https://developers.google.com/maps/documentation/embed/usage-and-billing and https://developers.google.com/maps/documentation/embed/embedding-map

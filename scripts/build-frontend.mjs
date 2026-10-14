@@ -12,7 +12,7 @@ if(connected){
   if(key.startsWith('sb_secret_'))throw new Error('A server secret cannot be used in a browser build');
   if(key.split('.').length===3){try{if(JSON.parse(Buffer.from(key.split('.')[1],'base64url')).role!=='anon')throw new Error('Only anon legacy keys are allowed');}catch{throw new Error('Invalid browser key');}}
 }
-const env={...process.env,MORESHET_BASE:base,MORESHET_FRONTEND_ONLY:'true',VITE_FRONTEND_PREVIEW:connected?'false':'true',VITE_SUPABASE_URL:url,VITE_SUPABASE_PUBLISHABLE_KEY:key,VITE_API_BASE_URL:api,VITE_GOOGLE_MAPS_EMBED_KEY:''};
+const env={...process.env,MORESHET_BASE:base,MORESHET_FRONTEND_ONLY:'true',VITE_FRONTEND_PREVIEW:connected?'false':'true',VITE_SUPABASE_URL:url,VITE_SUPABASE_PUBLISHABLE_KEY:key,VITE_API_BASE_URL:api,VITE_GOOGLE_MAPS_EMBED_KEY:process.env.VITE_GOOGLE_MAPS_EMBED_KEY || ''};
 const result=spawnSync(process.execPath,['node_modules/vite/bin/vite.js','build','--configLoader','runner'],{stdio:'inherit',env});if(result.status!==0)process.exit(result.status || 1);
 const html=await readFile('frontend-dist/index.html','utf8');
 for(const route of ['privacy','terms','ai-disclosure','support','cms']){await mkdir('frontend-dist/'+route,{recursive:true});await writeFile('frontend-dist/'+route+'/index.html',html);}
