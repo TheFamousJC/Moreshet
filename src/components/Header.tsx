@@ -47,5 +47,6 @@ export const Header: React.FC<HeaderProps> = ({ selectedLanguage, locationEnable
       <button type="button" onClick={onOpenSettings} className={`${control} border-[#164b77]/20 bg-white text-[#164b77]`} title={t('navSettings', selectedLanguage)} aria-label={t('navSettings', selectedLanguage)}><Settings className="h-4 w-4" /></button>
       <button type="button" onClick={onOpenHelp} className={`${control} border-[#b6daf3] bg-[#e0f1ff] text-[#164b77]`} title={t('help', selectedLanguage)} aria-label={t('help', selectedLanguage)}><CircleHelp className="h-4 w-4" /></button>
     </div>
+    <p className="mt-1 text-center text-[10px] font-medium tracking-wide text-[#216a9b]">Jewish Heritage in Your Pocket</p>
   </header>;
 };
