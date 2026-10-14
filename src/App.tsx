@@ -71,6 +71,7 @@ export default function App() {
   const completionPromptedTourIdsRef = useRef(new Set<string>());
   const deepLinkAppliedRef = useRef(false);
   useEffect(() => {
+    if(import.meta.env.VITE_FRONTEND_PREVIEW === 'true'){setAuthResolved(true);setAccount(null);return;}
     let active = true;
     const applySession = async (session: Awaited<ReturnType<typeof supabase.auth.getSession>>['data']['session']) => {
       if (!active) return;
@@ -736,6 +737,7 @@ export default function App() {
 
   // Trigger Cloud Storage Sync API
   const triggerCloudSync = async () => {
+    if(import.meta.env.VITE_FRONTEND_PREVIEW === 'true'){setAccountNotice('This preview saves on your device. Shared account sync will be enabled in a later stage.');return;}
     setSyncState((prev) => ({ ...prev, syncing: true }));
     try {
       const response = await fetch('/api/sync', {
@@ -869,7 +871,7 @@ export default function App() {
               ) : (
                 <button onClick={() => setIsAccountOpen(true)} className="mt-5 w-full rounded-xl bg-blue-900 py-3 text-sm font-bold text-white">Sign in to CMS</button>
               )}
-              <a href="/" className="mt-4 block text-center text-xs font-semibold text-slate-500">Return to visitor website</a>
+              <a href={import.meta.env.BASE_URL} className="mt-4 block text-center text-xs font-semibold text-slate-500">Return to visitor website</a>
             </section>
           </main>
         )}
@@ -909,7 +911,7 @@ export default function App() {
       {accountNotice && <button onClick={() => setAccountNotice('')} className="app-safe-notice absolute left-1/2 z-50 w-[calc(100%-2rem)] max-w-sm -translate-x-1/2 rounded-xl border border-amber-200 bg-amber-50 p-3 text-left text-xs font-semibold text-amber-900 shadow-lg">{accountNotice}</button>}
 
       {/* Main Tab Content Display */}
-      {publicContent.source === 'demo' && <div role="status" className="border-b border-amber-200 bg-amber-50 px-4 py-2 text-center text-xs text-amber-900">MVP sample tours · Check venue details and accessibility before travelling. <a href="/mvp-guide" target="_blank" rel="noopener noreferrer" className="font-bold underline">MVP guide</a></div>}
+      {publicContent.source === 'demo' && <div role="status" className="border-b border-amber-200 bg-amber-50 px-4 py-2 text-center text-xs text-amber-900">{import.meta.env.VITE_FRONTEND_PREVIEW === 'true' ? 'Online frontend preview · Sample tours · Accounts and shared publishing are not connected.' : 'MVP sample tours · Check venue details and accessibility before travelling.'}</div>}
       <main className="relative min-h-0 flex-1 overflow-hidden">
         {activeTab === 'walk' && (
           <LiveWalkMap
@@ -1109,3 +1111,4 @@ export default function App() {
     </div>
   );
 }
+

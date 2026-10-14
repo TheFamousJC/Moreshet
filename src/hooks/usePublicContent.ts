@@ -21,6 +21,7 @@ export function usePublicContent(language: LanguageCode, organization = 'tudela-
   const refresh = useCallback(async (signal?: AbortSignal): Promise<PublicContentPayload | null> => {
     setIsLoading(true);
     setError('');
+    if(import.meta.env.VITE_FRONTEND_PREVIEW === 'true'){setContent(demoPublicContent(language));setSource('demo');setIsLoading(false);return null;}
     try {
       const payload = await fetchPublicContent(organization, language, signal);
       // An empty published catalogue is intentionally not replaced with draft CMS records.

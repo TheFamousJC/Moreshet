@@ -13,7 +13,7 @@ npm run dev
 
 Open http://localhost:3220. Or double-click **Start Tudela MVP.cmd**. Keep the command window open while using the app. No cloud keys or paid account are needed for bundled demonstration tours, reading, device narration, Google Maps navigation links or the personal AI prompt workflow.
 
-The technical specification, staged plan and verification log are available at http://localhost:3220/mvp-guide or in **Docs/MVP-Guide.html**. These MVP documents supersede the older production-provider descriptions retained from the ZIP.
+The separate editable Word specification and development plan are in **Project Documents/Tudela Specification and Development Plan.docx**. The separate Israeli-cost budget is in **Project Documents/Tudela Israeli Build Growth and Operating Budget.docx**. These files are not part of the app and remain local until sharing is requested. Earlier Docs/MVP-Guide.html is retired.
 
 ## Shared accounts and CMS
 
@@ -21,7 +21,10 @@ The `/cms` interface is restored but requires a configured Supabase database, me
 
 Use local Supabase for development or discuss the free hosted plan before provision. Never paste service keys into chat or commit them. Copy `.env.example` to `.env.local` only when configuring the chosen service.
 
-The local helper has been isolated from previous Tudela containers using project ID `tudela_mvp_rebuild` and ports in the 544xx range. `npm run db:start` downloads and starts local containers; it can consume substantial disk space and RAM. It does not create a paid cloud project. Docker Desktop license eligibility must be checked for the intended organization. `npm run db:status` prints development credentials; do not share its output. Apply migrations and run `npm run db:test` before using shared features. Owner bootstrap is a separate step, with a password chosen locally.
+The local helper has been isolated from previous Tudela containers using project ID `tudela_mvp_rebuild` and ports in the 544xx range. 
+pm run db:start` downloads and starts local containers; it can consume substantial disk space and RAM. It does not create a paid cloud project. Docker Desktop license eligibility must be checked for the intended organization. 
+pm run db:status` prints development credentials; do not share its output. Apply migrations and run 
+pm run db:test` before using shared features. Owner bootstrap is a separate step, with a password chosen locally.
 
 ## Verify
 
@@ -43,3 +46,9 @@ Some archived checks assert the old AI / Leaflet architecture and are not accept
 No paid services are enabled. Google Maps links need no API key. Optional Maps Embed has no usage charge but needs a billing-enabled Google Cloud project and a restricted browser key; it is off. No AI API credentials or generated audio worker are needed. Existing browser read-aloud may depend on the device's voice service. Public hosting, mail delivery and shared accounts require separate setup and a capacity discussion.
 
 See the guide for the eight development stages, every visitor and CMS working part, operating limits and remaining verification.
+
+
+## Online frontend preview
+
+Run npm run build:frontend to build the sample-tour frontend into frontend-dist. GitHub Actions publishes only that directory to GitHub Pages. Account login and shared publishing are clearly marked as unavailable in this preview. Private project documents and server code are excluded from the site. The regular local server build remains available for backend development.
+

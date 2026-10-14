@@ -11,7 +11,9 @@ export const PUBLIC_INFORMATION_ROUTES: Record<string, PublicInformationPageKind
 };
 
 export function publicInformationPageForPath(pathname: string): PublicInformationPageKind | null {
-  const normalized = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
+  const base=import.meta.env?.BASE_URL || '/';
+  const localPath=base!=='/' && pathname.startsWith(base) ? '/'+pathname.slice(base.length) : pathname;
+  const normalized = localPath.length > 1 ? localPath.replace(/\/+$/, '') : localPath;
   return PUBLIC_INFORMATION_ROUTES[normalized] || null;
 }
 
@@ -28,9 +30,9 @@ export const PublicInformationPage: React.FC<{
     <div dir={language === 'he' ? 'rtl' : 'ltr'} className="min-h-screen bg-slate-50 font-sans text-slate-900">
       <header className="sticky top-0 z-10 border-b border-slate-200 bg-white/95 px-4 py-3 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-3">
-          <a href="/" className="flex min-w-0 items-center gap-2 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700">
+          <a href={import.meta.env.BASE_URL} className="flex min-w-0 items-center gap-2 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700">
             <ArrowLeft className="h-5 w-5 shrink-0 text-blue-950 rtl:rotate-180" />
-            <img src="/tudela-global-logo.png" alt="Tudela Global" className="h-9 w-9 rounded-lg object-cover" />
+            <img src={`${import.meta.env.BASE_URL}tudela-global-logo.png`} alt="Tudela Global" className="h-9 w-9 rounded-lg object-cover" />
             <span className="truncate text-sm font-bold text-blue-950">{copy.backHome}</span>
           </a>
           <span className="hidden rounded-full bg-amber-100 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-amber-900 sm:inline">{copy.pilotLabel}</span>

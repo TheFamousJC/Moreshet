@@ -36,6 +36,7 @@ export const AccountAccessModal: React.FC<AccountAccessModalProps> = ({ isOpen, 
   }, [isOpen, forcePasswordChange, recoveryMode]);
 
   if (!isOpen) return null;
+  if(import.meta.env.VITE_FRONTEND_PREVIEW === 'true') return <div ref={modalRef} className="fixed inset-0 z-[1000] flex items-center justify-center bg-slate-950/60 p-4" role="dialog" aria-modal="true" aria-labelledby="preview-account-title"><div className="w-full max-w-sm rounded-3xl bg-white p-6"><h2 id="preview-account-title" className="text-xl font-bold text-blue-950">You are exploring the frontend preview</h2><p className="mt-3 text-sm leading-relaxed text-slate-600">Account login, shared publishing, ratings and moderation will be connected in a later stage. You can explore sample tours, save tours on this device, listen with a device voice, and open Google Maps or your own AI.</p><button onClick={onClose} className="mt-5 w-full rounded-xl bg-blue-950 py-3 font-bold text-white">Continue exploring</button></div></div>;
 
   if (account && !forcePasswordChange && !recoveryMode) return <div ref={modalRef} className="fixed inset-0 z-[1000] flex items-center justify-center bg-slate-950/60 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="account-status-title">
     <div className="w-full max-w-sm rounded-3xl border border-slate-200 bg-white p-5 shadow-2xl">

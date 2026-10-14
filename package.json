@@ -61,7 +61,8 @@
     "rotate:database-password": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/rotate-database-password.ps1",
     "verify:database-password": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/verify-database-password.ps1",
     "test:mvp": "tsx scripts/test-mvp.ts",
-    "docs:mvp": "node scripts/build-mvp-guide.mjs"
+    "docs:mvp": "node scripts/build-mvp-guide.mjs",
+    "build:frontend": "node scripts/build-frontend.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

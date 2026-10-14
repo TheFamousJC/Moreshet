@@ -31,3 +31,6 @@ Docs/*
 # The archived scheduled production monitor targets the previous deployment.
 .github/workflows/production-monitor.yml
 *.zip
+Project Documents/
+
+frontend-dist/

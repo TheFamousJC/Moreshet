@@ -65,7 +65,7 @@ export const NavigationBottom: React.FC<NavigationBottomProps> = ({
           }`}
         >
           <img
-            src="/ask-benjamin-sage.png"
+            src={`${import.meta.env.BASE_URL}ask-benjamin-sage.png`}
             alt="Ask Benjamin"
             className={`w-6 h-6 rounded-lg object-cover border bg-white ${
               activeTab === 'herzl' || activeTab === 'benjamin'
