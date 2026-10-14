@@ -23,6 +23,7 @@ import { AccountAccessModal, AccountPromptReason } from './components/AccountAcc
 import { OnboardingTour } from './components/OnboardingTour';
 import { FirstSignInSetupWizard } from './components/FirstSignInSetupWizard';
 import { VisitorSplashScreen } from './components/VisitorSplashScreen';
+import { LocationChoiceModal } from './components/LocationChoiceModal';
 import { TourCompletionModal } from './components/TourCompletionModal';
 import { AccountContext, loadAccountContext, supabase } from './lib/supabase';
 import { markOnboardingComplete } from './lib/onboarding';
@@ -167,7 +168,7 @@ export default function App() {
     };
     try {
       const stored = localStorage.getItem('tudela_visitor_preferences');
-      return stored ? { ...defaults, ...JSON.parse(stored) } : defaults;
+      return stored ? { ...defaults, ...JSON.parse(stored), locationEnabled: false } : defaults;
     } catch {
       return defaults;
     }
@@ -221,6 +222,9 @@ export default function App() {
     document.documentElement.dir = direction;
     document.body.dir = direction;
   }, [isCmsRoute, selectedLanguage]);
+
+  const [isLocationChoiceOpen, setIsLocationChoiceOpen] = useState(() => !isCmsRoute && !publicInformationPageForPath(window.location.pathname));
+  const chooseLocationForVisit = (enabled: boolean) => {setVisitorPreferences(previous => ({...previous, locationEnabled: enabled}));setIsLocationChoiceOpen(false);};
 
   // Active GPS City Tour State
   const [selectedCityId, setSelectedCityId] = useState<string>('');
@@ -438,7 +442,7 @@ export default function App() {
 
   // Production accepts live device coordinates anywhere in the world.
   useEffect(() => {
-    if (!visitorPreferences.locationEnabled) {
+    if (isLocationChoiceOpen || !visitorPreferences.locationEnabled) {
       setGpsStatus('off');
       return;
     }
@@ -471,7 +475,7 @@ export default function App() {
       return () => navigator.geolocation.clearWatch(watchId);
     }
     setGpsStatus('unavailable');
-  }, [visitorPreferences.locationEnabled]);
+  }, [visitorPreferences.locationEnabled, isLocationChoiceOpen]);
 
   useEffect(() => {
     setAudioSettings((previous) => ({ ...previous, autoTriggerEnabled: visitorPreferences.arrivalPlaybackMode === 'auto' }));
@@ -907,6 +911,7 @@ export default function App() {
       />
 
       {showVisitorSplash && <VisitorSplashScreen />}
+      <LocationChoiceModal isOpen={isLocationChoiceOpen && !showVisitorSplash} language={selectedLanguage} onChoose={chooseLocationForVisit} />
 
       {accountNotice && <button onClick={() => setAccountNotice('')} className="app-safe-notice absolute left-1/2 z-50 w-[calc(100%-2rem)] max-w-sm -translate-x-1/2 rounded-xl border border-amber-200 bg-amber-50 p-3 text-left text-xs font-semibold text-amber-900 shadow-lg">{accountNotice}</button>}
 
@@ -1111,4 +1116,5 @@ export default function App() {
     </div>
   );
 }
+
 
