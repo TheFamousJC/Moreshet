@@ -91,7 +91,7 @@ export function parseHerzlRequest(body: unknown, config: HerzlProviderConfig): H
   const tourId = typeof input.tourId === 'string' && CONTENT_ID.test(input.tourId) ? input.tourId : '';
   const organization = typeof input.organization === 'string' && ORGANIZATION_SLUG.test(input.organization)
     ? input.organization
-    : 'tudela-global';
+    : 'moreshet';
   const contentSource = input.contentSource === 'shared' || input.contentSource === 'cache'
     ? input.contentSource
     : 'demo';

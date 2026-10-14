@@ -17,7 +17,7 @@ if (-not (Test-Path -LiteralPath $dockerPath -PathType Leaf)) { throw "Docker De
 $passwordSecure = Read-Host "Enter the NEW production database password (input is hidden)" -AsSecureString
 $password = [System.Net.NetworkCredential]::new('', $passwordSecure).Password
 if (-not $password) { throw "No password was entered." }
-$temporaryRoot = Join-Path ([System.IO.Path]::GetTempPath()) ("tudela-password-verify-" + [guid]::NewGuid().ToString('N'))
+$temporaryRoot = Join-Path ([System.IO.Path]::GetTempPath()) ("moreshet-password-verify-" + [guid]::NewGuid().ToString('N'))
 $credentialPath = Join-Path $temporaryRoot "database.env"
 New-Item -ItemType Directory -Path $temporaryRoot | Out-Null
 try {

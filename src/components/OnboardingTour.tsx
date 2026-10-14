@@ -44,7 +44,7 @@ export const OnboardingTour: React.FC<OnboardingTourProps> = ({ isOpen, selected
         </div>
 
         <div className="mt-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-950 text-amber-300 shadow-md" aria-hidden="true">
-          <StepIcon className={`h-8 w-8 ${stepIndex === 2 ? 'text-[#c43d4d]' : ''}`} />
+          <StepIcon className={`h-8 w-8 ${stepIndex === 2 ? 'text-[#297fad]' : ''}`} />
         </div>
         <h1 id="onboarding-title" className="mt-5 text-2xl font-bold leading-tight text-blue-950">{step.title}</h1>
         <p id="onboarding-description" className="mt-3 text-sm leading-relaxed text-slate-600">{step.body}</p>

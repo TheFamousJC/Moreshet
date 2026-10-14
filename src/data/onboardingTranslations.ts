@@ -20,7 +20,7 @@ export type OnboardingCopy = {
 
 export const ONBOARDING_COPY: Record<LanguageCode, OnboardingCopy> = {
   en: {
-    welcome: 'Welcome to Tudela Global', skip: 'Skip', back: 'Back', next: 'Next', start: 'Start exploring', progress: 'Introduction step',
+    welcome: 'Welcome to Moreshet', skip: 'Skip', back: 'Back', next: 'Next', start: 'Start exploring', progress: 'Introduction step',
     replayTitle: 'Replay app introduction', replayDescription: 'See the short guide to discovering, walking and saving tours again.',
     steps: [
       { title: 'Choose your heritage journey', body: 'Start in Discover and select a city. When a city has several tours, compare them before choosing one.', points: ['Browse tours by city', 'Review the ordered stops before starting'] },
@@ -29,7 +29,7 @@ export const ONBOARDING_COPY: Record<LanguageCode, OnboardingCopy> = {
     ],
   },
   he: {
-    welcome: 'ברוכים הבאים ל-Tudela Global', skip: 'דלג', back: 'חזרה', next: 'הבא', start: 'התחילו לגלות', progress: 'שלב במדריך',
+    welcome: 'ברוכים הבאים ל-Moreshet', skip: 'דלג', back: 'חזרה', next: 'הבא', start: 'התחילו לגלות', progress: 'שלב במדריך',
     replayTitle: 'הפעלה חוזרת של מדריך האפליקציה', replayDescription: 'צפו שוב במדריך הקצר לגילוי, הליכה ושמירת סיורים.',
     steps: [
       { title: 'בחרו את מסע המורשת שלכם', body: 'התחילו במסך הגילוי ובחרו עיר. אם יש כמה סיורים בעיר, השוו ביניהם לפני הבחירה.', points: ['עיינו בסיורים לפי עיר', 'בדקו את סדר התחנות לפני ההתחלה'] },
@@ -38,7 +38,7 @@ export const ONBOARDING_COPY: Record<LanguageCode, OnboardingCopy> = {
     ],
   },
   ru: {
-    welcome: 'Добро пожаловать в Tudela Global', skip: 'Пропустить', back: 'Назад', next: 'Далее', start: 'Начать знакомство', progress: 'Шаг знакомства',
+    welcome: 'Добро пожаловать в Moreshet', skip: 'Пропустить', back: 'Назад', next: 'Далее', start: 'Начать знакомство', progress: 'Шаг знакомства',
     replayTitle: 'Повторить знакомство с приложением', replayDescription: 'Снова откройте краткое руководство по поиску, прохождению и сохранению туров.',
     steps: [
       { title: 'Выберите маршрут по наследию', body: 'Начните в разделе «Открыть» и выберите город. Если туров несколько, сравните их перед выбором.', points: ['Просматривайте туры по городам', 'Проверьте порядок остановок до начала'] },
@@ -47,7 +47,7 @@ export const ONBOARDING_COPY: Record<LanguageCode, OnboardingCopy> = {
     ],
   },
   fr: {
-    welcome: 'Bienvenue sur Tudela Global', skip: 'Passer', back: 'Retour', next: 'Suivant', start: 'Commencer à explorer', progress: 'Étape de présentation',
+    welcome: 'Bienvenue sur Moreshet', skip: 'Passer', back: 'Retour', next: 'Suivant', start: 'Commencer à explorer', progress: 'Étape de présentation',
     replayTitle: 'Revoir la présentation de l’application', replayDescription: 'Revoyez le guide rapide pour découvrir, parcourir et enregistrer des visites.',
     steps: [
       { title: 'Choisissez votre parcours patrimonial', body: 'Commencez dans Découvrir et choisissez une ville. Si plusieurs visites sont proposées, comparez-les avant de choisir.', points: ['Parcourez les visites par ville', 'Vérifiez l’ordre des étapes avant de commencer'] },
@@ -56,7 +56,7 @@ export const ONBOARDING_COPY: Record<LanguageCode, OnboardingCopy> = {
     ],
   },
   de: {
-    welcome: 'Willkommen bei Tudela Global', skip: 'Überspringen', back: 'Zurück', next: 'Weiter', start: 'Jetzt entdecken', progress: 'Einführungsschritt',
+    welcome: 'Willkommen bei Moreshet', skip: 'Überspringen', back: 'Zurück', next: 'Weiter', start: 'Jetzt entdecken', progress: 'Einführungsschritt',
     replayTitle: 'App-Einführung wiederholen', replayDescription: 'Zeigen Sie die Kurzanleitung zum Entdecken, Gehen und Speichern von Touren erneut an.',
     steps: [
       { title: 'Wählen Sie Ihre Kulturerbe-Tour', body: 'Beginnen Sie unter Entdecken und wählen Sie eine Stadt. Bei mehreren Touren können Sie diese zuerst vergleichen.', points: ['Touren nach Stadt durchsuchen', 'Reihenfolge der Stopps vor dem Start prüfen'] },
@@ -65,7 +65,7 @@ export const ONBOARDING_COPY: Record<LanguageCode, OnboardingCopy> = {
     ],
   },
   es: {
-    welcome: 'Te damos la bienvenida a Tudela Global', skip: 'Omitir', back: 'Atrás', next: 'Siguiente', start: 'Empezar a explorar', progress: 'Paso de introducción',
+    welcome: 'Te damos la bienvenida a Moreshet', skip: 'Omitir', back: 'Atrás', next: 'Siguiente', start: 'Empezar a explorar', progress: 'Paso de introducción',
     replayTitle: 'Repetir la introducción de la aplicación', replayDescription: 'Vuelve a consultar la guía breve para descubrir, recorrer y guardar tours.',
     steps: [
       { title: 'Elige tu recorrido patrimonial', body: 'Empieza en Descubrir y selecciona una ciudad. Si hay varios tours, compáralos antes de elegir.', points: ['Explora los tours por ciudad', 'Revisa el orden de las paradas antes de empezar'] },

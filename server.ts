@@ -16,19 +16,19 @@ async function startServer(){
   app.use((req,res,next)=>{const requestId=randomUUID();res.setHeader('X-Request-Id',requestId);next();});
   app.use('/api', (req,res,next)=>{
     const origin=req.headers.origin;
-    const permitted=new Set([new URL(runtime.appUrl).origin,...(process.env.TUDELA_ALLOWED_ORIGINS || '').split(',').filter(Boolean).map(value=>new URL(value.trim()).origin)]);
+    const permitted=new Set([new URL(runtime.appUrl).origin,...(process.env.MORESHET_ALLOWED_ORIGINS || '').split(',').filter(Boolean).map(value=>new URL(value.trim()).origin)]);
     if(origin && !permitted.has(origin))return res.status(403).json({error:'Origin not permitted.'});
     if(origin){res.setHeader('Access-Control-Allow-Origin',origin);res.setHeader('Vary','Origin');res.setHeader('Access-Control-Allow-Methods','GET,POST,PATCH,PUT,DELETE,OPTIONS');res.setHeader('Access-Control-Allow-Headers','Authorization,Content-Type');}
     if(req.method==='OPTIONS')return res.status(204).end();
     next();
   });
   app.use(applySecurityHeaders);app.use((req,res,next)=>{let pathname;try{pathname=decodeURIComponent(req.path);}catch{return res.status(400).end();}if(/(?:^|\/)(?:Project Documents|Docs|\.tmp|\.git)(?:\/|$)/i.test(pathname))return res.status(404).end();next();});app.use(express.json({limit:'5mb'}));
-  app.get('/api/health',(_req,res)=>res.json({status:'ok',service:'Tudela Global MVP',version:'1.0.0-mvp',modes:{ai:'external-user-service-only',narration:'manual-and-device',maps:'google-maps-links'},databaseConfigured:Boolean(runtime.supabaseUrl&&runtime.supabaseSecretKey),paidApiCallsEnabled:false}));
+  app.get('/api/health',(_req,res)=>res.json({status:'ok',service:'Moreshet MVP',version:'1.0.0-mvp',modes:{ai:'external-user-service-only',narration:'manual-and-device',maps:'google-maps-links'},databaseConfigured:Boolean(runtime.supabaseUrl&&runtime.supabaseSecretKey),paidApiCallsEnabled:false}));
   app.get('/api/ready',async(_req,res)=>{
     if(!runtime.supabaseUrl||!runtime.supabaseSecretKey)return res.status(503).json({status:'visitor-demo-ready',dependency:'shared-accounts-and-cms-not-configured'});
     try{const response=await fetch(`${runtime.supabaseUrl}/rest/v1/organizations?select=id&limit=1`,{headers:{apikey:runtime.supabaseSecretKey,Authorization:`Bearer ${runtime.supabaseSecretKey}`},signal:AbortSignal.timeout(5000)});if(!response.ok)throw new Error();return res.json({status:'ready',dependency:'supabase'});}catch{return res.status(503).json({status:'not_ready',dependency:'supabase'});}
   });
-  app.post('/api/chat',(_req,res)=>res.status(410).json({error:'Use Ask Benjamin to copy a prompt and open your own AI. Tudela does not generate AI answers.'}));
+  app.post('/api/chat',(_req,res)=>res.status(410).json({error:'Use Ask Benjamin to copy a prompt and open your own AI. Moreshet does not generate AI answers.'}));
   app.post(['/api/routes/walking','/api/places/nearby'],(_req,res)=>res.status(410).json({error:'Paid map APIs are disabled. Open Google Maps for live walking directions or nearby search.'}));
   app.get('/api/geocode',(_req,res)=>res.status(410).json({error:'Automatic coordinate lookup is disabled. Find the location in Google Maps and enter verified latitude and longitude.'}));
   app.use('/api',createMemoryRateLimiter({windowMs:60000,limit:180}),createVisitorSyncRouter(),createPublicContentRouter(),createAuthAdminRouter());
@@ -39,7 +39,7 @@ async function startServer(){
     const vite=await createViteServer({configLoader:'runner',server:{middlewareMode:true},appType:'spa'});app.use(vite.middlewares);
   }else{const dist=path.join(process.cwd(),'dist');app.use(express.static(dist));app.get('*',(_req,res)=>res.sendFile(path.join(dist,'index.html')));}
   const host=process.env.NODE_ENV==='production'?'0.0.0.0':'127.0.0.1';
-  const server=app.listen(runtime.port,host,()=>console.log(`Tudela Global MVP ready at http://localhost:${runtime.port}`));
+  const server=app.listen(runtime.port,host,()=>console.log(`Moreshet MVP ready at http://localhost:${runtime.port}`));
   const stop=()=>{server.close(()=>process.exit(0));setTimeout(()=>process.exit(1),10000).unref();};process.once('SIGINT',stop);process.once('SIGTERM',stop);
 }
 startServer().catch(()=>{console.error('Startup failed. Check local port and service configuration.');process.exit(1);});

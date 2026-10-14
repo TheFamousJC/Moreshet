@@ -29,7 +29,7 @@ for (const expectedUrl of [
   'https://jewisheritage.org/european-routes/',
   'https://jewish-heritage-europe.eu/europe-map/',
 ]) assert.ok(migration.includes(expectedUrl), `Starter source is missing: ${expectedUrl}`);
-assert.match(migration, /Reviewed and approved by the Tudela Global owner on 11 August 2026/);
+assert.match(migration, /Reviewed and approved by the Moreshet owner on 11 August 2026/);
 assert.match(migration, /null, 'organization', 'published'/, 'Owner-approved starter sources must be published reference links.');
 assert.match(cms, /Approved evidence text/);
 assert.match(cms, /Revised draft/);

@@ -11,6 +11,6 @@ if not exist node_modules (
   pause
   exit /b 1
 )
-start "Tudela Global MVP" "http://localhost:3220/"
+start "Moreshet MVP" "http://localhost:3220/"
 npm run dev
 pause

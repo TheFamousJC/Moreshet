@@ -1,8 +1,8 @@
 const BASE = new URL('.', self.location.href).pathname;
-const PREFIX = 'tudela-' + encodeURIComponent(BASE) + '-';
+const PREFIX = 'moreshet-' + encodeURIComponent(BASE) + '-';
 const CACHE_NAME = PREFIX + 'frontend-v2';
 const PUBLIC_MEDIA_CACHE = PREFIX + 'public-media-v1';
-const APP_SHELL = ['','manifest.webmanifest','tudela-global-logo.png','ask-benjamin-sage.png'].map(file => BASE + file);
+const APP_SHELL = ['','manifest.webmanifest','moreshet-icon.png','ask-benjamin-sage.png'].map(file => BASE + file);
 self.addEventListener('install', event => {event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(APP_SHELL)));self.skipWaiting();});
 self.addEventListener('activate', event => {event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(PREFIX)&&key!==CACHE_NAME&&key!==PUBLIC_MEDIA_CACHE).map(key=>caches.delete(key)))));self.clients.claim();});
 self.addEventListener('fetch', event => {

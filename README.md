@@ -1,4 +1,4 @@
-# Tudela Global MVP
+# Moreshet MVP
 
 Recreated from Build 1.zip in an isolated project. Budapest is the first pilot. The visitor app and CMS are retained; built-in AI and paid map / narration calls are disabled.
 
@@ -11,9 +11,9 @@ npm ci
 npm run dev
 ```
 
-Open http://localhost:3220. Or double-click **Start Tudela MVP.cmd**. Keep the command window open while using the app. No cloud keys or paid account are needed for bundled demonstration tours, reading, device narration, Google Maps navigation links or the personal AI prompt workflow.
+Open http://localhost:3220. Or double-click **Start Moreshet MVP.cmd**. Keep the command window open while using the app. No cloud keys or paid account are needed for bundled demonstration tours, reading, device narration, Google Maps navigation links or the personal AI prompt workflow.
 
-The separate editable Word specification and development plan are in **Project Documents/Tudela Specification and Development Plan.docx**. The separate Israeli-cost budget is in **Project Documents/Tudela Israeli Build Growth and Operating Budget.docx**. These files are not part of the app and remain local until sharing is requested. Earlier Docs/MVP-Guide.html is retired.
+The separate editable Word specification and development plan are in **Project Documents/Moreshet Specification and Development Plan.docx**. The separate Israeli-cost budget is in **Project Documents/Moreshet Israeli Build Growth and Operating Budget.docx**. These files are not part of the app and remain local until sharing is requested. Earlier Docs/MVP-Guide.html is retired.
 
 ## Shared accounts and CMS
 
@@ -21,7 +21,7 @@ The `/cms` interface is restored but requires a configured Supabase database, me
 
 Use local Supabase for development or discuss the free hosted plan before provision. Never paste service keys into chat or commit them. Copy `.env.example` to `.env.local` only when configuring the chosen service.
 
-The local helper has been isolated from previous Tudela containers using project ID `tudela_mvp_rebuild` and ports in the 544xx range. 
+The local helper has been isolated from previous Moreshet containers using project ID `moreshet_mvp_rebuild` and ports in the 544xx range. 
 pm run db:start` downloads and starts local containers; it can consume substantial disk space and RAM. It does not create a paid cloud project. Docker Desktop license eligibility must be checked for the intended organization. 
 pm run db:status` prints development credentials; do not share its output. Apply migrations and run 
 pm run db:test` before using shared features. Owner bootstrap is a separate step, with a password chosen locally.

@@ -31,7 +31,7 @@ import { cityMatchesDiscoverySearch, normalizeDiscoverySearch } from '../lib/dis
 import type { AccountPromptReason } from './AccountAccessModal';
 import { WhatsAroundMe } from './WhatsAroundMe';
 
-const INTEREST_SESSION_KEY = 'tudela-selected-interests';
+const INTEREST_SESSION_KEY = 'moreshet-selected-interests';
 
 const readSessionInterests = (): SiteCategory[] => {
   if (typeof window === 'undefined') return [];
@@ -226,7 +226,7 @@ export const HeritageSearch: React.FC<HeritageSearchProps> = ({
   />;
 
   return (
-    <div ref={pageRef} className="h-full overflow-y-auto overscroll-contain bg-[#f7f0e5] p-3 pb-24 text-gray-900 space-y-3 max-w-md mx-auto">
+    <div ref={pageRef} className="h-full overflow-y-auto overscroll-contain bg-[#f0f8ff] p-3 pb-24 text-gray-900 space-y-3 max-w-md mx-auto">
       <h1 className="sr-only">{t('navDiscover', selectedLanguage)}</h1>
 
       {/* Search Bar & City Selector Controls */}
@@ -375,11 +375,11 @@ export const HeritageSearch: React.FC<HeritageSearchProps> = ({
           type="button"
           id="whats-around-me-button"
           onClick={() => setShowNearbyPlaces(true)}
-          className="flex min-h-14 w-full items-center gap-3 rounded-2xl border border-[#4f8078]/30 bg-white px-4 py-3 text-left shadow-xs transition hover:border-[#4f8078]/60"
+          className="flex min-h-14 w-full items-center gap-3 rounded-2xl border border-[#318bbf]/30 bg-white px-4 py-3 text-left shadow-xs transition hover:border-[#318bbf]/60"
         >
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#c38b3a]/20 text-[#173f46]"><Compass className="h-5 w-5" /></span>
-          <span className="min-w-0 flex-1"><span className="block text-sm font-bold text-[#173f46]">{selectedLanguage === 'he' ? 'מה נמצא סביבי?' : selectedLanguage === 'fr' ? 'Autour de moi' : selectedLanguage === 'ru' ? 'Что рядом?' : selectedLanguage === 'de' ? 'Was ist in meiner Nähe?' : selectedLanguage === 'es' ? '¿Qué hay cerca?' : 'What’s around me?'}</span><span className="mt-0.5 block text-[11px] text-gray-500">{selectedLanguage === 'he' ? 'גלו אתרי מורשת יהודית בקרבתכם' : selectedLanguage === 'fr' ? 'Découvrez le patrimoine juif à proximité' : selectedLanguage === 'ru' ? 'Найдите еврейское наследие поблизости' : selectedLanguage === 'de' ? 'Jüdisches Erbe in der Nähe entdecken' : selectedLanguage === 'es' ? 'Descubre patrimonio judío cercano' : 'Discover Jewish heritage near your location'}</span></span>
-          <ChevronRight className="h-4 w-4 shrink-0 text-[#4f8078] rtl:rotate-180" />
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#c38b3a]/20 text-[#164b77]"><Compass className="h-5 w-5" /></span>
+          <span className="min-w-0 flex-1"><span className="block text-sm font-bold text-[#164b77]">{selectedLanguage === 'he' ? 'מה נמצא סביבי?' : selectedLanguage === 'fr' ? 'Autour de moi' : selectedLanguage === 'ru' ? 'Что рядом?' : selectedLanguage === 'de' ? 'Was ist in meiner Nähe?' : selectedLanguage === 'es' ? '¿Qué hay cerca?' : 'What’s around me?'}</span><span className="mt-0.5 block text-[11px] text-gray-500">{selectedLanguage === 'he' ? 'גלו אתרי מורשת יהודית בקרבתכם' : selectedLanguage === 'fr' ? 'Découvrez le patrimoine juif à proximité' : selectedLanguage === 'ru' ? 'Найдите еврейское наследие поблизости' : selectedLanguage === 'de' ? 'Jüdisches Erbe in der Nähe entdecken' : selectedLanguage === 'es' ? 'Descubre patrimonio judío cercano' : 'Discover Jewish heritage near your location'}</span></span>
+          <ChevronRight className="h-4 w-4 shrink-0 text-[#318bbf] rtl:rotate-180" />
         </button>
       </div>}
 
@@ -421,7 +421,7 @@ export const HeritageSearch: React.FC<HeritageSearchProps> = ({
                       {tour.distanceMetres && <span className="rounded-full bg-blue-50 px-2.5 py-1"><Route className="me-1 inline h-3 w-3 text-blue-800" />{(tour.distanceMetres / 1000).toFixed(1)} {t('kilometres', selectedLanguage)}</span>}
                       {tour.wheelchairAccessible && <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-900"><Accessibility className="me-1 inline h-3 w-3" />{t('wheelchairAccessible', selectedLanguage)}</span>}
                     </div>
-                    <div className="grid grid-cols-[1fr_auto] gap-2"><button type="button" onClick={() => onSelectTour(tour.id)} className="flex min-h-11 w-full items-center justify-center gap-2 rounded-2xl bg-[#173f46] px-4 py-2.5 text-xs font-bold text-white shadow-sm">{t('chooseTour', selectedLanguage)}<ChevronRight className="h-4 w-4 rtl:rotate-180" /></button><button type="button" onClick={() => onToggleSavedTour(tour.id)} className={`flex h-11 w-11 items-center justify-center rounded-2xl border border-[#c43d4d] text-[#c43d4d] ${savedTourIds.includes(tour.id) ? 'bg-red-50' : 'bg-white'}`} aria-label={savedTourIds.includes(tour.id) ? 'Remove saved tour' : 'Save tour'}><Bookmark className={`h-5 w-5 ${savedTourIds.includes(tour.id) ? 'fill-current' : ''}`} /></button></div>
+                    <div className="grid grid-cols-[1fr_auto] gap-2"><button type="button" onClick={() => onSelectTour(tour.id)} className="flex min-h-11 w-full items-center justify-center gap-2 rounded-2xl bg-[#164b77] px-4 py-2.5 text-xs font-bold text-white shadow-sm">{t('chooseTour', selectedLanguage)}<ChevronRight className="h-4 w-4 rtl:rotate-180" /></button><button type="button" onClick={() => onToggleSavedTour(tour.id)} className={`flex h-11 w-11 items-center justify-center rounded-2xl border border-[#297fad] text-[#297fad] ${savedTourIds.includes(tour.id) ? 'bg-red-50' : 'bg-white'}`} aria-label={savedTourIds.includes(tour.id) ? 'Remove saved tour' : 'Save tour'}><Bookmark className={`h-5 w-5 ${savedTourIds.includes(tour.id) ? 'fill-current' : ''}`} /></button></div>
                   </div>
                 </article>
               );

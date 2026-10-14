@@ -1,14 +1,14 @@
 {
-  "name": "Tudela Global Jewish Heritage Tours",
-  "short_name": "Tudela Global",
+  "name": "Moreshet",
+  "short_name": "Moreshet",
   "description": "GPS-enabled Jewish heritage tours, stories and audio guidance.",
   "id": "./",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#f3f4f6",
-  "theme_color": "#17365d",
+  "background_color": "#f0f8ff",
+  "theme_color": "#164b77",
   "lang": "en",
   "dir": "auto",
   "categories": [
@@ -18,13 +18,13 @@
   ],
   "icons": [
     {
-      "src": "tudela-global-logo.png",
+      "src": "moreshet-icon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "tudela-global-logo.png",
+      "src": "moreshet-icon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"

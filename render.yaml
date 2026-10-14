@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: tudela-mvp-api
+    name: moreshet-mvp-api
     runtime: node
     plan: free
     buildCommand: npm ci && npm run build
@@ -12,7 +12,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: APP_URL
-        value: https://thefamousjc.github.io/TudelaGlobal_2/
+        value: https://thefamousjc.github.io/Moreshet/
       - key: TRUST_PROXY
         value: "true"
       - key: SUPABASE_URL

@@ -122,7 +122,7 @@ const licensedMedia = packages.flatMap((item) => item.stops.map((stop) => ({
     licenseName: stop.image.licenseName,
     licenseUrl: stop.image.licenseUrl,
     attributionText: stop.image.attributionText,
-    rightsNotes: 'Imported from the reviewed Tudela pilot catalogue package.',
+    rightsNotes: 'Imported from the reviewed Moreshet pilot catalogue package.',
   },
 })));
 

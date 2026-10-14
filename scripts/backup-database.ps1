@@ -25,7 +25,7 @@ if (-not (Test-Path -LiteralPath $opensslPath -PathType Leaf)) { throw "OpenSSL 
 $resolvedOutput = [System.IO.Path]::GetFullPath((Join-Path $projectRoot $OutputDirectory))
 New-Item -ItemType Directory -Path $resolvedOutput -Force | Out-Null
 $timestamp = Get-Date -Format "yyyyMMdd-HHmmss"
-$setName = "tudela-database-$timestamp-$projectRef"
+$setName = "moreshet-database-$timestamp-$projectRef"
 $stagingPath = Join-Path $resolvedOutput "$setName.staging"
 $plainZipPath = Join-Path $resolvedOutput "$setName.zip"
 $encryptedPath = Join-Path $resolvedOutput "$setName.zip.enc"
@@ -92,7 +92,7 @@ try {
   $archiveEntryCount = @($listOutput | Where-Object { $_ -match '^\d+;' }).Count
   if ($archiveEntryCount -lt 1) { throw "The database archive contains no restorable entries." }
 
-  $dumpHash = Get-TudelaFileSha256 -LiteralPath $dumpPath
+  $dumpHash = Get-MoreshetFileSha256 -LiteralPath $dumpPath
   [ordered]@{
     createdUtc = (Get-Date).ToUniversalTime().ToString('o')
     projectRef = $projectRef
@@ -105,11 +105,11 @@ try {
   } | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath $summaryPath -Encoding utf8
 
   Compress-Archive -Path $dumpPath, $summaryPath -DestinationPath $plainZipPath -CompressionLevel NoCompression
-  $env:TUDELA_BACKUP_PASSPHRASE = $passphrase
-  & $opensslPath enc -aes-256-cbc -salt -pbkdf2 -iter 200000 -in $plainZipPath -out $encryptedPath -pass env:TUDELA_BACKUP_PASSPHRASE
+  $env:MORESHET_BACKUP_PASSPHRASE = $passphrase
+  & $opensslPath enc -aes-256-cbc -salt -pbkdf2 -iter 200000 -in $plainZipPath -out $encryptedPath -pass env:MORESHET_BACKUP_PASSPHRASE
   if ($LASTEXITCODE -ne 0) { throw "OpenSSL encryption failed with exit code $LASTEXITCODE." }
 
-  $encryptedHash = Get-TudelaFileSha256 -LiteralPath $encryptedPath
+  $encryptedHash = Get-MoreshetFileSha256 -LiteralPath $encryptedPath
   Set-Content -LiteralPath $checksumPath -Value "$encryptedHash  $([System.IO.Path]::GetFileName($encryptedPath))" -Encoding ascii
   Write-Output "Encrypted database backup created: $encryptedPath"
   Write-Output "Archive entries: $archiveEntryCount"
@@ -117,7 +117,7 @@ try {
   Write-Output "Keep the passphrase in your password manager; it is not stored in the backup."
 }
 finally {
-  Remove-Item Env:TUDELA_BACKUP_PASSPHRASE -ErrorAction SilentlyContinue
+  Remove-Item Env:MORESHET_BACKUP_PASSPHRASE -ErrorAction SilentlyContinue
   $poolerUrl = $null
   $passwordSecure = $null
   $dbPassword = $null

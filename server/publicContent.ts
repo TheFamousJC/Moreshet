@@ -174,7 +174,7 @@ export function createPublicContentRouter() {
   }) : null;
 
   router.get('/public/content', async (req: Request, res: Response) => {
-    const organization = String(req.query.organization || 'tudela-global').trim().toLowerCase();
+    const organization = String(req.query.organization || 'moreshet').trim().toLowerCase();
     const language = String(req.query.language || 'en').trim().toLowerCase();
     if (!ORGANIZATION_SLUG.test(organization)) return res.status(400).json({ error: 'Invalid organization.' });
     if (!LANGUAGES.has(language)) return res.status(400).json({ error: 'Unsupported language.' });
@@ -202,7 +202,7 @@ export function createPublicContentRouter() {
   });
 
   router.get('/public/media/:mediaId', async (req: Request, res: Response) => {
-    const organization = String(req.query.organization || 'tudela-global').trim().toLowerCase();
+    const organization = String(req.query.organization || 'moreshet').trim().toLowerCase();
     const mediaId = String(req.params.mediaId || '').trim().toLowerCase();
     if (!ORGANIZATION_SLUG.test(organization)) return res.status(400).json({ error: 'Invalid organization.' });
     if (!UUID.test(mediaId)) return res.status(400).json({ error: 'Invalid media identifier.' });

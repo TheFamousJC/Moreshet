@@ -15,12 +15,12 @@ if ($linkedRef -cne $ProjectRef) { throw "Refusing to rotate an unexpected proje
 if (-not (Test-Path -LiteralPath $poolerUrlPath -PathType Leaf)) { throw "The linked Session Pooler address is missing." }
 if (-not (Test-Path -LiteralPath $dockerPath -PathType Leaf)) { throw "Docker Desktop was not found." }
 
-if (-not ("Tudela.CredentialReader" -as [type])) {
+if (-not ("Moreshet.CredentialReader" -as [type])) {
   Add-Type -TypeDefinition @"
 using System;
 using System.Runtime.InteropServices;
 
-namespace Tudela {
+namespace Moreshet {
   public static class CredentialReader {
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     private struct Credential {
@@ -62,7 +62,7 @@ namespace Tudela {
 "@
 }
 
-$tokenBytes = [Tudela.CredentialReader]::ReadGenericSecret("Supabase CLI:supabase")
+$tokenBytes = [Moreshet.CredentialReader]::ReadGenericSecret("Supabase CLI:supabase")
 if (-not $tokenBytes -or $tokenBytes.Length -lt 20) { throw "The authenticated Supabase CLI token could not be read." }
 $looksUnicode = $tokenBytes.Length -ge 2
 for ($index = 1; $looksUnicode -and $index -lt $tokenBytes.Length; $index += 2) {
@@ -84,7 +84,7 @@ $confirmationSecure = Read-Host "Enter the same NEW production database password
 $confirmation = [System.Net.NetworkCredential]::new('', $confirmationSecure).Password
 if ($confirmation -cne $newPassword) { throw "The two passwords did not match. The production password was not changed." }
 
-$temporaryRoot = Join-Path ([System.IO.Path]::GetTempPath()) ("tudela-password-rotation-" + [guid]::NewGuid().ToString('N'))
+$temporaryRoot = Join-Path ([System.IO.Path]::GetTempPath()) ("moreshet-password-rotation-" + [guid]::NewGuid().ToString('N'))
 $credentialPath = Join-Path $temporaryRoot "database.env"
 New-Item -ItemType Directory -Path $temporaryRoot | Out-Null
 try {

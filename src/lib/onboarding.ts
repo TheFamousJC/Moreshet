@@ -4,7 +4,7 @@ type OnboardingStorage = Pick<Storage, 'getItem' | 'setItem'>;
 
 export function getOnboardingStorageKey(userId?: string | null) {
   const audience = userId?.trim() ? `user:${userId.trim()}` : 'guest';
-  return `tudela_onboarding_v${ONBOARDING_VERSION}:${audience}`;
+  return `moreshet_onboarding_v${ONBOARDING_VERSION}:${audience}`;
 }
 
 export function hasCompletedOnboarding(storage: OnboardingStorage, userId?: string | null) {

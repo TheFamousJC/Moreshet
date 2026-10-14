@@ -12,13 +12,13 @@ const value = (name: string) => {
 };
 
 const email = value('--email')?.trim().toLowerCase();
-const displayName = value('--display-name')?.trim() || 'Tudela Global Super Admin';
-const password = process.env.TUDELA_BOOTSTRAP_PASSWORD || '';
+const displayName = value('--display-name')?.trim() || 'Moreshet Super Admin';
+const password = process.env.MORESHET_BOOTSTRAP_PASSWORD || '';
 const url = process.env.SUPABASE_URL || '';
 const secret = process.env.SUPABASE_SECRET_KEY || '';
 
 if (!email || !url || !secret) {
-  console.error('Usage: npm run auth:bootstrap -- --email you@example.com [--display-name "Name"]. For a new account, first set TUDELA_BOOTSTRAP_PASSWORD to 16+ characters.');
+  console.error('Usage: npm run auth:bootstrap -- --email you@example.com [--display-name "Name"]. For a new account, first set MORESHET_BOOTSTRAP_PASSWORD to 16+ characters.');
   process.exit(1);
 }
 
@@ -65,7 +65,7 @@ if (existingUser) {
   if (updateError) throw updateError;
 } else {
   if (password.length < 16) {
-    console.error('The email is not registered. Set TUDELA_BOOTSTRAP_PASSWORD to a temporary password of at least 16 characters, then run this command again.');
+    console.error('The email is not registered. Set MORESHET_BOOTSTRAP_PASSWORD to a temporary password of at least 16 characters, then run this command again.');
     process.exit(1);
   }
   const { data, error } = await supabase.auth.admin.createUser({

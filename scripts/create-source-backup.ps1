@@ -20,20 +20,20 @@ try {
   $remote = (& $git.Source remote get-url origin 2>$null).Trim()
   $timestamp = Get-Date -Format "yyyyMMdd-HHmmss"
   $resolvedOutput = [System.IO.Path]::GetFullPath((Join-Path $repositoryRoot $OutputDirectory))
-  $setDirectory = Join-Path $resolvedOutput "tudela-source-$timestamp-$shortCommit"
+  $setDirectory = Join-Path $resolvedOutput "moreshet-source-$timestamp-$shortCommit"
   New-Item -ItemType Directory -Path $setDirectory -Force | Out-Null
 
-  $archiveName = "tudela-global-source-$shortCommit.zip"
+  $archiveName = "moreshet-source-$shortCommit.zip"
   $archivePath = Join-Path $setDirectory $archiveName
   & $git.Source archive --format=zip --output=$archivePath HEAD
   if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $archivePath)) { throw "Git source archive creation failed." }
 
-  $hash = Get-TudelaFileSha256 -LiteralPath $archivePath
+  $hash = Get-MoreshetFileSha256 -LiteralPath $archivePath
   $checksumPath = "$archivePath.sha256"
   Set-Content -LiteralPath $checksumPath -Value "$hash  $archiveName" -Encoding ascii
 
   $manifest = @(
-    "Tudela Global safe source backup"
+    "Moreshet safe source backup"
     "Created UTC: $((Get-Date).ToUniversalTime().ToString('o'))"
     "Repository: $remote"
     "Branch: $branch"

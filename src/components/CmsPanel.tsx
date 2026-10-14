@@ -323,7 +323,7 @@ export const CmsPanel: React.FC<CmsPanelProps> = ({ cities, tours, sites, review
     const [editingRevisionId, setEditingRevisionId] = useState('');
     const [wideWorkspace, setWideWorkspace] = useState(() => {
         try {
-            const saved = localStorage.getItem('tudela_cms_workspace');
+            const saved = localStorage.getItem('moreshet_cms_workspace');
             if (saved)
                 return saved === 'wide';
             return window.matchMedia('(min-width: 1024px)').matches;
@@ -480,7 +480,7 @@ export const CmsPanel: React.FC<CmsPanelProps> = ({ cities, tours, sites, review
         setWideWorkspace((current) => {
             const next = !current;
             try {
-                localStorage.setItem('tudela_cms_workspace', next ? 'wide' : 'compact');
+                localStorage.setItem('moreshet_cms_workspace', next ? 'wide' : 'compact');
             }
             catch { /* Continue without persistence. */ }
             return next;

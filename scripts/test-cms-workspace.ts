@@ -7,7 +7,7 @@ const cssSource = await readFile(new URL('../src/index.css', import.meta.url), '
 const inlineReviewMigration = await readFile(new URL('../supabase/migrations/20260818090000_inline_revision_text_amendments.sql', import.meta.url), 'utf8');
 const approvedReviewEditMigration = await readFile(new URL('../supabase/migrations/20260818100000_edit_approved_revision_before_publish.sql', import.meta.url), 'utf8');
 
-assert.match(cmsSource, /tudela_cms_workspace/, 'CMS workspace preference must use a dedicated local key.');
+assert.match(cmsSource, /moreshet_cms_workspace/, 'CMS workspace preference must use a dedicated local key.');
 assert.match(cmsSource, /matchMedia\('\(min-width: 1024px\)'\)/, 'Desktop workspace must default from the desktop breakpoint.');
 assert.match(cmsSource, /Use full-screen CMS workspace/, 'The expand action needs an accessible name.');
 assert.match(cmsSource, /Use compact CMS workspace/, 'The compact action needs an accessible name.');

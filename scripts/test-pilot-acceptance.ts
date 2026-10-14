@@ -37,7 +37,7 @@ const signIn = async (email: string) => {
   return client;
 };
 const createUser = async (role: string) => {
-  const email = `stage4e-${role}-${suffix}@tudelaglobal.test`;
+  const email = `stage4e-${role}-${suffix}@moreshetglobal.test`;
   const { data, error } = await admin.auth.admin.createUser({
     email, password, email_confirm: true,
     user_metadata: { display_name: `Stage 4E ${role}`, username: `stage4e-${role}-${suffix}`, age_16_confirmed: true, preferred_language: 'en' },
@@ -79,8 +79,8 @@ const uploadThroughValidatedGateway = async (client: SupabaseClient, png: Buffer
         'X-Organization-Id': primaryOrganizationId,
         'X-File-Name': 'stage4e-pilot.png',
         'X-Media-Rights-Status': 'own_work',
-        'X-Media-Creator': encodeURIComponent('Tudela Global QA'),
-        'X-Media-Attribution': encodeURIComponent('Test image: Tudela Global QA'),
+        'X-Media-Creator': encodeURIComponent('Moreshet QA'),
+        'X-Media-Attribution': encodeURIComponent('Test image: Moreshet QA'),
         'X-Media-Rights-Notes': encodeURIComponent('Disposable one-pixel image generated solely for automated acceptance testing.'),
       },
     });
@@ -124,7 +124,7 @@ try {
   const { data: uploadedMedia, error: uploadedMediaError } = await admin.from('media_assets').select('object_path,rights_status,attribution_text').eq('id', mediaId).single();
   must(uploadedMediaError, 'Load validated media metadata');
   assert.equal(uploadedMedia.rights_status, 'own_work');
-  assert.equal(uploadedMedia.attribution_text, 'Test image: Tudela Global QA');
+  assert.equal(uploadedMedia.attribution_text, 'Test image: Moreshet QA');
   mediaPath = uploadedMedia.object_path;
 
   for (const [index, stopId] of stopIds.entries()) {
@@ -161,7 +161,7 @@ try {
   assert.equal(publicPayload.sites.length, 2);
   assert.deepEqual(publicPayload.sites.map((stop: any) => stop.name), ['Acceptance Stop 1', 'Acceptance Stop 2']);
   assert.match(publicPayload.sites[0].imageUrl, /^\/api\/public\/media\/[0-9a-f-]+\?organization=/);
-  assert.equal(publicPayload.sites[0].imageCredit, 'Test image: Tudela Global QA');
+  assert.equal(publicPayload.sites[0].imageCredit, 'Test image: Moreshet QA');
   const isolatedPayload = await loadPublishedContent(admin, isolatedSlug, 'en');
   assert.ok(isolatedPayload);
   assert.equal(isolatedPayload.cities.length, 0);

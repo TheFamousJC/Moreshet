@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { performance } from 'node:perf_hooks';
 
-const DEFAULT_BASE_URL = 'https://tudela-global-production.up.railway.app';
+const DEFAULT_BASE_URL = 'https://moreshet-production.up.railway.app';
 
 function positiveInteger(value, fallback) {
   const parsed = Number.parseInt(String(value ?? ''), 10);
@@ -19,13 +19,13 @@ async function request(url, expectedType, timeoutMs) {
   const response = await fetch(url, {
     headers: {
       Accept: expectedType === 'json' ? 'application/json' : 'text/html',
-      'User-Agent': 'Tudela-Pilot-Load-Acceptance/1.0',
+      'User-Agent': 'Moreshet-Pilot-Load-Acceptance/1.0',
     },
     signal: AbortSignal.timeout(timeoutMs),
   });
   const body = await response.text();
   if (!response.ok) throw new Error(`${url} returned HTTP ${response.status}: ${body.slice(0, 160)}`);
-  if (expectedType === 'html' && !body.includes('Tudela')) throw new Error(`${url} did not return the visitor application.`);
+  if (expectedType === 'html' && !body.includes('Moreshet')) throw new Error(`${url} did not return the visitor application.`);
   if (expectedType === 'json') {
     try {
       return { durationMs: performance.now() - started, body: JSON.parse(body) };
@@ -57,10 +57,10 @@ async function visitorJourney(baseUrl, visitorNumber, timeoutMs) {
 }
 
 async function main() {
-  const baseUrl = String(process.env.TUDELA_LOAD_URL || DEFAULT_BASE_URL).replace(/\/+$/, '');
-  const concurrency = positiveInteger(process.env.TUDELA_LOAD_CONCURRENCY, 10);
-  const timeoutMs = positiveInteger(process.env.TUDELA_LOAD_TIMEOUT_MS, 15_000);
-  const p95LimitMs = positiveInteger(process.env.TUDELA_LOAD_P95_LIMIT_MS, 5_000);
+  const baseUrl = String(process.env.MORESHET_LOAD_URL || DEFAULT_BASE_URL).replace(/\/+$/, '');
+  const concurrency = positiveInteger(process.env.MORESHET_LOAD_CONCURRENCY, 10);
+  const timeoutMs = positiveInteger(process.env.MORESHET_LOAD_TIMEOUT_MS, 15_000);
+  const p95LimitMs = positiveInteger(process.env.MORESHET_LOAD_P95_LIMIT_MS, 5_000);
   if (concurrency > 50) throw new Error('Refusing to exceed the controlled pilot ceiling of 50 simultaneous visitors.');
 
   const startedAt = new Date();
@@ -74,7 +74,7 @@ async function main() {
   const passed = failures.length === 0 && p95Ms !== null && p95Ms <= p95LimitMs;
   const report = {
     schemaVersion: 1,
-    test: 'Tudela controlled pilot read-only load acceptance',
+    test: 'Moreshet controlled pilot read-only load acceptance',
     startedAt: startedAt.toISOString(),
     completedAt: new Date().toISOString(),
     baseUrl,

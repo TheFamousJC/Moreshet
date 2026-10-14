@@ -19,11 +19,11 @@ const nonce = randomUUID();
 const signature = createHmac('sha256', process.env.NARRATION_WORKER_SECRET)
   .update(`${timestamp}.${nonce}.${body.toString('utf8')}`)
   .digest('hex');
-const headers = { 'x-tudela-timestamp': timestamp, 'x-tudela-nonce': nonce, 'x-tudela-signature': signature };
+const headers = { 'x-moreshet-timestamp': timestamp, 'x-moreshet-nonce': nonce, 'x-moreshet-signature': signature };
 
 assert.equal(verifySignedRequest(body, headers), true, 'A correctly signed request must be accepted.');
 assert.equal(verifySignedRequest(body, headers), false, 'A nonce must not be accepted twice.');
-assert.equal(verifySignedRequest(Buffer.from(`${body}changed`), { ...headers, 'x-tudela-nonce': randomUUID() }), false, 'Body tampering must invalidate the signature.');
+assert.equal(verifySignedRequest(Buffer.from(`${body}changed`), { ...headers, 'x-moreshet-nonce': randomUUID() }), false, 'Body tampering must invalidate the signature.');
 const validated = validateSynthesisBody(JSON.parse(body.toString()));
 assert.equal(validated.voice, 'en-GB-Chirp3-HD-Aoede');
 assert.equal(validated.pronunciations[0].phrase, 'English');

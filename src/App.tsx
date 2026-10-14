@@ -64,7 +64,7 @@ export default function App() {
   const cmsContent = useCmsContent(account, isCmsRoute);
   const [experienceMode, setExperienceMode] = useState<'tour' | 'pod'>(() => {
     try {
-      return localStorage.getItem('tudela_experience_mode') === 'pod' ? 'pod' : 'tour';
+      return localStorage.getItem('moreshet_experience_mode') === 'pod' ? 'pod' : 'tour';
     } catch {
       return 'tour';
     }
@@ -111,7 +111,7 @@ export default function App() {
 
   useEffect(() => {
     if (!isCmsRoute) return;
-    document.title = 'Tudela Global CMS';
+    document.title = 'Moreshet CMS';
     let robots = document.querySelector<HTMLMetaElement>('meta[name="robots"]');
     if (!robots) {
       robots = document.createElement('meta');
@@ -152,7 +152,7 @@ export default function App() {
   // Multi-Language State (English, Hebrew, Russian)
   const [selectedLanguage, setSelectedLanguage] = useState<LanguageCode>(() => {
     try {
-      const stored = localStorage.getItem('tudela_selected_lang');
+      const stored = localStorage.getItem('moreshet_selected_lang');
       return (stored as LanguageCode) || 'en';
     } catch {
       return 'en';
@@ -169,7 +169,7 @@ export default function App() {
       arrivalPulseEnabled: true,
     };
     try {
-      const stored = localStorage.getItem('tudela_visitor_preferences');
+      const stored = localStorage.getItem('moreshet_visitor_preferences');
       return stored ? { ...defaults, ...JSON.parse(stored), locationEnabled: false } : defaults;
     } catch {
       return defaults;
@@ -183,15 +183,15 @@ export default function App() {
   }, [showVisitorSplash]);
 
   useEffect(() => {
-    try { localStorage.setItem('tudela_visitor_preferences', JSON.stringify(visitorPreferences)); }
+    try { localStorage.setItem('moreshet_visitor_preferences', JSON.stringify(visitorPreferences)); }
     catch { /* Preferences remain available for this session. */ }
   }, [visitorPreferences]);
 
   useEffect(() => {
     if (isCmsRoute || !account || account.profile.password_reset_required) return;
-    if (account.user.user_metadata?.tudela_setup_completed_at) return;
+    if (account.user.user_metadata?.moreshet_setup_completed_at) return;
     try {
-      if (localStorage.getItem(`tudela_setup_completed_${account.user.id}`) !== 'true') setIsFirstSignInSetupOpen(true);
+      if (localStorage.getItem(`moreshet_setup_completed_${account.user.id}`) !== 'true') setIsFirstSignInSetupOpen(true);
     } catch {
       setIsFirstSignInSetupOpen(true);
     }
@@ -200,9 +200,9 @@ export default function App() {
   const completeFirstSignInSetup = async (preferences: VisitorPreferences) => {
     setVisitorPreferences(preferences);
     if (account) {
-      try { localStorage.setItem(`tudela_setup_completed_${account.user.id}`, 'true'); }
+      try { localStorage.setItem(`moreshet_setup_completed_${account.user.id}`, 'true'); }
       catch { /* The setup still applies for this session. */ }
-      const { error } = await supabase.auth.updateUser({ data: { tudela_setup_completed_at: new Date().toISOString() } });
+      const { error } = await supabase.auth.updateUser({ data: { moreshet_setup_completed_at: new Date().toISOString() } });
       if (error) setAccountNotice('Your choices were saved on this device. Account setup will synchronize after your next sign-in.');
     }
     setIsFirstSignInSetupOpen(false);
@@ -211,7 +211,7 @@ export default function App() {
   const handleSelectLanguage = (langCode: LanguageCode) => {
     setSelectedLanguage(langCode);
     try {
-      localStorage.setItem('tudela_selected_lang', langCode);
+      localStorage.setItem('moreshet_selected_lang', langCode);
     } catch (e) {
       console.error(e);
     }
@@ -236,7 +236,7 @@ export default function App() {
   // Heritage Sites State & Saved Bookmarks
   const [savedSiteIds, setSavedSiteIds] = useState<string[]>(() => {
     try {
-      const stored = localStorage.getItem('tudela_saved_sites');
+      const stored = localStorage.getItem('moreshet_saved_sites');
       return stored ? JSON.parse(stored) : ['budapest-dohany-synagogue', 'budapest-herzl-birthplace'];
     } catch {
       return ['budapest-dohany-synagogue', 'budapest-herzl-birthplace'];
@@ -245,7 +245,7 @@ export default function App() {
 
   const [savedTourIds, setSavedTourIds] = useState<string[]>(() => {
     try {
-      const stored = localStorage.getItem('tudela_saved_tours');
+      const stored = localStorage.getItem('moreshet_saved_tours');
       return stored ? JSON.parse(stored) : [];
     } catch {
       return [];
@@ -254,7 +254,7 @@ export default function App() {
 
   const [userNotes, setUserNotes] = useState<Record<string, string>>(() => {
     try {
-      const stored = localStorage.getItem('tudela_user_notes');
+      const stored = localStorage.getItem('moreshet_user_notes');
       return stored ? JSON.parse(stored) : {};
     } catch {
       return {};
@@ -299,14 +299,14 @@ export default function App() {
   // Persist bookmarks independently of the shared CMS catalogue.
   useEffect(() => {
     try {
-      localStorage.setItem('tudela_saved_sites', JSON.stringify(savedSiteIds));
+      localStorage.setItem('moreshet_saved_sites', JSON.stringify(savedSiteIds));
     } catch (e) {
       console.error(e);
     }
   }, [savedSiteIds]);
 
   useEffect(() => {
-    try { localStorage.setItem('tudela_saved_tours', JSON.stringify(savedTourIds)); }
+    try { localStorage.setItem('moreshet_saved_tours', JSON.stringify(savedTourIds)); }
     catch { /* Saved tours remain available for this session. */ }
   }, [savedTourIds]);
 
@@ -712,7 +712,7 @@ export default function App() {
 
       if (typeof window !== 'undefined' && 'Notification' in window && Notification.permission === 'granted') {
         new Notification(`Arrived at ${closest.site.name}`, {
-          body: audioSettings.autoTriggerEnabled ? 'Narration started automatically.' : 'Open Tudela and press Play when you are ready.',
+          body: audioSettings.autoTriggerEnabled ? 'Narration started automatically.' : 'Open Moreshet and press Play when you are ready.',
           icon: closest.site.imageUrl,
         });
       }
@@ -735,7 +735,7 @@ export default function App() {
     const updated = { ...userNotes, [siteId]: note };
     setUserNotes(updated);
     try {
-      localStorage.setItem('tudela_user_notes', JSON.stringify(updated));
+      localStorage.setItem('moreshet_user_notes', JSON.stringify(updated));
     } catch (e) {
       console.error(e);
     }
@@ -866,7 +866,7 @@ export default function App() {
           <main className="mx-auto flex min-h-screen max-w-md items-center px-5 py-10">
             <section className="w-full rounded-3xl border border-slate-700 bg-white p-6 shadow-2xl">
               <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-700">Restricted administration route</p>
-              <h1 className="mt-2 text-2xl font-bold text-slate-950">Tudela Global CMS</h1>
+              <h1 className="mt-2 text-2xl font-bold text-slate-950">Moreshet CMS</h1>
               <p className="mt-2 text-sm leading-relaxed text-slate-600">Sign in with an authorized Super Admin, Administrator, Editor or Reviewer account.</p>
               {accountNotice && <p className="mt-4 rounded-xl border border-amber-200 bg-amber-50 p-3 text-xs font-semibold text-amber-900">{accountNotice}</p>}
               {account && !account.canAccessCms ? (
@@ -892,7 +892,7 @@ export default function App() {
   }
 
   return (
-    <div dir={selectedLanguage === 'he' ? 'rtl' : 'ltr'} className="tudela-visitor-shell h-full w-full bg-[#173f46] flex flex-col font-sans select-none overflow-hidden relative">
+    <div dir={selectedLanguage === 'he' ? 'rtl' : 'ltr'} className="moreshet-visitor-shell h-full w-full bg-[#164b77] flex flex-col font-sans select-none overflow-hidden relative">
       {/* Mobile Header Bar */}
       <Header
         selectedLanguage={selectedLanguage}
@@ -962,7 +962,7 @@ export default function App() {
             onSelectExperience={(mode) => {
               setExperienceMode(mode);
               try {
-                localStorage.setItem('tudela_experience_mode', mode);
+                localStorage.setItem('moreshet_experience_mode', mode);
               } catch {
                 // Continue without persistence if storage is unavailable.
               }

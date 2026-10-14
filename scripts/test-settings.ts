@@ -12,7 +12,7 @@ for (const language of languages) {
   assert.ok(copy.productInformation);
   assert.ok(copy.version);
   assert.ok(copy.build);
-  assert.ok(copy.publishedBy.includes('Tudela Global'));
+  assert.ok(copy.publishedBy.includes('Moreshet'));
   assert.ok(copy.informationAndSupport && copy.privacy && copy.terms && copy.aiDisclosure && copy.support);
   assert.ok(copy.faqItems.length >= 6);
   for (const item of copy.faqItems) {

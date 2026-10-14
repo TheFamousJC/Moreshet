@@ -87,9 +87,9 @@ export const NavigationBottom: React.FC<NavigationBottomProps> = ({
           }`}
         >
           <div className="relative">
-          <Bookmark className={`h-5 w-5 text-[#c43d4d] ${activeTab === 'saved' ? 'fill-current' : ''}`} />
+          <Bookmark className={`h-5 w-5 text-[#297fad] ${activeTab === 'saved' ? 'fill-current' : ''}`} />
             {savedCount > 0 && (
-              <span className="absolute -top-1 -right-2 min-w-[14px] rounded-full bg-[#c43d4d] px-1 text-center text-[9px] font-bold text-white">
+              <span className="absolute -top-1 -right-2 min-w-[14px] rounded-full bg-[#297fad] px-1 text-center text-[9px] font-bold text-white">
                 {savedCount}
               </span>
             )}

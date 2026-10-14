@@ -1,4 +1,4 @@
-function Get-TudelaFileSha256 {
+function Get-MoreshetFileSha256 {
   param(
     [Parameter(Mandatory = $true)][string]$LiteralPath
   )

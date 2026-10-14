@@ -130,7 +130,7 @@ export const OfflineSyncPanel: React.FC<OfflineSyncPanelProps> = ({
       <div className="space-y-3">
         <div className="flex items-center justify-between">
           <h2 className="text-lg font-bold text-blue-900 flex items-center gap-2">
-            <BookmarkCheck className="h-5 w-5 text-[#c43d4d]" />
+            <BookmarkCheck className="h-5 w-5 text-[#297fad]" />
             {t('savedHeritageSites', selectedLanguage)} ({localizedSavedSites.length})
           </h2>
         </div>

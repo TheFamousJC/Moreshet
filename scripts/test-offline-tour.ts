@@ -16,7 +16,7 @@ assert.match(server, /admin\.storage\.from\(media\.storage_bucket\)\.download\(m
 const publicMediaBranch = serviceWorker.indexOf("url.pathname.startsWith('/api/public/media/')");
 const genericApiExclusion = serviceWorker.indexOf("url.pathname.startsWith('/api/')");
 assert.ok(publicMediaBranch >= 0 && genericApiExclusion > publicMediaBranch, 'Public media must be handled before the generic API exclusion.');
-assert.match(serviceWorker, /PUBLIC_MEDIA_CACHE = 'tudela-global-public-media-v1'/);
+assert.match(serviceWorker, /PUBLIC_MEDIA_CACHE = 'moreshet-public-media-v1'/);
 assert.match(serviceWorker, /url\.pathname === '\/cms'/, 'CMS responses must remain excluded from offline storage.');
 
 assert.match(publicContent, /localStorage\.setItem\(`\$\{CACHE_PREFIX\}/, 'Published text and stop details must remain locally cached.');

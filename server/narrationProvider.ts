@@ -134,9 +134,9 @@ export async function generateNarrationAudio(request: NarrationRequest, config: 
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'X-Tudela-Timestamp': timestamp,
-      'X-Tudela-Nonce': nonce,
-      'X-Tudela-Signature': signature,
+      'X-Moreshet-Timestamp': timestamp,
+      'X-Moreshet-Nonce': nonce,
+      'X-Moreshet-Signature': signature,
     },
     body,
     signal: AbortSignal.timeout(30_000),

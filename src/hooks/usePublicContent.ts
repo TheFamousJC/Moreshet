@@ -10,7 +10,7 @@ import {
   writePublicContentCache,
 } from '../lib/publicContent';
 
-export function usePublicContent(language: LanguageCode, organization = 'tudela-global') {
+export function usePublicContent(language: LanguageCode, organization = 'moreshet') {
   const [content, setContent] = useState<PublicContentPayload>(() =>
     readPublicContentCache(organization, language) || demoPublicContent(language));
   const [source, setSource] = useState<PublicContentSource>(() =>

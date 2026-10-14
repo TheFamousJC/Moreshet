@@ -1,6 +1,6 @@
 import { pathToFileURL } from 'node:url';
 
-const DEFAULT_BASE_URL = 'https://tudela-global-production.up.railway.app';
+const DEFAULT_BASE_URL = 'https://moreshet-production.up.railway.app';
 
 function positiveInteger(value, fallback) {
   const parsed = Number.parseInt(String(value ?? ''), 10);
@@ -13,7 +13,7 @@ function requiredEqual(actual, expected, label, problems) {
 
 async function readJson(url, timeoutMs) {
   const response = await fetch(url, {
-    headers: { Accept: 'application/json', 'User-Agent': 'Tudela-Production-Monitor/1.0' },
+    headers: { Accept: 'application/json', 'User-Agent': 'Moreshet-Production-Monitor/1.0' },
     signal: AbortSignal.timeout(timeoutMs),
   });
   const body = await response.text();
@@ -82,19 +82,19 @@ export async function monitorProduction(options = {}) {
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   monitorProduction({
-    baseUrl: process.env.TUDELA_MONITOR_URL,
-    attempts: process.env.TUDELA_MONITOR_ATTEMPTS,
-    retryDelayMs: process.env.TUDELA_MONITOR_RETRY_DELAY_MS,
-    timeoutMs: process.env.TUDELA_MONITOR_TIMEOUT_MS,
-    expectedHerzlMode: process.env.TUDELA_EXPECTED_HERZL_MODE,
-    expectedNarrationMode: process.env.TUDELA_EXPECTED_NARRATION_MODE,
-    expectedProvider: process.env.TUDELA_EXPECTED_AI_PROVIDER,
-    expectedDailyLimit: process.env.TUDELA_EXPECTED_AI_DAILY_LIMIT,
-    expectedEnforcement: process.env.TUDELA_EXPECTED_AI_ENFORCEMENT,
+    baseUrl: process.env.MORESHET_MONITOR_URL,
+    attempts: process.env.MORESHET_MONITOR_ATTEMPTS,
+    retryDelayMs: process.env.MORESHET_MONITOR_RETRY_DELAY_MS,
+    timeoutMs: process.env.MORESHET_MONITOR_TIMEOUT_MS,
+    expectedHerzlMode: process.env.MORESHET_EXPECTED_HERZL_MODE,
+    expectedNarrationMode: process.env.MORESHET_EXPECTED_NARRATION_MODE,
+    expectedProvider: process.env.MORESHET_EXPECTED_AI_PROVIDER,
+    expectedDailyLimit: process.env.MORESHET_EXPECTED_AI_DAILY_LIMIT,
+    expectedEnforcement: process.env.MORESHET_EXPECTED_AI_ENFORCEMENT,
   }).then((result) => {
-    console.log(`Tudela production monitor PASS\n${JSON.stringify(result, null, 2)}`);
+    console.log(`Moreshet production monitor PASS\n${JSON.stringify(result, null, 2)}`);
   }).catch((error) => {
-    console.error(`Tudela production monitor FAILED\n${error instanceof Error ? error.message : error}`);
+    console.error(`Moreshet production monitor FAILED\n${error instanceof Error ? error.message : error}`);
     process.exitCode = 1;
   });
 }

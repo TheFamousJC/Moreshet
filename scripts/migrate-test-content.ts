@@ -19,17 +19,17 @@ if (profileError) throw profileError;
 const actorId = profiles?.[0]?.user_id;
 if (!actorId) throw new Error('Create the Super Admin first with npm run auth:bootstrap, then rerun this migration.');
 
-let { data: organization, error: organizationError } = await supabase.from('organizations').select('id').eq('slug', 'tudela-global').maybeSingle();
+let { data: organization, error: organizationError } = await supabase.from('organizations').select('id').eq('slug', 'moreshet').maybeSingle();
 if (organizationError) throw organizationError;
 if (!organization) {
-  const result = await supabase.from('organizations').insert({ name: 'Tudela Global', slug: 'tudela-global', default_language: 'en', default_currency: 'USD', created_by: actorId }).select('id').single();
+  const result = await supabase.from('organizations').insert({ name: 'Moreshet', slug: 'moreshet', default_language: 'en', default_currency: 'USD', created_by: actorId }).select('id').single();
   if (result.error) throw result.error;
   organization = result.data;
 }
 const organizationId = organization.id;
 await supabase.from('organization_settings').upsert({
   organization_id: organizationId,
-  application_name: 'Tudela Global',
+  application_name: 'Moreshet',
   enabled_languages: ['en', 'he', 'ru', 'fr', 'de', 'es'],
   enabled_commercial_models: ['free', 'paid', 'subscription'],
   feedback_enabled: true,

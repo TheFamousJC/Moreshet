@@ -10,7 +10,7 @@ export const supabase = createClient(
   supabasePublishableKey || 'missing-local-publishable-key',
   {
     auth: {
-      storageKey: 'tudela-global-auth',
+      storageKey: 'moreshet-auth',
       persistSession: true,
       autoRefreshToken: true,
       detectSessionInUrl: true,

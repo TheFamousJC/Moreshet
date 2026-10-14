@@ -15,9 +15,9 @@ const usedNonces = new Map<string, number>();
 
 export function verifySignedRequest(rawBody: Buffer, headers: Record<string, string | string[] | undefined>, now = Date.now()) {
   if (SHARED_SECRET.length < 32) return false;
-  const timestamp = String(headers['x-tudela-timestamp'] || '');
-  const nonce = String(headers['x-tudela-nonce'] || '');
-  const supplied = String(headers['x-tudela-signature'] || '');
+  const timestamp = String(headers['x-moreshet-timestamp'] || '');
+  const nonce = String(headers['x-moreshet-nonce'] || '');
+  const supplied = String(headers['x-moreshet-signature'] || '');
   const requestTime = Number(timestamp);
   if (!Number.isFinite(requestTime) || Math.abs(now - requestTime) > MAX_CLOCK_SKEW_MS) return false;
   if (!/^[0-9a-f-]{36}$/i.test(nonce) || usedNonces.has(nonce) || !/^[0-9a-f]{64}$/i.test(supplied)) return false;
@@ -50,7 +50,7 @@ export function googleBearerHeaders(token: string | null | undefined) {
 }
 
 const app = express();
-app.get('/health', (_request, response) => response.json({ ok: true, service: 'tudela-narration-worker' }));
+app.get('/health', (_request, response) => response.json({ ok: true, service: 'moreshet-narration-worker' }));
 app.post('/synthesize', express.raw({ type: 'application/json', limit: '64kb' }), async (request, response) => {
   const rawBody = Buffer.isBuffer(request.body) ? request.body : Buffer.alloc(0);
   if (!verifySignedRequest(rawBody, request.headers)) return response.status(401).json({ error: { message: 'Unauthorized request.' } });
@@ -93,5 +93,5 @@ app.post('/synthesize', express.raw({ type: 'application/json', limit: '64kb' })
 
 if (process.env.NODE_ENV !== 'test') {
   if (SHARED_SECRET.length < 32) throw new Error('NARRATION_WORKER_SECRET must contain at least 32 characters.');
-  app.listen(PORT, '0.0.0.0', () => console.log(`Tudela narration worker listening on port ${PORT}`));
+  app.listen(PORT, '0.0.0.0', () => console.log(`Moreshet narration worker listening on port ${PORT}`));
 }

@@ -7,9 +7,9 @@ const visitor = await readFile(new URL('../src/components/TourCommunityPanel.tsx
 const app = await readFile(new URL('../src/App.tsx', import.meta.url), 'utf8');
 const migration = await readFile(new URL('../supabase/migrations/20260817193000_tour_likes_and_sharing.sql', import.meta.url), 'utf8');
 
-const link = buildTourShareUrl('https://tudela.example', 'client-one', 'city-1', 'tour-1');
+const link = buildTourShareUrl('https://moreshet.example', 'client-one', 'city-1', 'tour-1');
 const parsed = new URL(link);
-assert.equal(parsed.origin, 'https://tudela.example');
+assert.equal(parsed.origin, 'https://moreshet.example');
 assert.equal(parsed.pathname, '/');
 assert.deepEqual(Object.fromEntries(parsed.searchParams), { organization: 'client-one', city: 'city-1', tour: 'tour-1' });
 assert.doesNotMatch(link, /lat|lng|gps|user|location/i, 'shared links must not contain user or GPS data');

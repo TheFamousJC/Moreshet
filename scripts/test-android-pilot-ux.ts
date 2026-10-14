@@ -28,13 +28,13 @@ assert.match(discovery, /google-maps-mark\.svg/, 'Google Maps actions must have 
 assert.match(discovery, /waze\.com\/ul/, 'Stop cards must offer a Waze handoff.');
 assert.match(discovery, /onToggleSavedTour/, 'Discovery must let visitors bookmark complete tours.');
 assert.match(discovery, /whats-around-me-button/, 'Discovery must expose the plain-language nearby heritage entry point.');
-assert.match(nearby, /Verified by Tudela Global/, 'Nearby results must distinguish Tudela-reviewed places.');
-assert.match(nearby, /Not yet verified by Tudela Global/, 'Google-discovered places must be visibly unverified.');
+assert.match(nearby, /Verified by Moreshet/, 'Nearby results must distinguish Moreshet-reviewed places.');
+assert.match(nearby, /Not yet verified by Moreshet/, 'Google-discovered places must be visibly unverified.');
 assert.match(nearby, /AI can make mistakes/, 'The AI disclosure must be visible before asking Benjamin about a place.');
 assert.match(nearby, /onOpenAccount/, 'Saving or asking about nearby places must support contextual sign-in.');
 assert.match(nearby, /googleMapsUrl/, 'Nearby results must provide an official map handoff.');
 assert.match(nearby, /INTEREST_VALUES\.map/, 'What’s Around Me must use the shared Discovery/CMS interest taxonomy.');
-assert.match(nearby, /matchesSelectedInterests/, 'Nearby Tudela results must respect the selected interests.');
+assert.match(nearby, /matchesSelectedInterests/, 'Nearby Moreshet results must respect the selected interests.');
 assert.match(nearby, /interests: selectedInterests/, 'Nearby Google searches must be tailored to the selected interests.');
 assert.match(benjamin, /initialQuestion/, 'Ask Benjamin must receive the selected nearby-place question without automatically spending a request.');
 
@@ -51,11 +51,11 @@ assert.match(settings, /arrivalPlaybackMode/, 'Settings must offer automatic and
 assert.match(settings, /arrivalAlertsEnabled/, 'Settings must include the arrival-alert master toggle.');
 assert.match(settings, /arrivalToneEnabled[\s\S]*arrivalVibrationEnabled[\s\S]*arrivalPulseEnabled/, 'Tone, vibration and pulse must be independently configurable.');
 assert.match(header, /onOpenAccount[\s\S]*onOpenSaved[\s\S]*onOpenSettings[\s\S]*onOpenHelp/, 'Header must route to profile, saved, settings and help.');
-assert.match(header, /onGoDiscovery[\s\S]*Tudela<br \/>Global/, 'The Tudela Global wordmark must return visitors to Discovery.');
-assert.match(header, /onClick=\{onGoDiscovery\}[\s\S]*onClick=\{onOpenAccount\}/, 'The Tudela Global logo must be the first header button, immediately before Profile.');
+assert.match(header, /onGoDiscovery[\s\S]*Moreshet<br \/>Global/, 'The Moreshet wordmark must return visitors to Discovery.');
+assert.match(header, /onClick=\{onGoDiscovery\}[\s\S]*onClick=\{onOpenAccount\}/, 'The Moreshet logo must be the first header button, immediately before Profile.');
 assert.match(header, /left-1\/2 -translate-x-1\/2 bg-white px-1[\s\S]*\{language\.flag\}/, 'The selected-language flag must break the bottom border at the centre like the battery indicator.');
 assert.match(header, /justify-center gap-0\.5 px-1/, 'Header controls must remain tightly centred on narrow phones.');
-assert.match(header, /w-16[\s\S]*Tudela<br \/>Global/, 'The text-only Tudela Global home control must be twice the width of an icon button.');
+assert.match(header, /w-16[\s\S]*Moreshet<br \/>Global/, 'The text-only Moreshet home control must be twice the width of an icon button.');
 assert.doesNotMatch(header, /Volume2|VolumeX|onToggleMasterAudio|audioSettings/, 'The redundant header audio toggle must be removed.');
 assert.match(header, /border-\[#c45d79\][\s\S]*border-\[#7c4db5\][\s\S]*border-\[#2f8f68\][\s\S]*border-\[#d4a017\]/, 'Header icons must use the requested profile, language, battery and location colours.');
 assert.match(header, /border-\[#c43d4d\][\s\S]*<Bookmark/, 'The header bookmark must remain red.');

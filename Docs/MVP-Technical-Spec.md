@@ -1,17 +1,17 @@
-# Tudela Global MVP technical specification
+# Moreshet MVP technical specification
 
 Version 1, 13 October 2026. This is the current specification for the rebuild from Build 1.zip. Earlier documents in this folder describe the previous architecture and are retained as reference, not instructions for this MVP.
 
 ## What the app does
 
-Tudela helps visitors discover Jewish heritage, choose a city and tour, read and listen to stories at individual stops, and open Google Maps for walking directions. Staff create and review tours in a separate editing area. Visitors can save content and, once shared accounts are configured, contribute ratings, comments and personal stories.
+Moreshet helps visitors discover Jewish heritage, choose a city and tour, read and listen to stories at individual stops, and open Google Maps for walking directions. Staff create and review tours in a separate editing area. Visitors can save content and, once shared accounts are configured, contribute ratings, comments and personal stories.
 
 Budapest is the first European pilot. Existing cities and sample tours remain available. An MVP means a testable product with a deliberately small operating model; it does not mean that placeholders are presented as working online services.
 
 ## Rules for this rebuild
 
 1. The initial operating target is as close to zero budget as practical. No paid service is activated by this rebuild.
-2. Tudela does not call an AI API, send prompts automatically, or display generated answers as if they came from its own assistant. The visitor copies a prompt and opens their own AI website.
+2. Moreshet does not call an AI API, send prompts automatically, or display generated answers as if they came from its own assistant. The visitor copies a prompt and opens their own AI website.
 3. Google Maps provides external maps and navigation. An in-app Google map is optional and requires a separate configuration decision.
 4. Shared personal data belongs to the signed-in account. A visitor must never receive another account's private notes.
 5. Only reviewed and published content is served from the shared catalogue. Bundled sample content is labeled as demonstration content.
@@ -21,7 +21,7 @@ Budapest is the first European pilot. Existing cities and sample tours remain av
 
 The visitor interface is a React website: it can be used on a phone or desktop and supports installation as a web app. A small Express server serves the website and checks requests. Supabase supplies the shared database, account sign-in and file storage when configured. Its local version can run on the developer's machine; no paid hosting is needed to demonstrate the visitor experience.
 
-The browser stores visitor preferences, cached tour content and saved content for local use. Google Maps and the user's AI service open separately. Tudela cannot observe or control what happens inside those services.
+The browser stores visitor preferences, cached tour content and saved content for local use. Google Maps and the user's AI service open separately. Moreshet cannot observe or control what happens inside those services.
 
 Local address: http://localhost:3220. Staff editing area: http://localhost:3220/cms. This specification and the plan are available through http://localhost:3220/mvp-guide.
 
@@ -84,17 +84,17 @@ The CMS is a separate route, not a secret URL that grants permission. The databa
 
 ## AI use step by step
 
-The visitor writes a question and selects ChatGPT, Gemini or Claude. Tudela prepares a visible text prompt naming the selected city and asking for sources and clear uncertainty. The visitor chooses Copy prompt, opens the selected service and pastes the prompt into their own conversation. Their service may require sign-in, impose a free-use limit or offer paid subscriptions.
+The visitor writes a question and selects ChatGPT, Gemini or Claude. Moreshet prepares a visible text prompt naming the selected city and asking for sources and clear uncertainty. The visitor chooses Copy prompt, opens the selected service and pastes the prompt into their own conversation. Their service may require sign-in, impose a free-use limit or offer paid subscriptions.
 
-Tudela does not transfer GPS, account credentials or private notes with the prompt. It does not automatically read the answer, save it or publish it. If AI-assisted material is later used to author a tour, a person must bring it back as a draft, check facts, confirm media rights and submit it to the normal review process.
+Moreshet does not transfer GPS, account credentials or private notes with the prompt. It does not automatically read the answer, save it or publish it. If AI-assisted material is later used to author a tour, a person must bring it back as a draft, check facts, confirm media rights and submit it to the normal review process.
 
 The old AI and narration provider source files remain historical code in the recovered project; the running MVP does not expose a route that invokes them. Adding API keys does not enable AI calls in this server.
 
 ## Google Maps and cost choices
 
-The default uses standard Google Maps URLs for a stop pin, walking navigation and nearby search. These URLs need no API key. Google receives the destination and, only when explicitly included for a directions link, the origin. The user can continue using Google Maps independently of Tudela.
+The default uses standard Google Maps URLs for a stop pin, walking navigation and nearby search. These URLs need no API key. Google receives the destination and, only when explicitly included for a directions link, the origin. The user can continue using Google Maps independently of Moreshet.
 
-An optional Maps Embed API map can display the current stop inside Tudela. Google lists Embed usage as no charge, but requires an API key and a billing-enabled project. It is off by default. Interactive custom maps, live place search, geocoding and route calculations are different products and can incur usage charges; they are not included in the zero-budget MVP. Spending alerts alone are not a guaranteed spending cap.
+An optional Maps Embed API map can display the current stop inside Moreshet. Google lists Embed usage as no charge, but requires an API key and a billing-enabled project. It is off by default. Interactive custom maps, live place search, geocoding and route calculations are different products and can incur usage charges; they are not included in the zero-budget MVP. Spending alerts alone are not a guaranteed spending cap.
 
 Official sources checked on 13 October 2026: [Maps URLs](https://developers.google.com/maps/documentation/urls/get-started), [Maps Embed billing](https://developers.google.com/maps/documentation/embed/usage-and-billing), and [Maps pricing](https://developers.google.com/maps/billing-and-pricing/pricing).
 
@@ -104,7 +104,7 @@ Official sources checked on 13 October 2026: [Maps URLs](https://developers.goog
 | --- | --- | --- |
 | Website and API | Existing computer, localhost | No new hosting bill; unavailable to other visitors unless separately hosted |
 | Google Maps | External URLs | No platform API key; visitors switch apps or tabs for navigation |
-| AI | Visitor's own account in an external service | Tudela has no AI API bill; the visitor's chosen service sets its own limits |
+| AI | Visitor's own account in an external service | Moreshet has no AI API bill; the visitor's chosen service sets its own limits |
 | Audio | Human recording or browser device voice | No generated-audio API bill; voice quality and offline behavior vary by device |
 | Shared database and accounts | Local Supabase for development, or free hosted Supabase after configuration | Local requires running infrastructure; free hosting has storage, traffic, email and availability limits |
 | Media | Existing cleared files and licensed uploads | Images and recordings can dominate storage and download limits; existing files are not automatically rights-cleared |

@@ -9,7 +9,7 @@ const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 export default defineConfig(() => {
   return {
     plugins: [react(), tailwindcss()],
-    base: process.env.TUDELA_BASE || '/',
+    base: process.env.MORESHET_BASE || '/',
     resolve: {
       alias: {
         '@': projectRoot,
@@ -23,7 +23,7 @@ export default defineConfig(() => {
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
     build: {
-      outDir: process.env.TUDELA_FRONTEND_ONLY === 'true' ? 'frontend-dist' : 'dist',
+      outDir: process.env.MORESHET_FRONTEND_ONLY === 'true' ? 'frontend-dist' : 'dist',
       rollupOptions: {
         output: {
           manualChunks(id) {

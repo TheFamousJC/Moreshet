@@ -10,7 +10,7 @@ assert.equal(detectImageMime(Uint8Array.from(Buffer.from('<script>alert(1)</scri
 assert.equal(MAX_MEDIA_BYTES, 8 * 1024 * 1024);
 
 const valid = {
-  NODE_ENV: 'production', APP_URL: 'https://tudelaglobal.com',
+  NODE_ENV: 'production', APP_URL: 'https://moreshetglobal.com',
   SUPABASE_URL: 'https://example.supabase.co', VITE_SUPABASE_URL: 'https://example.supabase.co',
   VITE_SUPABASE_PUBLISHABLE_KEY: 'publishable-key-long-enough', SUPABASE_SECRET_KEY: 'secret-key-different-and-long',
   HERZL_MODE: 'simulator',

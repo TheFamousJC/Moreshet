@@ -59,7 +59,7 @@ assert.equal(result.bytes?.toString(), 'test mp3 bytes');
 assert.equal(body?.voice, 'en-GB-Chirp3-HD-Aoede');
 assert.equal(body?.speakingRate, 1);
 assert.deepEqual(body?.pronunciations, request.pronunciations);
-assert.match(headers?.get('x-tudela-signature') || '', /^[0-9a-f]{64}$/);
+assert.match(headers?.get('x-moreshet-signature') || '', /^[0-9a-f]{64}$/);
 
 const adminSource = await readFile(new URL('../server/authAdmin.ts', import.meta.url), 'utf8');
 assert.match(adminSource, /narration\/pronunciation-preview/, 'Pronunciation approval must use a dedicated authenticated preview endpoint.');

@@ -1,4 +1,4 @@
-# Tudela Global MVP verification log
+# Moreshet MVP verification log
 
 Updated 13 October 2026. These results apply to the restored local project, not an old deployment.
 
@@ -33,4 +33,4 @@ Phone GPS, arrival alerts, offline recovery, voice quality, cross-device sync re
 
 Stage 1 restore and build: locally verified. Stage 2 zero-budget architecture: implemented and locally checked; database owner-policy execution still pending. Stage 3 visitor demo: browser flow checked; phone and offline acceptance pending. Stages 4–8: retained implementation where applicable, with service setup and acceptance work remaining.
 
-The local app runs on port 3220. SubFinder remains separate on port 3210 and its GitHub repository has not been used for Tudela. No paid cloud project or public deployment was created.
+The local app runs on port 3220. SubFinder remains separate on port 3210 and its GitHub repository has not been used for Moreshet. No paid cloud project or public deployment was created.

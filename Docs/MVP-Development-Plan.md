@@ -1,4 +1,4 @@
-# Tudela Global MVP staged development plan
+# Moreshet MVP staged development plan
 
 Version 1, 13 October 2026. First pilot: Budapest. Budget target: zero new service spending during local development. Each stage updates the technical specification and verification log before being called complete.
 
@@ -10,7 +10,7 @@ The rebuild keeps that investment and changes three architectural choices: AI op
 
 ## Stage 1 Restore and establish the baseline
 
-Deliverables: isolated Tudela project, locked dependencies, feature inventory, local start command, a build result and a first verification log. Keep SubFinder and its GitHub repository separate. Do not run archived deployment or backup scripts as part of extraction.
+Deliverables: isolated Moreshet project, locked dependencies, feature inventory, local start command, a build result and a first verification log. Keep SubFinder and its GitHub repository separate. Do not run archived deployment or backup scripts as part of extraction.
 
 Completion gate: the restored app builds and its source can be inspected without live keys. Identify any baseline failures and database-dependent tests separately.
 

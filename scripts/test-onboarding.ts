@@ -38,7 +38,7 @@ assert.match(appSource, /useState\(false\)/, 'Onboarding must be closed by defau
 assert.match(appSource, /onReplayOnboarding/, 'Settings must be able to replay onboarding.');
 assert.match(settingsSource, /replayTitle/, 'Settings replay control is missing localized copy.');
 assert.match(settingsSource, /onOpenSetupWizard/, 'Settings must let a visitor review the preferences wizard later.');
-assert.match(appSource, /tudela_setup_completed_\$\{account\.user\.id\}/, 'First-sign-in setup completion must be stored separately for each account.');
+assert.match(appSource, /moreshet_setup_completed_\$\{account\.user\.id\}/, 'First-sign-in setup completion must be stored separately for each account.');
 assert.match(appSource, /supabase\.auth\.updateUser/, 'First-sign-in setup completion must follow the account across devices.');
 assert.match(appSource, /FirstSignInSetupWizard/, 'Signed-in visitors must receive the preferences setup wizard.');
 assert.match(setupSource, /arrivalPlaybackMode/, 'The setup wizard must explain automatic and manual narration.');

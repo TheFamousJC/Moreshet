@@ -8,8 +8,8 @@ $ErrorActionPreference = 'Stop'
 
 $projectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 $dockerCli = (Get-Command docker -ErrorAction Stop).Source
-$helperImage = 'tudela-supabase-cli:2.112.0'
-$projectId = 'tudela_mvp_rebuild'
+$helperImage = 'moreshet-supabase-cli:2.112.0'
+$projectId = 'moreshet_mvp_rebuild'
 $supabaseNetwork = "supabase_network_$projectId"
 $databaseContainer = "supabase_db_$projectId"
 $internalDatabaseUrl = "postgresql://postgres:postgres@${databaseContainer}:5432/postgres?sslmode=disable"

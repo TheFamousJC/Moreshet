@@ -11,7 +11,7 @@ param(
 $ErrorActionPreference = "Stop"
 . (Join-Path $PSScriptRoot "file-hash.ps1")
 
-function Resolve-TudelaBackup {
+function Resolve-MoreshetBackup {
   param(
     [string]$RequestedPath,
     [Parameter(Mandatory = $true)][string]$BackupDirectory,
@@ -52,12 +52,12 @@ function Test-EncryptedChecksum {
     throw "Checksum file was not found: $checksumPath"
   }
   $expectedHash = ((Get-Content -LiteralPath $checksumPath -Raw).Trim() -split '\s+')[0].ToLowerInvariant()
-  $actualHash = Get-TudelaFileSha256 -LiteralPath $EncryptedPath
+  $actualHash = Get-MoreshetFileSha256 -LiteralPath $EncryptedPath
   if ($actualHash -ne $expectedHash) { throw "Encrypted backup checksum mismatch: $EncryptedPath" }
   return $actualHash
 }
 
-function Expand-TudelaEncryptedBackup {
+function Expand-MoreshetEncryptedBackup {
   param(
     [Parameter(Mandatory = $true)][string]$EncryptedPath,
     [Parameter(Mandatory = $true)][string]$Destination,
@@ -70,15 +70,15 @@ function Expand-TudelaEncryptedBackup {
   $passphraseSecure = Read-Host $Prompt -AsSecureString
   $passphrase = [System.Net.NetworkCredential]::new('', $passphraseSecure).Password
   try {
-    $env:TUDELA_RECOVERY_PASSPHRASE = $passphrase
-    & $opensslPath enc -d -aes-256-cbc -pbkdf2 -iter 200000 -in $EncryptedPath -out $plainZip -pass env:TUDELA_RECOVERY_PASSPHRASE
+    $env:MORESHET_RECOVERY_PASSPHRASE = $passphrase
+    & $opensslPath enc -d -aes-256-cbc -pbkdf2 -iter 200000 -in $EncryptedPath -out $plainZip -pass env:MORESHET_RECOVERY_PASSPHRASE
     if ($LASTEXITCODE -ne 0) { throw "Decryption failed. Check the passphrase and encrypted backup integrity." }
     Expand-Archive -LiteralPath $plainZip -DestinationPath $extractPath
     Remove-Item -LiteralPath $plainZip -Force
     return $extractPath
   }
   finally {
-    Remove-Item Env:TUDELA_RECOVERY_PASSPHRASE -ErrorAction SilentlyContinue
+    Remove-Item Env:MORESHET_RECOVERY_PASSPHRASE -ErrorAction SilentlyContinue
     $passphrase = $null
     $passphraseSecure = $null
   }
@@ -117,8 +117,8 @@ $dockerPath = Join-Path $env:LOCALAPPDATA "Programs\DockerDesktop\resources\bin\
 $opensslPath = "C:\Program Files\Git\usr\bin\openssl.exe"
 $tempBase = [System.IO.Path]::GetFullPath([System.IO.Path]::GetTempPath())
 $drillId = (Get-Date -Format "yyyyMMdd-HHmmss") + "-" + [guid]::NewGuid().ToString('N').Substring(0, 8)
-$tempRoot = Join-Path $tempBase ("tudela-recovery-drill-" + $drillId)
-$containerName = "tudela_recovery_$($drillId.Replace('-', '_'))"
+$tempRoot = Join-Path $tempBase ("moreshet-recovery-drill-" + $drillId)
+$containerName = "moreshet_recovery_$($drillId.Replace('-', '_'))"
 $containerStarted = $false
 $startedAt = (Get-Date).ToUniversalTime()
 $reportDirectory = Join-Path $projectRoot "Docs\recovery-drill-reports"
@@ -139,10 +139,10 @@ $report = [ordered]@{
 if ([string]::IsNullOrWhiteSpace($VerifiedDatabaseReportPath) -and -not (Test-Path -LiteralPath $dockerPath -PathType Leaf)) { throw "Docker Desktop was not found." }
 if (-not (Test-Path -LiteralPath $opensslPath -PathType Leaf)) { throw "OpenSSL was not found in Git for Windows." }
 
-$databaseBackup = Resolve-TudelaBackup -RequestedPath $EncryptedDatabaseBackupPath -BackupDirectory $databaseBackupDirectory -Description "database backup"
-$storageBackup = Resolve-TudelaBackup -RequestedPath $EncryptedStorageBackupPath -BackupDirectory $storageBackupDirectory -Description "Storage backup"
+$databaseBackup = Resolve-MoreshetBackup -RequestedPath $EncryptedDatabaseBackupPath -BackupDirectory $databaseBackupDirectory -Description "database backup"
+$storageBackup = Resolve-MoreshetBackup -RequestedPath $EncryptedStorageBackupPath -BackupDirectory $storageBackupDirectory -Description "Storage backup"
 
-Write-Host "Tudela isolated recovery drill" -ForegroundColor Cyan
+Write-Host "Moreshet isolated recovery drill" -ForegroundColor Cyan
 if ([string]::IsNullOrWhiteSpace($VerifiedDatabaseReportPath)) {
   Write-Host "Database: $databaseBackup"
 }
@@ -162,13 +162,13 @@ try {
 
     Write-Host "`n1/2 Restoring the encrypted database into a disposable container..." -ForegroundColor Cyan
   $databaseEncryptedHash = Test-EncryptedChecksum -EncryptedPath $databaseBackup
-  $databaseExtractPath = Expand-TudelaEncryptedBackup -EncryptedPath $databaseBackup -Destination (Join-Path $tempRoot "database") -Prompt "Enter the database-backup passphrase"
+  $databaseExtractPath = Expand-MoreshetEncryptedBackup -EncryptedPath $databaseBackup -Destination (Join-Path $tempRoot "database") -Prompt "Enter the database-backup passphrase"
   $dumpPath = Join-Path $databaseExtractPath "database.dump"
   $databaseSummaryPath = Join-Path $databaseExtractPath "DATABASE-SUMMARY.json"
   if (-not (Test-Path -LiteralPath $dumpPath -PathType Leaf)) { throw "database.dump is missing from the decrypted database backup." }
   if (-not (Test-Path -LiteralPath $databaseSummaryPath -PathType Leaf)) { throw "DATABASE-SUMMARY.json is missing from the decrypted database backup." }
   $databaseSummary = Get-Content -LiteralPath $databaseSummaryPath -Raw | ConvertFrom-Json
-  $dumpHash = Get-TudelaFileSha256 -LiteralPath $dumpPath
+  $dumpHash = Get-MoreshetFileSha256 -LiteralPath $dumpPath
   if ($dumpHash -ne $databaseSummary.databaseSha256) { throw "The database dump checksum does not match its internal summary." }
 
   $randomBytes = New-Object byte[] 36
@@ -181,7 +181,7 @@ try {
   $mountSource = $databaseExtractPath.Replace('\', '/')
   Invoke-DockerText -Arguments @(
     "run", "--detach", "--name", $containerName,
-    "--label", "com.3sci.tudela.recovery=true",
+    "--label", "com.3sci.moreshet.recovery=true",
     "--tmpfs", "/var/lib/postgresql/data:rw,noexec,nosuid,size=2147483648",
     "--env-file", $credentialPath,
     "--mount", "type=bind,source=$mountSource,target=/recovery,readonly",
@@ -288,7 +288,7 @@ select json_build_object(
 
   Write-Host "`n2/2 Restoring and verifying the encrypted Storage archive..." -ForegroundColor Cyan
   $storageEncryptedHash = Test-EncryptedChecksum -EncryptedPath $storageBackup
-  $storageExtractPath = Expand-TudelaEncryptedBackup -EncryptedPath $storageBackup -Destination (Join-Path $tempRoot "storage") -Prompt "Enter the Storage-backup passphrase"
+  $storageExtractPath = Expand-MoreshetEncryptedBackup -EncryptedPath $storageBackup -Destination (Join-Path $tempRoot "storage") -Prompt "Enter the Storage-backup passphrase"
   $storageManifestPath = Join-Path $storageExtractPath "STORAGE-MANIFEST.json"
   $storageSummaryPath = Join-Path $storageExtractPath "BACKUP-SUMMARY.json"
   if (-not (Test-Path -LiteralPath $storageManifestPath -PathType Leaf)) { throw "STORAGE-MANIFEST.json is missing from the decrypted Storage backup." }
@@ -309,7 +309,7 @@ select json_build_object(
       throw "Storage manifest path escapes the disposable restore directory: $relativePath"
     }
     if (-not (Test-Path -LiteralPath $objectPath -PathType Leaf)) { throw "Restored Storage object is missing: $relativePath" }
-    $objectHash = Get-TudelaFileSha256 -LiteralPath $objectPath
+    $objectHash = Get-MoreshetFileSha256 -LiteralPath $objectPath
     if ($objectHash -ne ([string]$entry.sha256).ToLowerInvariant()) { throw "Restored Storage object checksum mismatch: $relativePath" }
     $objectBytes = (Get-Item -LiteralPath $objectPath).Length
     if ($null -ne $entry.bytes -and $objectBytes -ne [long]$entry.bytes) { throw "Restored Storage object size mismatch: $relativePath" }
@@ -344,7 +344,7 @@ finally {
   $resolvedTempRoot = [System.IO.Path]::GetFullPath($tempRoot)
   $validTemporaryTarget =
     $resolvedTempRoot.StartsWith($tempBase, [System.StringComparison]::OrdinalIgnoreCase) -and
-    ([System.IO.Path]::GetFileName($resolvedTempRoot) -like "tudela-recovery-drill-*")
+    ([System.IO.Path]::GetFileName($resolvedTempRoot) -like "moreshet-recovery-drill-*")
   if ($validTemporaryTarget -and (Test-Path -LiteralPath $resolvedTempRoot)) {
     Remove-Item -LiteralPath $resolvedTempRoot -Recurse -Force
   }

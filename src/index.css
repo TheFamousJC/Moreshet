@@ -13,55 +13,55 @@
 /* A single high-visibility focus treatment keeps keyboard navigation visible
    even on controls that use custom colours or remove the browser outline. */
 :where(button, a, input, select, textarea, [tabindex]):focus-visible {
-  outline: 3px solid #c98a3b !important;
+  outline: 3px solid #3b9ed8 !important;
   outline-offset: 2px !important;
 }
 
-/* Tudela Global visitor branding, derived from the supplied production logo. */
-.tudela-visitor-shell {
-  --tudela-teal: #173f46;
-  --tudela-sage: #4f8078;
-  --tudela-terracotta: #a74d38;
-  --tudela-sand: #d7b276;
-  --tudela-ochre: #c98a3b;
-  --tudela-cream: #f7f0e5;
+/* Moreshet visitor branding, with a sky-blue palette. */
+.moreshet-visitor-shell {
+  --moreshet-teal: #164b77;
+  --moreshet-sage: #318bbf;
+  --moreshet-terracotta: #247eb1;
+  --moreshet-sand: #b6daf3;
+  --moreshet-ochre: #3b9ed8;
+  --moreshet-cream: #f0f8ff;
 }
 
-.tudela-visitor-shell .bg-blue-950,
-.tudela-visitor-shell .bg-blue-900 { background-color: var(--tudela-teal) !important; }
-.tudela-visitor-shell .text-blue-950,
-.tudela-visitor-shell .text-blue-900 { color: var(--tudela-teal) !important; }
-.tudela-visitor-shell .border-blue-200,
-.tudela-visitor-shell .border-blue-100 { border-color: color-mix(in srgb, var(--tudela-sage) 35%, white) !important; }
-.tudela-visitor-shell .bg-blue-50,
-.tudela-visitor-shell .bg-blue-100 { background-color: color-mix(in srgb, var(--tudela-sage) 14%, white) !important; }
-.tudela-visitor-shell .text-amber-600,
-.tudela-visitor-shell .text-amber-700 { color: var(--tudela-terracotta) !important; }
+.moreshet-visitor-shell .bg-blue-950,
+.moreshet-visitor-shell .bg-blue-900 { background-color: var(--moreshet-teal) !important; }
+.moreshet-visitor-shell .text-blue-950,
+.moreshet-visitor-shell .text-blue-900 { color: var(--moreshet-teal) !important; }
+.moreshet-visitor-shell .border-blue-200,
+.moreshet-visitor-shell .border-blue-100 { border-color: color-mix(in srgb, var(--moreshet-sage) 35%, white) !important; }
+.moreshet-visitor-shell .bg-blue-50,
+.moreshet-visitor-shell .bg-blue-100 { background-color: color-mix(in srgb, var(--moreshet-sage) 14%, white) !important; }
+.moreshet-visitor-shell .text-amber-600,
+.moreshet-visitor-shell .text-amber-700 { color: var(--moreshet-terracotta) !important; }
 
-@keyframes tudela-splash-reveal {
+@keyframes moreshet-splash-reveal {
   0% { opacity: 0; transform: scale(0.82) translateY(18px); }
   35% { opacity: 1; transform: scale(1.03) translateY(0); }
   75% { opacity: 1; transform: scale(1) translateY(0); }
   100% { opacity: 0; transform: scale(1.04) translateY(-8px); }
 }
 
-@keyframes tudela-splash-screen {
+@keyframes moreshet-splash-screen {
   0%, 78% { opacity: 1; }
   100% { opacity: 0; }
 }
 
-@keyframes tudela-splash-halo {
+@keyframes moreshet-splash-halo {
   0% { opacity: 0; transform: scale(0.3); }
   45% { opacity: 0.28; transform: scale(1); }
   100% { opacity: 0; transform: scale(1.35); }
 }
 
-.tudela-splash { animation: tudela-splash-screen 2.2s ease-out both; }
-.tudela-splash-mark { position: relative; animation: tudela-splash-reveal 2.2s ease-out both; }
-.tudela-splash-halo { position: absolute; top: 10%; width: 11rem; height: 11rem; border-radius: 9999px; background: #4f8078; filter: blur(24px); animation: tudela-splash-halo 2.2s ease-out both; }
-.tudela-splash-line { animation: tudela-splash-reveal 2.2s ease-out both; }
+.moreshet-splash { animation: moreshet-splash-screen 2.2s ease-out both; }
+.moreshet-splash-mark { position: relative; animation: moreshet-splash-reveal 2.2s ease-out both; }
+.moreshet-splash-halo { position: absolute; top: 10%; width: 11rem; height: 11rem; border-radius: 9999px; background: #318bbf; filter: blur(24px); animation: moreshet-splash-halo 2.2s ease-out both; }
+.moreshet-splash-line { animation: moreshet-splash-reveal 2.2s ease-out both; }
 
-.leaflet-overlay-pane .tudela-google-walking-route {
+.leaflet-overlay-pane .moreshet-google-walking-route {
   filter: drop-shadow(0 0 2px rgb(255 255 255 / 100%)) drop-shadow(0 1px 1px rgb(15 23 42 / 45%));
 }
 
@@ -116,7 +116,7 @@
 }
 
 /* Browser chrome already reserves the iPhone Home-indicator area. Apply the
-   larger inset only to an installed standalone web app, where Tudela owns the
+   larger inset only to an installed standalone web app, where Moreshet owns the
    complete screen. This avoids an unnecessary white shelf below navigation in
    Safari/Chrome while retaining safe controls after Add to Home Screen. */
 @media (display-mode: standalone) {
@@ -206,3 +206,18 @@
     resize: vertical;
   }
 }
+
+/* Shared Moreshet tokens for visitor, account and CMS surfaces. */
+@theme {
+  --color-blue-950: #164b77;
+  --color-blue-900: #1b5987;
+  --color-blue-800: #216a9b;
+  --color-blue-700: #247eb1;
+  --color-blue-600: #2187c2;
+  --color-blue-500: #3498d0;
+  --color-blue-200: #b6daf3;
+  --color-blue-100: #e0f1ff;
+  --color-blue-50: #f0f8ff;
+}
+.moreshet-visitor-shell { background: #eef7ff !important; }
+.moreshet-splash { background: #f0f8ff !important; }

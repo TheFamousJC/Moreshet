@@ -17,7 +17,7 @@ const child = spawn(process.execPath, ['dist/server.js'], {
   stdio: ['ignore', 'pipe', 'pipe'],
   env: {
     ...process.env,
-    NODE_ENV: 'production', PORT: String(port), APP_URL: `https://tudelaglobal.test`, APP_VERSION: 'stage4f-test',
+    NODE_ENV: 'production', PORT: String(port), APP_URL: `https://moreshetglobal.test`, APP_VERSION: 'stage4f-test',
     SUPABASE_URL: 'https://example.supabase.co', VITE_SUPABASE_URL: 'https://example.supabase.co',
     VITE_SUPABASE_PUBLISHABLE_KEY: 'publishable-key-long-enough', SUPABASE_SECRET_KEY: 'secret-key-different-and-long',
     HERZL_MODE: 'live', HERZL_PROVIDER: 'openai', OPENAI_API_KEY: '', TRUST_PROXY: 'false',
@@ -30,7 +30,7 @@ child.stderr.on('data', (chunk) => { output += chunk.toString(); });
 
 try {
   const deadline = Date.now() + 10_000;
-  while (!output.includes('Tudela Global running')) {
+  while (!output.includes('Moreshet running')) {
     if (child.exitCode !== null) throw new Error(`Production server stopped early:\n${output}`);
     if (Date.now() > deadline) throw new Error(`Production server did not start:\n${output}`);
     await new Promise((resolve) => setTimeout(resolve, 50));

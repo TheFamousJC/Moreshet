@@ -15,7 +15,7 @@ export interface PublicContentPayload {
 
 export type PublicContentSource = 'shared' | 'cache' | 'demo';
 
-const CACHE_PREFIX = 'tudela_public_content_v1';
+const CACHE_PREFIX = 'moreshet_public_content_v1';
 
 export function demoPublicContent(language: LanguageCode): PublicContentPayload {
   const tours: TourSummary[] = TOUR_CITIES.map((city) => ({

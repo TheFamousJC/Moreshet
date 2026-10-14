@@ -53,7 +53,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ selectedLanguage, 
   const toggle = (key: keyof VisitorPreferences) => onChangePreferences({ ...preferences, [key]: !preferences[key] });
 
   return (
-    <div className="h-full overflow-y-auto overscroll-contain bg-[#f7f0e5] px-3 pb-24 pt-3 text-slate-900">
+    <div className="h-full overflow-y-auto overscroll-contain bg-[#f0f8ff] px-3 pb-24 pt-3 text-slate-900">
       <div className="mx-auto max-w-md space-y-4">
         <div className="flex items-center gap-3">
           <button type="button" onClick={onBack} className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-blue-900 shadow-xs" aria-label={copy.back}>
@@ -65,33 +65,33 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ selectedLanguage, 
           </div>
         </div>
 
-        <section id="visitor-preferences" className="scroll-mt-4 rounded-3xl border border-[#d7b276]/50 bg-white p-4 shadow-sm" aria-labelledby="visitor-preferences-heading">
-          <div className="mb-4 flex items-center gap-3"><img src={`${import.meta.env.BASE_URL}tudela-global-logo.png`} alt="Tudela Global" className="h-12 w-12 rounded-2xl border border-[#d7b276]/30 bg-[#f7f0e5] object-contain" /><div><h2 id="visitor-preferences-heading" className="font-bold text-[#173f46]">{labels.preferences}</h2><p className="text-[11px] text-slate-600">Changes apply immediately and are remembered on this device.</p></div></div>
+        <section id="visitor-preferences" className="scroll-mt-4 rounded-3xl border border-[#b6daf3]/50 bg-white p-4 shadow-sm" aria-labelledby="visitor-preferences-heading">
+          <div className="mb-4 flex items-center gap-3"><img src={`${import.meta.env.BASE_URL}moreshet-logo.png`} alt="Moreshet" className="h-12 w-12 rounded-2xl border border-[#b6daf3]/30 bg-[#f0f8ff] object-contain" /><div><h2 id="visitor-preferences-heading" className="font-bold text-[#164b77]">{labels.preferences}</h2><p className="text-[11px] text-slate-600">Changes apply immediately and are remembered on this device.</p></div></div>
           <div className="space-y-3">
             <PreferenceToggle icon={<MapPin className="h-4 w-4" />} label={labels.location} checked={preferences.locationEnabled} onClick={() => toggle('locationEnabled')} />
-            <div className="rounded-2xl bg-[#f7f0e5] p-3"><div className="mb-2 flex items-center gap-2 text-xs font-bold text-[#173f46]"><Volume2 className="h-4 w-4" />{labels.arrival}</div><div className="grid grid-cols-2 gap-2"><button type="button" onClick={() => onChangePreferences({ ...preferences, arrivalPlaybackMode: 'auto' })} className={`min-h-10 rounded-xl text-xs font-bold ${preferences.arrivalPlaybackMode === 'auto' ? 'bg-[#4f8078] text-white' : 'border border-slate-200 bg-white text-slate-700'}`}>{labels.auto}</button><button type="button" onClick={() => onChangePreferences({ ...preferences, arrivalPlaybackMode: 'manual' })} className={`min-h-10 rounded-xl text-xs font-bold ${preferences.arrivalPlaybackMode === 'manual' ? 'bg-[#4f8078] text-white' : 'border border-slate-200 bg-white text-slate-700'}`}>{labels.manual}</button></div></div>
+            <div className="rounded-2xl bg-[#f0f8ff] p-3"><div className="mb-2 flex items-center gap-2 text-xs font-bold text-[#164b77]"><Volume2 className="h-4 w-4" />{labels.arrival}</div><div className="grid grid-cols-2 gap-2"><button type="button" onClick={() => onChangePreferences({ ...preferences, arrivalPlaybackMode: 'auto' })} className={`min-h-10 rounded-xl text-xs font-bold ${preferences.arrivalPlaybackMode === 'auto' ? 'bg-[#318bbf] text-white' : 'border border-slate-200 bg-white text-slate-700'}`}>{labels.auto}</button><button type="button" onClick={() => onChangePreferences({ ...preferences, arrivalPlaybackMode: 'manual' })} className={`min-h-10 rounded-xl text-xs font-bold ${preferences.arrivalPlaybackMode === 'manual' ? 'bg-[#318bbf] text-white' : 'border border-slate-200 bg-white text-slate-700'}`}>{labels.manual}</button></div></div>
             <PreferenceToggle icon={<BellRing className="h-4 w-4" />} label={labels.alerts} checked={preferences.arrivalAlertsEnabled} onClick={() => toggle('arrivalAlertsEnabled')} />
             <div className={`grid grid-cols-3 gap-2 ${preferences.arrivalAlertsEnabled ? '' : 'pointer-events-none opacity-45'}`}><MiniToggle label={labels.tone} checked={preferences.arrivalToneEnabled} onClick={() => toggle('arrivalToneEnabled')} /><MiniToggle label={labels.vibration} checked={preferences.arrivalVibrationEnabled} onClick={() => toggle('arrivalVibrationEnabled')} /><MiniToggle label={labels.pulse} checked={preferences.arrivalPulseEnabled} onClick={() => toggle('arrivalPulseEnabled')} /></div>
-            <button type="button" onClick={onOpenSetupWizard} className="flex min-h-11 w-full items-center justify-center gap-2 rounded-2xl border border-[#d7b276] bg-white text-xs font-bold text-[#173f46]"><Settings className="h-4 w-4" />{labels.setup}</button>
+            <button type="button" onClick={onOpenSetupWizard} className="flex min-h-11 w-full items-center justify-center gap-2 rounded-2xl border border-[#b6daf3] bg-white text-xs font-bold text-[#164b77]"><Settings className="h-4 w-4" />{labels.setup}</button>
           </div>
         </section>
 
-        <section className="rounded-3xl border border-[#4f8078]/30 bg-white p-4 shadow-sm"><div className="flex items-center gap-2"><Cloud className="h-4 w-4 text-[#4f8078]" /><h2 className="font-bold text-[#173f46]">{labels.connection}</h2></div><p className="mt-2 text-xs text-slate-600">{syncState.isOnline ? 'Online' : 'Offline'} · {syncState.pendingSyncCount ? `${syncState.pendingSyncCount} pending` : 'Up to date'}</p><button type="button" onClick={onSync} disabled={syncState.syncing || !syncState.isOnline} className="mt-3 min-h-10 w-full rounded-xl bg-[#173f46] text-xs font-bold text-white disabled:opacity-50">{syncState.syncing ? 'Syncing…' : labels.sync}</button></section>
+        <section className="rounded-3xl border border-[#318bbf]/30 bg-white p-4 shadow-sm"><div className="flex items-center gap-2"><Cloud className="h-4 w-4 text-[#318bbf]" /><h2 className="font-bold text-[#164b77]">{labels.connection}</h2></div><p className="mt-2 text-xs text-slate-600">{syncState.isOnline ? 'Online' : 'Offline'} · {syncState.pendingSyncCount ? `${syncState.pendingSyncCount} pending` : 'Up to date'}</p><button type="button" onClick={onSync} disabled={syncState.syncing || !syncState.isOnline} className="mt-3 min-h-10 w-full rounded-xl bg-[#164b77] text-xs font-bold text-white disabled:opacity-50">{syncState.syncing ? 'Syncing…' : labels.sync}</button></section>
 
-        <section className="overflow-hidden rounded-3xl bg-[#173f46] text-white shadow-md" aria-labelledby="settings-product-heading">
+        <section className="overflow-hidden rounded-3xl bg-[#164b77] text-white shadow-md" aria-labelledby="settings-product-heading">
           <div className="flex items-center gap-3 border-b border-white/10 p-4">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-amber-300/30 bg-white/10">
-              <img src={`${import.meta.env.BASE_URL}tudela-global-logo.png`} alt="" className="h-10 w-10 rounded-xl object-contain" />
+              <img src={`${import.meta.env.BASE_URL}moreshet-logo.png`} alt="" className="h-10 w-10 rounded-xl object-contain" />
             </div>
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-[.18em] text-amber-300">Tudela Global</p>
+              <p className="text-[10px] font-bold uppercase tracking-[.18em] text-amber-300">Moreshet</p>
               <h2 id="settings-product-heading" className="mt-1 font-bold">{copy.productInformation}</h2>
             </div>
           </div>
           <dl className="grid grid-cols-2 gap-px bg-white/10 text-xs">
-            <div className="bg-[#173f46] p-3"><dt className="text-[#d7b276]">{copy.version}</dt><dd className="mt-1 font-mono font-bold">{buildInformation.version}</dd></div>
-            <div className="bg-[#173f46] p-3"><dt className="text-[#d7b276]">{copy.build}</dt><dd className="mt-1 truncate font-mono font-bold">{buildInformation.build}</dd></div>
-            <div className="col-span-2 bg-[#173f46] p-3"><dt className="text-[#d7b276]">{copy.publisher}</dt><dd className="mt-1 font-bold">{copy.publishedBy}</dd></div>
+            <div className="bg-[#164b77] p-3"><dt className="text-[#b6daf3]">{copy.version}</dt><dd className="mt-1 font-mono font-bold">{buildInformation.version}</dd></div>
+            <div className="bg-[#164b77] p-3"><dt className="text-[#b6daf3]">{copy.build}</dt><dd className="mt-1 truncate font-mono font-bold">{buildInformation.build}</dd></div>
+            <div className="col-span-2 bg-[#164b77] p-3"><dt className="text-[#b6daf3]">{copy.publisher}</dt><dd className="mt-1 font-bold">{copy.publishedBy}</dd></div>
           </dl>
         </section>
 
@@ -152,6 +152,6 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ selectedLanguage, 
   );
 };
 
-const PreferenceToggle: React.FC<{ icon: React.ReactNode; label: string; checked: boolean; onClick: () => void }> = ({ icon, label, checked, onClick }) => <button type="button" role="switch" aria-checked={checked} onClick={onClick} className="flex min-h-12 w-full items-center gap-3 rounded-2xl bg-[#f7f0e5] px-3 text-start"><span className="text-[#4f8078]">{icon}</span><span className="flex-1 text-xs font-bold text-[#173f46]">{label}</span><span className={`relative h-6 w-11 rounded-full transition-colors ${checked ? 'bg-[#4f8078]' : 'bg-slate-300'}`}><span className={`absolute top-1 h-4 w-4 rounded-full bg-white shadow transition-transform ${checked ? 'translate-x-6 rtl:-translate-x-6' : 'translate-x-1 rtl:-translate-x-1'}`} /></span></button>;
+const PreferenceToggle: React.FC<{ icon: React.ReactNode; label: string; checked: boolean; onClick: () => void }> = ({ icon, label, checked, onClick }) => <button type="button" role="switch" aria-checked={checked} onClick={onClick} className="flex min-h-12 w-full items-center gap-3 rounded-2xl bg-[#f0f8ff] px-3 text-start"><span className="text-[#318bbf]">{icon}</span><span className="flex-1 text-xs font-bold text-[#164b77]">{label}</span><span className={`relative h-6 w-11 rounded-full transition-colors ${checked ? 'bg-[#318bbf]' : 'bg-slate-300'}`}><span className={`absolute top-1 h-4 w-4 rounded-full bg-white shadow transition-transform ${checked ? 'translate-x-6 rtl:-translate-x-6' : 'translate-x-1 rtl:-translate-x-1'}`} /></span></button>;
 
-const MiniToggle: React.FC<{ label: string; checked: boolean; onClick: () => void }> = ({ label, checked, onClick }) => <button type="button" role="switch" aria-checked={checked} onClick={onClick} className={`min-h-12 rounded-2xl border px-2 text-[10px] font-bold ${checked ? 'border-[#4f8078] bg-[#4f8078] text-white' : 'border-slate-200 bg-white text-slate-600'}`}><Waves className="mx-auto mb-1 h-3 w-3" />{label}</button>;
+const MiniToggle: React.FC<{ label: string; checked: boolean; onClick: () => void }> = ({ label, checked, onClick }) => <button type="button" role="switch" aria-checked={checked} onClick={onClick} className={`min-h-12 rounded-2xl border px-2 text-[10px] font-bold ${checked ? 'border-[#318bbf] bg-[#318bbf] text-white' : 'border-slate-200 bg-white text-slate-600'}`}><Waves className="mx-auto mb-1 h-3 w-3" />{label}</button>;
