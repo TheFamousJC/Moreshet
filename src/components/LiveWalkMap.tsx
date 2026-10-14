@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MapPin, Navigation, Settings, LocateFixed, Play, List } from 'lucide-react';
 import { HeritageSite, UserLocation, AudioGuideSettings } from '../types';
 import { getDistanceMeters, formatDistance } from '../utils/geo';
 import { getTranslatedSite, LanguageCode } from '../data/translations';
+import { apiUrl } from '../lib/api';
 import { googleMapsWalking, googleMapsSearch, googleMapsEmbed } from '../lib/googleMaps';
 interface LiveWalkMapProps {
   sites: HeritageSite[]; userLocation: UserLocation; gpsStatus:'off'|'simulated'|'requesting'|'live'|'denied'|'unavailable'|'error';
@@ -15,7 +16,16 @@ export const LiveWalkMap:React.FC<LiveWalkMapProps>=(props)=>{
   const [mapMode, setMapMode] = useState<'stop' | 'tour'>('stop');
   const [viewedStop, setViewedStop] = useState<string | null>(null);
   const active=props.sites.find(s=>s.id===viewedStop)||props.sites.find(s=>s.id===props.nextSiteId)||props.selectedSite||props.sites[0];
-  const embedKey=import.meta.env.VITE_GOOGLE_MAPS_EMBED_KEY;
+  const [embedKey, setEmbedKey]=useState(import.meta.env.VITE_GOOGLE_MAPS_EMBED_KEY || '');
+  useEffect(()=>{
+    if (embedKey) return;
+    const controller=new AbortController();
+    fetch(apiUrl('/api/maps/config'),{signal:controller.signal})
+      .then(response=>response.ok?response.json():null)
+      .then(config=>{if(config?.configured && /^AIza[0-9A-Za-z_-]{35}$/.test(config.embedKey || ''))setEmbedKey(config.embedKey);})
+      .catch(()=>{});
+    return ()=>controller.abort();
+  },[embedKey]);
   const showRoute=mapMode==='tour' && props.sites.length>1 && props.sites.length<=22;
   const translated=active?getTranslatedSite(active,props.selectedLanguage):null;
   const trusted=props.gpsStatus==='live';

@@ -19,10 +19,16 @@ const prompt=buildPersonalAiPrompt('Tell me about this synagogue','Budapest','en
 assert.ok(!(await readFile('src/components/AskHerzlChat.tsx','utf8')).includes('fetch('));
 assert.ok(!(await readFile('src/components/WhatsAroundMe.tsx','utf8')).includes("fetch('/api/places/nearby'"));
 const migration=await readFile('supabase/migrations/20261013100000_private_visitor_sync.sql','utf8');assert.ok(migration.includes('enable row level security'));assert.ok(migration.includes('auth.uid()) = user_id'));
-const child=spawn(process.execPath,['--import','tsx','server.ts'],{env:{...process.env,PORT:'3229',APP_URL:'http://localhost:3220',NODE_ENV:'development',SUPABASE_URL:'',SUPABASE_SECRET_KEY:'',VITE_SUPABASE_PUBLISHABLE_KEY:'',HERZL_MODE:'live',OPENAI_API_KEY:'test-not-a-real-key',NARRATION_MODE:'live'},stdio:['ignore','pipe','pipe']});
+const child=spawn(process.execPath,['--import','tsx','server.ts'],{env:{...process.env,PORT:'3229',APP_URL:'http://localhost:3220',NODE_ENV:'development',SUPABASE_URL:'',SUPABASE_SECRET_KEY:'',VITE_SUPABASE_PUBLISHABLE_KEY:'',HERZL_MODE:'live',OPENAI_API_KEY:'test-not-a-real-key',NARRATION_MODE:'live',VITE_GOOGLE_MAPS_EMBED_KEY:'AIza'+'A'.repeat(35)},stdio:['ignore','pipe','pipe']});
 try{
   await new Promise<void>((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('MVP server startup timed out')),30000);let output='';child.stdout.on('data',chunk=>{output+=chunk;if(output.includes('MVP ready')){clearTimeout(timer);resolve();}});child.once('exit',code=>{clearTimeout(timer);reject(new Error(`MVP server exited ${code}`));});});
   const base='http://127.0.0.1:3229';const health=await (await fetch(base+'/api/health')).json();assert.equal(health.paidApiCallsEnabled,false);assert.equal(health.modes.ai,'external-user-service-only');
+  const mapConfigResponse=await fetch(base+'/api/maps/config');
+  assert.equal(mapConfigResponse.headers.get('Cache-Control'),'no-store');
+  const mapConfig=await mapConfigResponse.json();
+  assert.equal(mapConfig.configured,true);
+  assert.equal(mapConfig.embedKey,'AIza'+'A'.repeat(35));
+  assert.ok(!JSON.stringify(mapConfig).includes('test-not-a-real-key'));
   for(const route of ['/api/chat','/api/routes/walking','/api/places/nearby','/api/admin/narration/preview','/api/admin/narration/pronunciation-preview'])assert.equal((await fetch(base+route,{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'})).status,410,route);
   assert.equal((await fetch(base+'/api/geocode?q=Budapest')).status,410);
   assert.equal((await fetch(base+'/api/sync')).status,401);

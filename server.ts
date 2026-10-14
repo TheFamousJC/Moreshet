@@ -23,6 +23,12 @@ async function startServer(){
     next();
   });
   app.use(applySecurityHeaders);app.use((req,res,next)=>{let pathname;try{pathname=decodeURIComponent(req.path);}catch{return res.status(400).end();}if(/(?:^|\/)(?:Project Documents|Docs|\.tmp|\.git)(?:\/|$)/i.test(pathname))return res.status(404).end();next();});app.use(express.json({limit:'5mb'}));
+  // Only this explicitly public, website-restricted key may be returned to visitors.
+  app.get('/api/maps/config',(_req,res)=>{
+    const key=(process.env.VITE_GOOGLE_MAPS_EMBED_KEY || '').trim();
+    res.setHeader('Cache-Control','no-store');
+    return res.json(/^AIza[0-9A-Za-z_-]{35}$/.test(key) ? {configured:true,embedKey:key} : {configured:false});
+  });
   app.get('/api/health',(_req,res)=>res.json({status:'ok',service:'Moreshet MVP',version:'1.0.0-mvp',modes:{ai:'external-user-service-only',narration:'manual-and-device',maps:'google-maps-links'},databaseConfigured:Boolean(runtime.supabaseUrl&&runtime.supabaseSecretKey),paidApiCallsEnabled:false}));
   app.get('/api/ready',async(_req,res)=>{
     if(!runtime.supabaseUrl||!runtime.supabaseSecretKey)return res.status(503).json({status:'visitor-demo-ready',dependency:'shared-accounts-and-cms-not-configured'});
