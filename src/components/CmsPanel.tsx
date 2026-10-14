@@ -1,3 +1,4 @@
+import { apiUrl } from '../lib/api';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { ArchiveRestore, ArrowDown, ArrowLeft, ArrowUp, Building2, Check, ChevronRight, Database, Download, Edit3, Headphones, ImagePlus, Library, Link2, Loader2, LogOut, MapPin, Maximize2, Minimize2, Plus, Search, ShieldCheck, Star, Trash2, Unlink, Upload, Users, WandSparkles } from 'lucide-react';
 import { COUNTRIES } from '../data/countries';
@@ -376,7 +377,7 @@ export const CmsPanel: React.FC<CmsPanelProps> = ({ cities, tours, sites, review
         setIsGeocoding(true);
         setMessage('Finding the real-world location…');
         try {
-            const response = await fetch(`/api/geocode?q=${encodeURIComponent(locationQuery)}&scope=${scope}`);
+            const response = await fetch(apiUrl(`/api/geocode?q=${encodeURIComponent(locationQuery)}&scope=${scope}`));
             const data = await response.json();
             if (!response.ok || !data.result)
                 throw new Error(data.error || 'No reliable location match was found.');
@@ -857,7 +858,7 @@ const SiteEditor: React.FC<{
     const addTag = (tag: string) => { const clean = tag.trim(); if (clean && !draft.tags.some(item => item.toLowerCase() === clean.toLowerCase()))
         setDraft({ ...draft, tags: [...draft.tags, clean] }); setTagInput(''); };
     const findCoords = async () => { const city = cities.find(item => item.id === draft.cityId); setFindingCoordinates(true); setNotice('Finding real-world coordinates…'); try {
-        const response = await fetch(`/api/geocode?q=${encodeURIComponent(`${draft.name}, ${draft.address}, ${city?.name || draft.cityName || ''}, ${city?.country || ''}`)}&scope=landmark`);
+        const response = await fetch(apiUrl(`/api/geocode?q=${encodeURIComponent(`${draft.name}, ${draft.address}, ${city?.name || draft.cityName || ''}, ${city?.country || ''}`)}&scope=landmark`));
         const data = await response.json();
         if (!response.ok || !data.result)
             throw new Error(data.error || 'No reliable match found.');

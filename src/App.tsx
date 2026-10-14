@@ -1,3 +1,4 @@
+import { apiUrl } from './lib/api';
 /**
  * European Jewish Heritage & Live Walk Mobile Application
  *
@@ -45,7 +46,8 @@ const PUBLIC_ORGANIZATION = requestedOrganization && /^[a-z0-9]+(?:-[a-z0-9]+)*$
   : (import.meta.env.VITE_ORGANIZATION_SLUG || '3sci');
 
 export default function App() {
-  const isCmsRoute = window.location.pathname === '/cms' || window.location.pathname.startsWith('/cms/');
+  const appPath = window.location.pathname.startsWith(import.meta.env.BASE_URL) ? '/' + window.location.pathname.slice(import.meta.env.BASE_URL.length) : window.location.pathname;
+  const isCmsRoute = appPath === '/cms' || appPath.startsWith('/cms/');
   // Navigation State
   const [activeTab, setActiveTab] = useState<TabType>('search');
   const [settingsReturnTab, setSettingsReturnTab] = useState<TabType>('search');
@@ -744,7 +746,7 @@ export default function App() {
     if(import.meta.env.VITE_FRONTEND_PREVIEW === 'true'){setAccountNotice('This preview saves on your device. Shared account sync will be enabled in a later stage.');return;}
     setSyncState((prev) => ({ ...prev, syncing: true }));
     try {
-      const response = await fetch('/api/sync', {
+      const response = await fetch(apiUrl('/api/sync'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', ...(account?.session.access_token ? { Authorization: `Bearer ${account.session.access_token}` } : {}) },
         body: JSON.stringify({

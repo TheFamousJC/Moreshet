@@ -14,6 +14,14 @@ async function startServer(){
   const runtime=loadRuntimeConfig({...process.env,PORT:process.env.PORT || '3220',HERZL_MODE:'simulator',HERZL_PROVIDER:'openai'});
   const app=express();app.disable('x-powered-by');if(runtime.trustProxy)app.set('trust proxy',1);
   app.use((req,res,next)=>{const requestId=randomUUID();res.setHeader('X-Request-Id',requestId);next();});
+  app.use('/api', (req,res,next)=>{
+    const origin=req.headers.origin;
+    const permitted=new Set([new URL(runtime.appUrl).origin,...(process.env.TUDELA_ALLOWED_ORIGINS || '').split(',').filter(Boolean).map(value=>new URL(value.trim()).origin)]);
+    if(origin && !permitted.has(origin))return res.status(403).json({error:'Origin not permitted.'});
+    if(origin){res.setHeader('Access-Control-Allow-Origin',origin);res.setHeader('Vary','Origin');res.setHeader('Access-Control-Allow-Methods','GET,POST,PATCH,PUT,DELETE,OPTIONS');res.setHeader('Access-Control-Allow-Headers','Authorization,Content-Type');}
+    if(req.method==='OPTIONS')return res.status(204).end();
+    next();
+  });
   app.use(applySecurityHeaders);app.use((req,res,next)=>{let pathname;try{pathname=decodeURIComponent(req.path);}catch{return res.status(400).end();}if(/(?:^|\/)(?:Project Documents|Docs|\.tmp|\.git)(?:\/|$)/i.test(pathname))return res.status(404).end();next();});app.use(express.json({limit:'5mb'}));
   app.get('/api/health',(_req,res)=>res.json({status:'ok',service:'Tudela Global MVP',version:'1.0.0-mvp',modes:{ai:'external-user-service-only',narration:'manual-and-device',maps:'google-maps-links'},databaseConfigured:Boolean(runtime.supabaseUrl&&runtime.supabaseSecretKey),paidApiCallsEnabled:false}));
   app.get('/api/ready',async(_req,res)=>{

@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: tudela-mvp-api
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 24
+      - key: NODE_ENV
+        value: production
+      - key: APP_URL
+        value: https://thefamousjc.github.io/TudelaGlobal_2/
+      - key: TRUST_PROXY
+        value: "true"
+      - key: SUPABASE_URL
+        sync: false
+      - key: VITE_SUPABASE_URL
+        sync: false
+      - key: VITE_SUPABASE_PUBLISHABLE_KEY
+        sync: false
+      - key: SUPABASE_SECRET_KEY
+        sync: false
+

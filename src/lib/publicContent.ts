@@ -1,3 +1,4 @@
+import { apiUrl } from './api';
 import { HERITAGE_SITES, TOUR_CITIES } from '../data/heritageSites';
 import { LanguageCode } from '../data/translations';
 import { HeritageSite, TourCity, TourSummary } from '../types';
@@ -93,11 +94,14 @@ export function clearPublicContentCache(organization: string, language: Language
 
 export async function fetchPublicContent(organization: string, language: LanguageCode, signal?: AbortSignal) {
   const params = new URLSearchParams({ organization, language });
-  const response = await fetch(`/api/public/content?${params}`, { signal, headers: { Accept: 'application/json' } });
+  const response = await fetch(apiUrl(`/api/public/content?${params}`), { signal, headers: { Accept: 'application/json' } });
   if (!response.ok) throw new Error(`Published content request failed (${response.status}).`);
   const payload = await response.json() as PublicContentPayload;
   if (payload.schemaVersion !== 1 || !Array.isArray(payload.cities) || !Array.isArray(payload.tours) || !Array.isArray(payload.sites)) {
     throw new Error('Published content response is invalid.');
+  }
+  for (const items of [payload.cities, payload.tours, payload.sites]) {
+    for (const item of items) if (item.imageUrl?.startsWith('/api/')) item.imageUrl = apiUrl(item.imageUrl);
   }
   return payload;
 }

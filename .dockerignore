@@ -9,3 +9,9 @@ Docs/.manual_render*
 *.docx
 server-dev.*.log
 backups
+
+Project Documents
+Docs
+.tmp
+frontend-dist
+*.zip

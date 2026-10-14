@@ -1,3 +1,4 @@
+import { apiUrl } from '../lib/api';
 import React, { useEffect, useState } from 'react';
 import { ArrowLeft, BellRing, Bot, ChevronDown, Cloud, Info, LifeBuoy, LockKeyhole, MapPin, PlayCircle, Scale, Settings, ShieldCheck, Volume2, Waves } from 'lucide-react';
 import { LanguageCode } from '../data/translations';
@@ -27,7 +28,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ selectedLanguage, 
   useEffect(() => {
     if(import.meta.env.VITE_FRONTEND_PREVIEW === 'true'){setBuildInformation({version:'1.0.0 frontend preview',build:'online'});return;}
     const controller = new AbortController();
-    void fetch('/api/health', { signal: controller.signal, headers: { Accept: 'application/json' } })
+    void fetch(apiUrl('/api/health'), { signal: controller.signal, headers: { Accept: 'application/json' } })
       .then((response) => response.ok ? response.json() : Promise.reject(new Error('Health request failed.')))
       .then((payload) => setBuildInformation({
         version: String(payload.version || 'pilot-0.1'),

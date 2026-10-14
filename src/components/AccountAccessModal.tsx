@@ -1,3 +1,4 @@
+import { apiUrl, appReturnUrl } from '../lib/api';
 import React, { useEffect, useState } from 'react';
 import { KeyRound, LogIn, ShieldCheck, UserPlus, X } from 'lucide-react';
 import { AccountContext, isSupabaseConfigured, loadAccountContext, supabase } from '../lib/supabase';
@@ -74,13 +75,13 @@ export const AccountAccessModal: React.FC<AccountAccessModalProps> = ({ isOpen, 
         const { data, error } = await supabase.auth.signUp({
           email: email.trim().toLowerCase(),
           password,
-          options: { data: { display_name: displayName.trim(), username: username.trim(), age_16_confirmed: true, preferred_language: 'en' } },
+          options: { emailRedirectTo: appReturnUrl(), data: { display_name: displayName.trim(), username: username.trim(), age_16_confirmed: true, preferred_language: 'en' } },
         });
         if (error) throw error;
         if (data.session) await finishSession();
         else setMessage('Registration created. Check your email to verify the account before signing in.');
       } else if (mode === 'forgot') {
-        const { error } = await supabase.auth.resetPasswordForEmail(email.trim().toLowerCase(), { redirectTo: window.location.origin });
+        const { error } = await supabase.auth.resetPasswordForEmail(email.trim().toLowerCase(), { redirectTo: appReturnUrl() });
         if (error) throw error;
         setMessage('If the account exists, a password-reset message has been sent.');
       } else {
@@ -89,7 +90,7 @@ export const AccountAccessModal: React.FC<AccountAccessModalProps> = ({ isOpen, 
         const { error } = await supabase.auth.updateUser({ password });
         if (error) throw error;
         if (forcePasswordChange) {
-          const response = await fetch('/api/account/password-reset-completed', {
+          const response = await fetch(apiUrl('/api/account/password-reset-completed'), {
             method: 'POST',
             headers: { Authorization: `Bearer ${sessionData.session.access_token}` },
           });

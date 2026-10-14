@@ -11,7 +11,7 @@ const prompt=buildPersonalAiPrompt('Tell me about this synagogue','Budapest','en
 assert.ok(!(await readFile('src/components/AskHerzlChat.tsx','utf8')).includes('fetch('));
 assert.ok(!(await readFile('src/components/WhatsAroundMe.tsx','utf8')).includes("fetch('/api/places/nearby'"));
 const migration=await readFile('supabase/migrations/20261013100000_private_visitor_sync.sql','utf8');assert.ok(migration.includes('enable row level security'));assert.ok(migration.includes('auth.uid()) = user_id'));
-const child=spawn(process.execPath,['--import','tsx','server.ts'],{env:{...process.env,PORT:'3229',NODE_ENV:'development',SUPABASE_URL:'',SUPABASE_SECRET_KEY:'',VITE_SUPABASE_PUBLISHABLE_KEY:'',HERZL_MODE:'live',OPENAI_API_KEY:'test-not-a-real-key',NARRATION_MODE:'live'},stdio:['ignore','pipe','pipe']});
+const child=spawn(process.execPath,['--import','tsx','server.ts'],{env:{...process.env,PORT:'3229',APP_URL:'http://localhost:3220',NODE_ENV:'development',SUPABASE_URL:'',SUPABASE_SECRET_KEY:'',VITE_SUPABASE_PUBLISHABLE_KEY:'',HERZL_MODE:'live',OPENAI_API_KEY:'test-not-a-real-key',NARRATION_MODE:'live'},stdio:['ignore','pipe','pipe']});
 try{
   await new Promise<void>((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('MVP server startup timed out')),30000);let output='';child.stdout.on('data',chunk=>{output+=chunk;if(output.includes('MVP ready')){clearTimeout(timer);resolve();}});child.once('exit',code=>{clearTimeout(timer);reject(new Error(`MVP server exited ${code}`));});});
   const base='http://127.0.0.1:3229';const health=await (await fetch(base+'/api/health')).json();assert.equal(health.paidApiCallsEnabled,false);assert.equal(health.modes.ai,'external-user-service-only');
@@ -20,6 +20,13 @@ try{
   assert.equal((await fetch(base+'/api/sync')).status,401);
   assert.equal((await fetch(base+'/api/sync',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'})).status,401);
   assert.equal((await fetch(base+'/api/ready')).status,503);
+  const trustedOrigin='http://localhost:3220';
+  const preflight=await fetch(base+'/api/sync',{method:'OPTIONS',headers:{Origin:trustedOrigin,'Access-Control-Request-Method':'POST','Access-Control-Request-Headers':'authorization,content-type'}});
+  assert.equal(preflight.status,204);
+  assert.equal(preflight.headers.get('Access-Control-Allow-Origin'),trustedOrigin);
+  assert.equal((await fetch(base+'/api/sync',{headers:{Origin:'https://untrusted.example'}})).status,403);
+  assert.equal((await fetch(base+'/api/sync',{headers:{Origin:trustedOrigin}})).status,401);
+
   assert.equal((await fetch(base+'/')).status,200);
   console.log('MVP checks passed: external AI, Google Maps links, disabled paid endpoints, anonymous sync rejection and visitor server.');
 } finally {child.kill();}

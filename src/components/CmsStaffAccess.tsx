@@ -1,3 +1,4 @@
+import { apiUrl } from '../lib/api';
 import React, { useEffect, useMemo, useState } from 'react';
 import { Building2, KeyRound, Plus, RefreshCw, ShieldCheck, UserPlus } from 'lucide-react';
 import { AccountContext, OrganizationRole } from '../lib/supabase';
@@ -41,7 +42,7 @@ export const CmsStaffAccess: React.FC<Props> = ({ account, onSignOut }) => {
   const visibleStaff = useMemo(() => staff.filter((item) => !organizationId || item.organization_id === organizationId), [staff, organizationId]);
 
   const request = async (url: string, options?: RequestInit) => {
-    const response = await fetch(url, { ...options, headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${account.session.access_token}`, ...(options?.headers || {}) } });
+    const response = await fetch(apiUrl(url), { ...options, headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${account.session.access_token}`, ...(options?.headers || {}) } });
     const body = await response.json();
     if (!response.ok) throw new Error(body.error || 'The request failed.');
     return body;

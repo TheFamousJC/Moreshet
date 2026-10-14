@@ -1,3 +1,4 @@
+import { apiUrl } from './api';
 import { COUNTRIES } from '../data/countries';
 import { ContentLanguage, ContentStatus, HeritageSite, HeritageSiteTranslation, SiteCategory, TourCity, TourSummary } from '../types';
 import { AccountContext, OrganizationRole, supabase } from './supabase';
@@ -210,7 +211,7 @@ async function cmsAuthenticatedRequest(path: string, init?: RequestInit) {
   const { data } = await supabase.auth.getSession();
   const token = data.session?.access_token;
   if (!token) fail('Sign in again before using CMS narration.');
-  const response = await fetch(path, { ...init, headers: { ...(init?.headers || {}), Authorization: `Bearer ${token}` } });
+  const response = await fetch(apiUrl(path), { ...init, headers: { ...(init?.headers || {}), Authorization: `Bearer ${token}` } });
   const body = await response.json().catch(() => ({}));
   if (!response.ok) fail(body.error || 'The narration service is unavailable.');
   return body;
@@ -905,7 +906,7 @@ export async function uploadCmsImage(organizationId: string, _userId: string, fi
   const { data: sessionData } = await supabase.auth.getSession();
   const token = sessionData.session?.access_token;
   if (!token) fail('Sign in again before uploading.');
-  const response = await fetch('/api/admin/media', {
+  const response = await fetch(apiUrl('/api/admin/media'), {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -931,7 +932,7 @@ export async function importCmsLicensedImage(organizationId: string, stopId: str
   const { data: sessionData } = await supabase.auth.getSession();
   const token = sessionData.session?.access_token;
   if (!token) fail('Sign in again before importing licensed media.');
-  const response = await fetch('/api/admin/media/import-url', {
+  const response = await fetch(apiUrl('/api/admin/media/import-url'), {
     method: 'POST',
     headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({ organizationId, stopId, ...media }),
