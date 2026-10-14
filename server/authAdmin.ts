@@ -454,7 +454,7 @@ export function createAuthAdminRouter() {
       upstream = await fetch(importUrl, {
         redirect: 'follow',
         signal: AbortSignal.timeout(20_000),
-        headers: { 'User-Agent': 'MoreshetCMS/1.0 (https://moreshetglobal.com; contact: jeremy@3sci.com)' },
+        headers: { 'User-Agent': 'MoreshetCMS/1.0 (https://moreshet-production.up.railway.app; contact: jeremy@3sci.com)' },
       });
     } catch {
       return res.status(502).json({ error: 'The Wikimedia image could not be downloaded.' });
